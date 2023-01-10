@@ -1,0 +1,556 @@
+.contact__section {
+    padding-top: 5rem;
+    margin-top: -3rem;
+    height: 100%;
+    .contact__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        position: relative;
+        .bg__contact {
+            display: block;
+            font-size: 30rem;
+            top: -11rem;
+            left: -6rem;
+            position: absolute;
+            
+            font-weight: 500;
+            color: $offWhite;
+            opacity: .01;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            .contact__header {
+                width: 75%;
+                margin: 0 auto;
+                margin-bottom: 1rem;
+                h1 {
+                    font-family: $headerFont;
+                    font-weight: 700;
+                    position: relative;
+                    font-size: $mobileHeaderFontSize;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -.3rem;
+                        left: 0;
+                        height: .8rem;
+                        width: 4rem;
+                        border-radius: 2rem;
+                        background-color: $offTeal;
+                    }
+                }
+            }
+            .contact__text {
+                margin-bottom: 0;
+                p {
+                    width: 75%;
+                    margin-top: $headerMargin;
+                    font-size: 1rem;
+                    color: $darkModeGrey;
+                    span {
+                        color: $offTeal;
+                    }
+                }
+                .contact__mail {
+                    display: flex;
+                    width: 75%;
+                    margin: 0 auto;
+                    margin-top: 2rem;
+                    .icon {
+                        font-size: 2.5rem;
+                        color: $darkModeGrey;
+                    }
+                    a { 
+                        margin-left: 1.5rem;
+                        text-decoration: none;
+                        color: $darkModeGrey;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        h2 {
+                            font-weight: 400;
+                            font-size: 1.1rem;
+                            width: 100%;
+                        }
+                    }
+                }
+                .contact__phone {
+                    display: flex;
+                    width: 75%;
+                    margin: 1rem auto;
+                    align-items: center;
+                    .icon {
+                        margin-left: 0.2rem;
+                        width: 2.5rem;
+                    }
+                    h2 {
+                        font-weight: 400;
+                        font-size: 1.1rem;
+                        width: 100%;
+                        margin-left: 1.75rem;
+                    }
+                }
+                .contact__cta {
+                    display: flex;
+                    width: 75%;
+                    margin: 2rem auto;
+                    align-items: center;
+                    h2 {
+                        font-family: 'Helvetica Neue', sans-serif;
+                        font-weight: 600;
+                        font-size: 1.3rem;
+                        color: $darkModeGrey;
+                        width: 100%;
+                        span {
+                            color: $offTeal;
+                        }
+                    }
+                }
+            }
+        }
+        .contact__form {
+            display: flex;
+            position: relative;
+            width: 82%;
+            flex-direction: column;
+            margin-left: 0;
+            margin-top: -1rem;
+            padding-bottom: 3rem;
+            .text__field {
+                margin-bottom: .5rem;
+                width: 90%;
+                position: relative;
+                height: 60px;
+                overflow: hidden;
+                margin: auto;
+                margin-top: 1rem;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    color: $offWhite;
+                    padding-top: 20px;
+                    border: none;
+                    background: none;
+                    margin-top: -12px;
+                    margin-left: -1px;
+                    font-size: 1rem;
+                    outline: none;
+                    &:focus + .label-name .content-name,
+                    &:valid + .label-name .content-name {
+                        transform: translateY(-150%);
+                        font-size: .9rem;
+                        background: none;
+                    }
+                    &:focus + .label-name::after,
+                    &:valid + .label-name::after {
+                        transform: translateX(0%);
+                        background: none;
+                    }
+                }
+                label {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0%;
+                    color: currentColor;
+                    margin-bottom: 1px;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 1.1rem;
+                    pointer-events: none;
+                    opacity: 0.9;
+                    border-bottom: 1px solid currentColor;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        opacity: 1;
+                        left: 0px;
+                        bottom: -1px;
+                        height: 100%;
+                        width: 100%;
+                        background: none;
+                        border-bottom: 2px solid currentColor;
+                        transform: translateX(-100%);
+                        transition: 0.5s;
+                    }
+                }
+                .content-name {
+                    position: absolute;
+                    bottom: 5px;
+                    margin-top: -10px;
+                    color: $offWhite;
+                    left: 0px;
+                    transition: all 0.3s ease;
+                }
+            }
+            .text__area {
+                margin: 1rem auto 20px auto;
+                width: 90%;
+                position: relative;
+                height: 10rem;
+                overflow: hidden;
+                textarea {
+                    width: 100%;
+                    height: 100%;
+                    color: $offWhite;
+                    padding-top: 35px;
+                    border: none;
+                    background: none;
+                    margin-top: -12px;
+                    margin-left: -1px;
+                    font-size: 1rem;
+                    outline: none;
+                    &:focus + .label-name .content-name,
+                    &:valid + .label-name .content-name {
+                        transform: translateY(-75%);
+                        font-size: .9rem;
+                        background: none;
+                    }
+                    &:focus + .label-name::after,
+                    &:valid + .label-name::after {
+                        transform: translateX(0%);
+                        background: none;
+                    }
+                }
+                label {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    margin-bottom: 1px;
+                    width: 100%;
+                    height: 100%;
+                    background: none;
+                    font-size: 1.1rem;
+                    pointer-events: none;
+                    opacity: 0.9;
+                    border-bottom: 1px solid currentColor;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        opacity: 1;
+                        left: 0px;
+                        bottom: -1px;
+                        height: 100%;
+                        width: 100%;
+                        border-bottom: 2px solid currentColor;
+                        transform: translateX(-150%);
+                        transition: 0.5s;
+                    }
+                }
+                .content-name {
+                    position: absolute;
+                    top: 1rem;
+                    left: 0px;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+    }
+    .send__btn {
+        background-color: $offWhite;
+        color: $offBlack;
+        border: 1px solid $offWhite;
+        position: relative;
+        outline: none;
+        font-size: 1.1rem;
+        padding: .6rem 1rem;
+        border: 1.1px solid $offBlack;
+        font-weight: 500;
+        text-transform: uppercase;
+        z-index: 1;
+        border-radius: 3px;
+        margin-left: auto;
+        margin-right: 1.5rem;
+        margin-top: 2.5rem;
+        max-width: 12rem;
+        transition: 300ms ease-in-out;
+        &:hover,
+        &:focus {
+            transform: translateY(-0.25em);
+            color: $offWhite;
+            z-index: 1;
+            cursor: none;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 2px;
+            right: 0;
+            z-index: -1;
+            background-color: $offBlack;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 300ms ease-in-out;
+            outline: none;
+        }
+        &:hover::before,
+        &:focus::before {
+            transform: scaleX(1);
+        }
+        
+    }
+    .sent {
+        pointer-events: none;
+        background-color: $offWhite;
+        color: $offBlack;
+    }
+    .bg__contact2 {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .contact__section {
+        padding-top: 8rem;
+        margin-top: 8rem;
+        width: 100%;
+        .contact__container {
+            width: 88%;
+            margin: 0 auto;
+            .contact {
+                width: 70%;
+                align-items: center;
+                .contact__header {
+                    text-align: center;
+                    h1 {
+                        font-size: $tabletHeaderFontSize;
+                    }
+                }
+                .contact__text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    p {
+                        font-size: $mobileBodyFontSize;
+                        text-align: center;
+                        width: 100%;
+                    }
+                    .contact__mail {
+                        margin-top: 0;
+                        display: flex;
+                        justify-content: center;
+                        width: 60%;
+                    }
+                    .contact__phone {
+                        display: flex;
+                        margin: 1rem auto;
+                        width: 40%;
+                        justify-content: center;
+                    }
+                    .contact__cta {
+                        text-align: center;
+                        margin-left: 2rem;
+                        margin: 1rem auto;
+                    }
+                }
+            }
+            .contact__form {
+                margin-top: 2rem;
+                width: 70%;
+            }
+        }
+    }
+    .send__btn {
+        margin-top: 3rem;   
+    }
+}
+
+@media screen and (min-width: 1312px) {
+    .contact__section {
+        width: 100%;
+        margin-top: 2rem;
+        padding-top: 11rem;
+        .contact__container {
+            width: 65%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            .bg__contact {
+                font-size: 35rem;
+                opacity: .01;
+                color: $offWhite;
+                top: 0rem;
+                left: -25rem;
+            }
+            .contact {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-top: 2rem;
+                margin-left: 0;
+                .contact__header {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    text-align: left;
+                    margin: 0 0 2rem 0;
+                    h1 {
+                        font-size: $desktopHeaderFontSize;
+                    }
+                    a { 
+                        width: 100%;
+                        h2 {
+                            font-size: clamp(1.6rem, 2vh, 1.8rem);
+                        }
+                    }
+                }
+                .contact__text {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0rem;
+                    align-items: flex-start;
+                    justify-content: flex-end;
+                    p {
+                        text-align: left;
+                        width: 80%;
+                        margin: 0;
+                        font-size: 1.1rem;
+                    }
+                    .contact__mail {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin: 0;
+                        margin-top: 1.5rem;
+                        .icon {
+                            font-size: 3rem;
+                        }
+                        a {
+                            align-items: center;
+                            h2 {
+                                align-items: flex-start;
+                                font-size: 1.3rem;
+                            }
+                        }
+                    }
+                    .contact__phone {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        margin: 0;
+                        margin-top: 1rem;
+                        width: 100%;
+                        h2 {
+                            width: 100%;
+                            font-size: 1.3rem;
+                        }
+                        .icon {
+                            width: 3rem;
+                        }
+                    }
+                    .contact__cta {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin: 0;
+                        h2 {
+                            align-items: flex-start;
+                            text-align: left;
+                            margin-top: 3rem;
+                            margin-left: .2rem;
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+            .contact__form {
+                margin-top: 0rem;
+                width: 60%;
+                .text__field {
+                    height: 4rem;
+                    width: 100%;
+                    input {
+                        font-size: 1rem;
+                    }
+                }
+                .text__area {
+                    margin-top: 2rem;
+                    width: 100%;
+                    position: relative;
+                    height: 12rem;
+                    overflow: hidden;
+                    textarea {
+                        width: 100%;
+                    }
+                }
+                .send__btn {
+                    margin: 0;
+                    max-width: 13.5rem;
+                    font-size: 1.2rem;
+                    padding: .6rem 1.5rem;
+                    margin-top: 2.5rem;
+                }
+            }
+        }
+        .bg__contact2 {
+            display: none;
+        }
+    }
+}
+
+body.dark-mode {
+    .contact__section {
+        .contact__container {
+
+            .contact {
+
+
+                .contact__text {
+
+                    .contact__mail {
+                        .icon {
+                            color: $darkModeGrey;
+                        }
+                        a {
+                            color: $darkModeGrey;
+                        }
+                    }
+                }
+            }
+            .send__btn {
+                border: 1px solid $offWhite;
+                color: $offBlack;
+                background-color: $offWhite;
+                &::before {
+                    background-color: $offBlack;
+                }
+                &:hover,
+                &:focus {
+                    color: $offWhite;
+                }
+            }
+            .contact__form {
+                .text__field {
+                    input {
+                        color: $offWhite;
+                    }
+                    .content__name {
+                        color: $offWhite;
+                    }
+                }
+                .text__area {
+                    textarea{
+                        color: $offWhite;
+                    }
+                }
+            }
+            .sent {
+                background-color: $offWhite;
+                color: $offBlack;
+            }
+        }
+        
+    }
+}

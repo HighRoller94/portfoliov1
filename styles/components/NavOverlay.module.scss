@@ -1,0 +1,561 @@
+@import '../variables.module';
+
+.overlay {
+    .navbar {
+        position: fixed;
+        background-color: rgba(16, 16, 16, 0.6);
+        backdrop-filter: blur(.5rem);
+        display: flex;
+        height: 8rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        z-index: 99;
+        transition: 500ms;
+        .navbar__container {
+            width: 81%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.25rem auto 0 auto;
+            .nav__logo {
+                width: 3.25rem;
+            }
+            .mobile__toggles {
+                display: flex;
+                align-items: center; 
+                .navbar__toggle {
+                    margin-top: -.75rem;
+                    z-index: 100;
+                    width: 27px;
+                    height: 27px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    transition: 330ms ease-out;
+                    .bar {
+                        border-radius: 5px;
+                        width: 100%;
+                        height: 3px;
+                        background-color: currentColor;
+                    }
+                    .half {
+                        width: 50%;
+                    }
+                    .start {
+                        transition: transform 300ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+                        transform-origin: right;
+                    }
+                    .end {
+                        align-self: flex-end;
+                        transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+                        transform-origin: left;
+                    }
+                    
+                }
+                .navbar__toggle.active {
+                    color: $offWhite;
+                    transform: rotate(-45deg);
+                    .start {
+                        transform: rotate(-90deg) translateX(1.5px);
+                    }
+                    .end {
+                        transform: rotate(-90deg) translateX(-1.5px);
+                    }
+                }
+            }
+            .sidebar { 
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                transition: all .75s ease;
+                background: transparent;
+                right: -1000px;
+                width: 55%;
+                top: 0;
+                opacity: 1;
+                z-index: 99;
+                overflow: hidden;
+                list-style: none;
+                padding-top: 8rem;
+                height: 100vh;
+                .navbar__menu {
+                    list-style: none;
+                    margin-left: -.3rem;
+                    .sidebar__name {
+                        padding-bottom: 2rem;
+                        color: $offWhite;
+                        list-style: none;
+                        h3 {
+                            font-size: 1.7rem;
+                        }
+                        h4 {
+                            font-size: 1.1rem;
+                            opacity: .5;
+                            font-weight: 400;
+                        }
+                    }
+                    .navbar__item {
+                        margin: 1.75rem 0;
+                        h1 {
+                            font-size: 2.7rem;
+                            color: $offWhite;
+                        }
+                        .navbar__links {
+                            font-size: 1.2rem;
+                            transition: 200ms ease-in;
+                            font-family: 'Poppins', sans-serif;
+                            font-weight: 600;
+                            color: $offWhite;
+                            opacity: 1;
+                            &::after {
+                                background: $offTeal;
+                            }
+                        }
+                        
+                    }
+                    .tablet__toggle {
+                        display: none;
+                    }
+                    .mobile__contact {
+                        display: block;
+                        margin: 1.5rem 0 2rem 0;
+                        color: $offWhite;
+                        button {
+                            padding: .4rem 1.6rem;
+                            opacity: 1;
+                            font-weight: 400;
+                            border: 1px solid currentColor;
+                            color: currentColor;
+                            background: none;
+                            outline: none;
+                            font-size: 1.2rem;
+                            z-index: 1;
+                            position: relative;
+                            transition: 200ms ease;
+                            &:hover {
+                                opacity: 0.5;
+                                background-color: rgba(250, 250, 250, .25);
+                            }
+                        }
+                    }
+                    .tab__toggle {
+                        display: none;
+                    }
+                    .menu__socials {
+                        display: flex;
+                        width: 70%;
+                        margin-top: 50%;
+                        .li__icon {
+                            transition: 200ms ease;
+                            font-size: 3.25rem;
+                            margin-right: 3rem;
+                            color: $offWhite;
+                            &:hover { 
+                                opacity: 0.7;
+                                cursor: none;
+                            }
+                        }
+                        .gh__icon {
+                            margin-top: .15rem;
+                            font-size: 2.75rem;
+                            color: $offWhite;
+                            transition: 200ms ease;
+                            &:hover { 
+                                opacity: 0.7;
+                                cursor: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .sidebar.active {
+                background-color: $offBlack;
+                top: 0;
+                list-style: none;
+                right: 0;
+                opacity: 1;
+                width: 50%;
+                transition: all .75s ease;
+                z-index: 99;
+                height: 100vh;
+                position: absolute;
+                overflow: none;
+                padding-top: 7.5rem;
+                padding-left: -1rem;
+                .navbar__menu {
+                    list-style: none;
+                    margin-left: -.3rem;
+                    .sidebar__name {
+                        padding-bottom: 2rem;
+                        color: $offWhite;
+                        list-style: none;
+                        h3 {
+                            font-size: 1.7rem;
+                        }
+                        h4 {
+                            font-size: 1.1rem;
+                            opacity: .5;
+                            font-weight: 400;
+                        }
+                    }
+                    .navbar__item {
+                        margin: 1.75rem 0;
+                        h1 {
+                            font-size: 2.7rem;
+                            color: $offWhite;
+                        }
+                        .navbar__links {
+                            font-size: 1.2rem;
+                            transition: 200ms ease-in;
+                            font-weight: 500;
+                            color: $offWhite;
+                            opacity: 1;
+                        }
+                    }
+                    .mobile__contact {
+                        display: block;
+                        margin: 2.5rem 0 2rem 0;
+                        color: $offWhite;
+                        button {
+                            padding: .4rem 1.6rem;
+                            opacity: 1;
+                            font-weight: 400;
+                            border: 1px solid currentColor;
+                            color: currentColor;
+                            background: none;
+                            outline: none;
+                            font-size: 1.2rem;
+                            z-index: 1;
+                            position: relative;
+                            transition: 200ms ease;
+                            &:hover {
+                                opacity: 0.5;
+                                background-color: rgba(250, 250, 250, .25);
+                            }
+                        }
+                    }
+                    .tab__toggle {
+                        display: none;
+                        z-index: 0;
+                    }
+                    .menu__socials {
+                        display: flex;
+                        width: 70%;
+                        margin-top: 20vh;
+                        .li__icon {
+                            transition: 200ms ease;
+                            font-size: 3rem;
+                            margin-right: 2rem;
+                            &:hover { 
+                                opacity: 0.7;
+                                cursor: none;
+                            }
+                        }
+                        .gh__icon {
+                            margin-top: .15rem;
+                            font-size: 2.5rem;
+                            color: $offWhite;
+                            transition: 200ms ease;
+                            &:hover { 
+                                opacity: 0.7;
+                                cursor: none;
+                            }
+                        }
+                    }
+                }
+                
+                .side__menu__toggle {
+                    display: none;
+                }
+                .sidebar__h1 {
+                    position: absolute;
+                    bottom: 17rem;
+                    right: -3rem;
+                    width: 100%;
+                    font-weight: 300;
+                    opacity: .05;
+                    font-size: 3rem;
+                    transform: rotate(-90deg);
+                }
+            }
+            .nav__button__div {
+                h1 {
+                    &:hover {
+                        color: $offBlack;
+                        background-color: $offWhite;
+                    }
+                }
+            }
+        }
+    }
+    .socials {
+        display: none;
+    }
+    .download__cv {
+        display: none;
+    }
+    .link {
+        color: currentColor;
+    }
+}
+
+.navbar.active {
+    height: 6rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+}
+
+.nav__hidden {
+    transform: translateY(-8rem);
+}
+
+@media screen and (min-width: 768px) {
+    .overlay {
+        .navbar {
+            height: 9rem;
+            .navbar__container {
+                width: 90%;
+                margin-top: 1rem;
+                .nav__logo {
+                    margin-left: 1.5rem;
+                    width: 3.75rem;
+                    margin-top: .6rem;
+                }
+                .mobile__toggles {
+                    .navbar__toggle {
+                        display: none;
+                    }
+                }
+                .sidebar {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: right;
+                    height: auto;
+                    width: 100%;
+                    list-style: none;
+                    position: static;
+                    margin-top: 0;
+                    align-items: center;
+                    margin-right: 1rem;
+                    padding-top: 0;
+                    background-color: transparent;
+                    .navbar__menu {
+                        display: flex;
+                        list-style: none;
+                        align-items: center;
+                        margin-left: 0;
+                        flex-direction: row;
+                        margin-top: .7rem;
+                        .sidebar__name {
+                            display: none;
+                        }
+                        .navbar__item {
+                            margin: 0 1rem;
+                            .navbar__links {
+                                color: $lightModeGrey;
+                                font-size: 1.1rem;
+                                font-weight: 600;
+                                position: relative;
+                                height: 100%;
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 1rem;
+                                    left: 0;
+                                    
+                                    z-index: -1;
+                                    width: 0%;
+                                    height: .7rem;
+                                    background: $offRed;
+                                    transition: 200ms ease-in;
+                                }
+                                &:hover::after {
+                                    width: 100%;
+                                }
+                            }
+                            
+                        }
+                        .mobile__contact {
+                            color: $offBlack;
+                            display: block;
+                            margin-left: 1.25rem;
+                            margin-top: 2rem;
+                            button {
+                                padding: .4rem 1.6rem;
+                                font-weight: 400;
+                                font-family: 'Helvetica', sans-serif;
+                                border: 1px solid currentColor;
+                                color: currentColor;
+                                background: none;
+                                outline: none;
+                                font-size: 1rem;
+                                z-index: 1;
+                                position: relative;
+                                transition: 200ms ease;
+                                &:hover {
+                                    background-color: rgba(250, 250, 250, .25);
+                                }
+                            }
+                        }
+                        .tab__toggle {
+                            display: flex;
+                            margin-top: .5rem;
+                            margin-left: 2rem;
+                            margin-right: -1.2rem;
+                        }
+                        .sidebar__h1 {
+                            display: none;
+                        }
+                        .menu__socials {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .socials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 6.8%;
+            z-index: 99;
+            color: currentColor;
+            .link {
+                color: currentColor;
+            }
+            .linked__icon {
+                font-size: 2rem;
+                color: currentColor;
+                transition: 300ms ease-in;
+                &:hover {
+                    opacity: 0.5;
+                    cursor: none;
+                    transform: scale(1.2);
+                }
+            }
+            .git__icon {
+                margin-top: 10px;
+                font-size: 1.6rem;
+                margin-bottom: 1.1rem;
+                color: currentColor;
+                transition: 300ms ease-in;
+                &:hover {
+                    opacity: 0.5;
+                    cursor: none;
+                    transform: scale(1.2);
+                }
+            }
+        }
+        
+    }
+    .navbar.active {
+        height: 6rem;
+        padding-top: 1rem;
+    }
+}
+
+
+
+@media screen and (min-width: 1312px) {
+    .overlay {
+        .navbar {
+            position: fixed;
+            height: 13rem;
+            display: flex;
+            width: 100%;
+            z-index: 99;
+            margin-bottom: -1rem;
+            .nav__hidden {
+                transform: translateY(-12rem);
+            }
+            .navbar__container {
+                width: 83%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 2.5rem;
+                .nav__logo {
+                    width: 4rem;
+                    transform: scale(1.2);
+                    margin-left: 0;
+                    margin-top: .5rem;
+                }
+                .navbar__toggle {
+                    display: none;
+                }
+                .sidebar {
+                    display: flex;
+                    list-style: none;
+                    margin-top: 0;
+                    justify-content: center;
+                    background-color: transparent;
+                    .navbar__menu {
+                        margin-left: 3rem;
+                        background-color: transparent;
+                        .navbar__item {
+                            margin: 0 20px;
+                            height: 2.5rem;
+                            .navbar__links {
+                                font-size: 1.2rem;
+                            }
+                        }
+                        .mobile__contact {
+                            display: none;
+                        }
+                        
+                        .menu__socials {
+                            display: none;
+                        }
+                        .tab__toggle {
+                            display: none;
+                        }
+                    }
+                    
+                }
+                .nav__button__div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 1.25rem;
+                    margin-top: -.3rem;
+                    h1 {
+                        padding: .5rem 1.8rem;
+                        font-weight: 400;
+                        border: 1px solid currentColor;
+                        border-radius: 3px;
+                        color: currentColor;
+                        font-size: 1rem;
+                        transition: 500ms ease;
+                        &:hover {
+                            background-color: #1c1c1c;
+                            color: $offWhite;
+                        }
+                    }
+                }
+                .side__menu__toggle {
+                    display: none;
+                }
+            }
+        }
+        .socials {
+            left: 8%;
+            .linked__icon {
+                font-size: 2.9rem;
+            }
+            .git__icon {
+                margin-top: 1rem;
+                font-size: 2.4rem;
+                margin-bottom: 1.75rem;
+            }
+            p {
+                margin: 40px 0;
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .navbar.active {
+        height: 8.5rem;
+    }
+}
