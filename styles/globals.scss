@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 @import './components/NavOverlay.module.scss';
+@import './components/AltNavOverlay.module.scss';
+@import './components/Modal.module.scss';
+@import './components/BackgroundAnimation.module.scss';
 @import './components/Hero.module.scss';
 @import './components/About.module.scss';
 @import './components/Projects.module.scss';
+@import './components/Project.module.scss';
+@import './components/Carousel.module.scss';
 @import './components/Skills.module.scss';
 @import './components/Contact.module.scss';
 @import './components/Footer.module.scss';
 
 * {
   margin: 0;
-  cursor: none;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   ::-webkit-scrollbar {
@@ -18,9 +22,14 @@
   }
 }
 
+a {
+  color:white;
+  text-decoration:none;
+}
+
 body {
   overflow-x: hidden;
-  cursor: none;
+
   background-color: $offBlack;
   color: $offWhite;
   transition: 200ms ease-in-out;
@@ -48,10 +57,12 @@ body {
   justify-content: center;
   background: transparent;
   pointer-events: none;
+  transition: 200ms ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
   .border {
+
       border: 25px solid black;
   }
 }
@@ -71,7 +82,7 @@ body {
   opacity: 1;
   border-radius: 50%;
   position: fixed;
-  z-index: 100;
+  z-index: 9999999;
   animation: cursorAnim 2s infinite alternate;
   pointer-events: none;
 }

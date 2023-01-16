@@ -20,7 +20,7 @@
             font-family: $headerFont;
             font-weight: 700;
             color: currentColor;
-            font-size: $mobileHeaderFontSize;
+            font-size: $headerFontSize;
             &::after {
                 content: '';
                 position: absolute;
@@ -49,129 +49,13 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 3rem;
+        
         grid-row-gap: 0;
-        .project {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            width: 75%;
-            margin-bottom: 3rem;
-            overflow: hidden;
-            border-radius: 1rem;
-            padding: 2rem 1rem;
-            z-index: 2;
-            img {
-                width: 100%;
-                filter: grayscale(50) saturate(90%) brightness(50%);
-                border-radius: 1rem;
-                grid-row-start: 1;
-                position: relative;
-                grid-column-start: 1;
-                height: 100%;
-                background-attachment: fixed;
-                background-repeat: no-repeat;
-                opacity: 1;
-                object-fit: cover;
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                &:hover {
-                    filter: grayscale(0) saturate(90%) brightness(80%);
-                }
-            }
-            .project__text {
-                display: flex;
-                flex-direction: column;
-                z-index: 2;
-                padding-bottom: 3rem;
-                margin-top: -3rem;
-                border-radius: 5px;
-                width: 100%;
-                h4 {
-                    opacity: .7;
-                    color: currentColor;
-                    letter-spacing: .4rem;
-                    color: $offTeal;
-                }
-                h1 {
-                    font-family: $headerFont;
-                    font-weight: 600;
-                    margin-top: 0.3rem;
-                    font-size: 2.5rem;
-                    transition: all .3s ease-in-out;
-                }
-                p {
-                    margin-top: .5rem;
-                    color: $darkModeGrey;
-                    width: 100%;
-                    font-size: $mobileBodyFontSize;
-                    font-weight: 400;
-                    transition: all .3s ease-in-out;
-                    span {
-                        color: $offTeal;
-                    }
-                }
-                .project__languages {
-                    display: flex;
-                    justify-content: flex-start;
-                    margin-top: 1.5rem;
-                    span {
-                        background-color: $lightModeGrey;
-                        font-size: 1rem;
-                        border-radius: 1rem;
-                        padding: .3rem 1rem;
-                        margin-right: 1rem;
-                        color: $offWhite;
-                    }
-                }
-                .btns {
-                    display: flex;
-                    align-items: center;
-                    margin-top: 1.5rem;
-                    .site__btn {
-                        display: flex;
-                        align-items: center;
-                        transition: 200ms ease-in;
-                        color: $offWhite;
-                        border:none;
-                        outline: none;
-                        font-size: 1.2rem;
-                        margin-right: 1rem;
-                        padding: .5rem 1rem;
-                        border-radius: 3px;
-                        background: none;
-                        border: 1px solid grey;
-                        font-weight: 500;
-                        z-index: 1;
-                        transition: 300ms ease-in-out;
-                        &:hover {
-                            cursor: none;
-                            background-color: lightgrey;
-                        }
-                        .icon {
-                            font-size: 2rem;
-                            margin-right: .5rem;
-                        }
-                    }
-                    .git__btn {
-                        background: none;
-                        outline: none;
-                        display: flex;
-                        font-size: 1.1rem;
-                        border-radius: 1rem;
-                        border: none;
-                        align-items: center;
-                        color: $offWhite;
-                        &:hover {
-                            cursor: none;
-                            text-decoration: underline;
-                        }
-                        .icon {
-                            margin-right: .5rem;
-                        }
-                    }
-                }
-            }
+        @media screen and (min-width: 768px) {
+            margin-top: 3rem;
         }
+
+        
     }
 }
 
@@ -188,14 +72,12 @@
             h1 {
                 padding: 0;
                 margin-left: 0;
-                font-size: $tabletHeaderFontSize;
                 &::after {
                     bottom: -.4rem;
                 }
             }
             p {
                 margin-top: $headerMargin;
-                font-size: $tabletBodyFontSize;
             }
         }
         .projects {
@@ -205,59 +87,7 @@
             justify-content: center;
             grid-row-gap: 5rem;
             grid-column-gap: 2.5rem;
-            .project {
-                width: 100%;
-                margin-top: 0;
-                margin-bottom: 0rem;
-                
-                img {
-                    &::before {
-                        content: "";
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        background-color: $offRed;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        opacity: .7;
-                        z-index: 2;
-                    }
-                }
-                .project__text {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    width: 100%;
-                    grid-column: 1 / 5; 
-                    grid-row: 1; 
-                    z-index: 1;
-                    margin-top: -5.5rem;
-                    h1 {
-                        font-size: 2rem;
-                    }
-                    p {
-                        width: 100%;
-                        color: $lightModeGrey;
-                    }
-                    .btns {
-                        .site__btn {
-                            padding: .4rem .8rem;
-                            font-size: 1.1rem;
-                            .icon {
-                                margin-right: .5rem;
-                                margin-left: 0rem;
-                            }
-                        }
-                        .git__btn {
-                            font-size: 1rem;
-                            .icon {
-                                margin-right: .75rem;
-                            }
-                        }
-                    }
-                }
-            }
+            
         }
     }
 
@@ -276,11 +106,10 @@
             width: 65%;
             margin: 0 auto;
             h1 {
-                font-size: $desktopHeaderFontSize;
+
             }
             p {
                 width: 100%;
-                font-size: $desktopBodyFontSize;
             }
         }
         .projects {
@@ -288,66 +117,7 @@
             display: flex;
             justify-content: flex-start;
             width: 65%;
-            .project {
-                display: flex;
-                flex-direction: row;
-                width: 100%;
-                height: 20rem;
-                margin-bottom: 1rem;
-                border: 1px border $offRed;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit:contain;
-                    padding: 0;
-                    margin: 0;
-                    opacity: 1;
-                    transition: 0.5s ease-in-out;
-                    filter: grayscale(50);
-                    &:hover {
-                        filter: grayscale(0);
-                        transform: translateY(-.5rem);
-                    }
-                }
-                .project__text {
-                    display: flex;
-                    width: 100%;
-                    flex-direction: column;
-                    border-radius: .5rem;
-                    margin-top: 2.5rem;
-                    margin-left: 3rem;
-                    transform: translate(0%, 0%);
-                    h1 {
-                        font-size: 2.3rem;
-                        font-family: $headerFont;
-                    }
-                    p {
-                        font-size: 1.1rem;
-                        width: 100%;
-                    }
-                    .project__languages {
-                        span {
-                            font-size: .95rem;   
-                        }
-                    }
-                    .btns {
-                        .site__btn {
-                            font-size: 1.1rem;
-                            .icon {
-                                margin-right: .5rem;
-                                margin-left: 0rem;
-                            }
-                        }
-                        .git__btn {
-                            font-size: 1.1rem;
-                            .icon {
-                                margin-right: .5rem;
-                                margin-left: 0rem;
-                            }
-                        }
-                    }
-                }
-            }
+            
             .reverse {
                 flex-direction: row-reverse;
                 .project__text {
@@ -363,51 +133,3 @@
         }
     }
 }
-
-body.dark-mode {
-    .projects__section {
-        .projects__header {
-
-            p {
-                color: $darkModeGrey;
-                span {
-                    color: $offTeal;
-                }
-            }
-        }
-        .projects {
-            .project {
-                img {
-                    filter: grayscale(50) saturate(90%) brightness(50%);
-                    opacity: 1;
-                    &:hover {
-                        filter: grayscale(0) saturate(90%) brightness(80%);
-                    }
-                }
-                .project__text {
-                    background: none;
-                    h4 {
-                        color: $offTeal;
-                    }
-                    p {
-                        color: $darkModeGrey;
-                        span {
-                            color: $offTeal;
-                        }
-                    }
-                    .project__languages {
-                        span {
-                            background-color: $lightModeGrey;
-                        }
-                    }
-                    .btns { 
-                        .git__btn {
-                            color: $offWhite;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-

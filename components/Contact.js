@@ -1,27 +1,29 @@
-import React, { useState  } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
-import { GrMail } from 'react-icons/Gr'
+import { FiMail } from 'react-icons/Fi'
 
 function Contact() {
     const [status, setStatus] = useState(false);
+    const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
     
-        // emailjs.sendForm('service_fppej9d', 'template_ij66m24', e.target, 'user_tPwEwZeUHFlaN3PHk72Nh')
-        //     .then((result) => {
-        //         console.log(result.text);
-        //     }, (error) => {
-        //         console.log(error.text);
-        //     });
-        //     e.target.reset()
-        //     setStatus(true)
+        emailjs.sendForm('service_fppej9d', 'template_ij66m24', e.target, 'user_tPwEwZeUHFlaN3PHk72Nh')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+            e.target.reset()
+            setStatus(true)
     };
     
     return (
         <div className="contact__section" data-scroll-section id="contact">
             <div className="contact__container">
-            <h1 className="bg__contact">Contact</h1>
+            
                 <div className="contact">
                     <div className="contact__header">
                         <h2 data-aos="fade-right">What's next?</h2>
@@ -30,7 +32,7 @@ function Contact() {
                     <div className="contact__text">
                         <p data-aos="fade-right">I'd <span>love to hear from you</span>, feel free to shoot me a message!</p>
                         <div data-aos="fade-right" className="contact__mail focus">
-                            <GrMail className="icon" />
+                            <FiMail className="icon" />
                             <a href="mailto:ashbridgescodes@gmail.com">
                                 <h2 className="focus">ashbridgescodes@gmail.com</h2>
                             </a> 
@@ -48,7 +50,7 @@ function Contact() {
                         </div>
                     </div>
                 </div>
-                <form className="contact__form" data-aos="fade-left" data-aos-delay="400" noValidate autoComplete="off" onSubmit={sendEmail}>
+                <form className="contact__form" ref={form} noValidate autoComplete="off" onSubmit={sendEmail}>
                     <div className="text__field">
                         <input type="text" name="name" autoComplete="off" required />
                         <label htmlFor="name" className="label-name" ><span className="content-name">Name</span></label>
@@ -62,7 +64,7 @@ function Contact() {
                         <label htmlFor="name" className="label-name" ><span className="content-name">Message</span></label>
                     </div>
                     {!status ? (
-                        <button type="submit" data-aos="fade-left" data-aos-delay="200" className="send__btn focus">Send message!</button>
+                        <button type="submit" className="send__btn focus">Send message!</button>
                     ) : (
                         <button className="send__btn sent">Message sent!</button>
                     )}

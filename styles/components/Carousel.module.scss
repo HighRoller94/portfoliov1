@@ -1,0 +1,61 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    position: relative;
+
+    .carouselImage {
+        position: Relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    .carouselArrow {
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        background-color: red;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .right {
+        right: 0;
+    }
+
+    .carouselIndicators {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        bottom: 0;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        text-align: center;
+
+        div {
+            background-color: white;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: 200ms ease-in-out;
+        }
+
+        .active {
+            background-color: $offTeal;
+            width:25px;
+            border-radius: 2rem;
+            transition: 200ms ease-in-out;
+        }
+    }
+}

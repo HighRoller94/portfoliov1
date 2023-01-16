@@ -1,0 +1,12 @@
+.alt {
+    box-shadow:none !important;
+    .backIcon {
+        font-size:4rem;
+        margin-left: -1.5rem;
+        transition: 200ms ease-in;
+        &:hover { 
+            color: $offTeal;
+            transform: scale(1.1);
+        }
+    }
+}

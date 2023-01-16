@@ -2,26 +2,92 @@
 
 .footer__section {
     width: 75%;
-    margin: 5rem auto 0 auto;
+    margin: 0rem auto 5rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 7vh;
+    z-index: 99;
+    position:relative;
+    @media screen and (min-width: 768px) { 
+        margin-top: 3rem;
+    }
+    @media screen and (min-width: 1312px) {
+        margin-top: 0rem;
+        margin: 0rem auto 8rem auto;
+    }
+    a {
+        width:100%;
+        .footer__contact {
+            display:flex;
+            font-size: .85rem;
+            width:100%;
+            text-align:center;
+            border-radius: .5rem;
+            color: $offWhite;
+            margin-bottom: 4rem;
+            transition: 300ms ease-in-out;
+            h2 {
+                font-weight: 500;
+                a {
+                    span {
+                        font-weight: 700;
+                        color: $offTeal;
+                    }
+                }
+                &:hover {
+                    span {
+                        color: #a7fff9;
+                    }
+                }
+            }
+
+            @media screen and (min-width: 768px) { 
+                width: 87%;
+                font-size: 1rem;
+            }
+            @media screen and (min-width: 1312px) {
+                margin-bottom: 5rem;
+                width: 100%;
+                font-size: 1rem;
+            }
+        }
+    }
+    
     .footer__links {
         display: flex;
         justify-content: space-between;
         width: 85%;
         align-items: center;
         margin: 1rem 0 1.5rem 0;
+        @media screen and (min-width: 768px) { 
+            margin-bottom: .5rem;
+        }
+        @media screen and (min-width: 1312px) {
+            display: flex;
+            align-items: center;
+        }
         p {
             font-weight: 200;
             margin: 0;
             font-size: 1.1rem;
+            @media screen and (min-width: 1312px) {
+                margin: 0 1.5rem;
+                font-weight: 300;
+                font-size: 1.2rem;
+            }
         }
     }
     .footer__logo2 {
         display: none;
+        @media screen and (min-width: 768px) { 
+            display: flex;
+            height: 4rem;
+            margin: 1.5rem 0;
+        }
+        @media screen and (min-width: 1312px) {
+            margin: .5rem 0;
+        }
     }
     .footer__icons {
         display: flex;
@@ -29,6 +95,9 @@
         justify-content: center;
         color: $offWhite;
         margin: 1rem 0 1.5rem 0;
+        @media screen and (min-width: 768px) { 
+            display: none;
+        }
         .li__icon {
             font-size: 3rem;
             margin: 0 20px;
@@ -44,59 +113,18 @@
     .footer__copyright {
         display: flex;
         align-items: center;
-        margin-bottom: 6rem;
+        text-align:center;
         margin-top: 1rem;
+        @media screen and (min-width: 1312px) {
+            display: flex;
+            align-items: center;
+        }
         p {
             font-weight: 400;
             font-size: .9rem;
             color: $darkModeGrey;
             span {
                 color: $offTeal;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .footer__section {
-        width: 60%;
-        .footer__links {
-            margin-bottom: .5rem;
-        }
-        .footer__logo2 {
-            display: flex;
-            height: 4rem;
-            margin: 1.5rem 0;
-        }
-        .footer__icons {
-            display: none;
-        }
-    }
-}
-
-@media screen and (min-width: 1312px) {
-    .footer__section {
-        margin-top: 8rem;
-        width: 30%;
-        .footer__links {
-            display: flex;
-            align-items: center;
-            p {
-                margin: 0 1.5rem;
-                font-weight: 300;
-                font-size: 1.2rem;
-            }
-        }
-        .footer__logo2 {
-            height: 4rem;
-            margin: .5rem 0;
-        }
-        .footer__copyright {
-            margin-bottom: 9rem;
-            display: flex;
-            align-items: center;
-            p {
-                font-size: .9rem;
             }
         }
     }

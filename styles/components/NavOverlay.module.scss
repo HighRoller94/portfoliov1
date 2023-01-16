@@ -1,25 +1,89 @@
 @import '../variables.module';
 
 .overlay {
+    position:absolute;
+    z-index: 99;
     .navbar {
         position: fixed;
-        background-color: rgba(16, 16, 16, 0.6);
-        backdrop-filter: blur(.5rem);
         display: flex;
         height: 8rem;
         justify-content: center;
         align-items: center;
         width: 100%;
-        z-index: 99;
         transition: 500ms;
+        @media screen and (min-width: 768px) {
+            height: 9rem;
+        }
+        @media screen and (min-width: 1312px) {
+            position: fixed;
+            height: 13rem;
+            display: flex;
+            width: 100%;
+            z-index: 99;
+        }
+        .barContainer {
+            width: calc(100% - 30px);
+            margin: 0 auto;
+            position: fixed; 
+            left: 0; 
+            right: 0; 
+            margin-left: auto; 
+            margin-right: auto; 
+            top: 5rem;
+            left:0;
+            z-index: 999;
+            @media screen and (min-width: 768px) {
+                top: 6.35rem;
+                width: calc(100% - 50px);
+            }
+            @media screen and (min-width: 1312px) {
+                top: 8.4rem;
+                width: calc(100% - 140px);
+            }
+            #progressBar {
+                --scrollAmount: 0%;
+                background-color: $offTeal;
+                width: var(--scrollAmount);
+                height: 8px;
+                position:absolute;
+                left: 0;
+                z-index:9999;
+                @media screen and (min-width: 768px) {
+                    height: 10px;
+                }
+            }
+        }
         .navbar__container {
             width: 81%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin: 1.25rem auto 0 auto;
+            @media screen and (min-width: 768px) {
+                width: 90%;
+                margin-top: 1rem;
+            }
+            @media screen and (min-width: 1312px) {
+                width: 83%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1.5rem;
+            }
             .nav__logo {
                 width: 3.25rem;
+                transition: 200ms ease-in-out;
+                @media screen and (min-width: 768px) {
+                    margin-left: 1.5rem;
+                    width: 3.75rem;
+                    margin-top: .6rem;
+                }
+                @media screen and (min-width: 1312px) { 
+                    width: 4rem;
+                    transform: scale(1.2);
+                    margin-left: 0;
+                    margin-top: .5rem;
+                }
             }
             .mobile__toggles {
                 display: flex;
@@ -33,6 +97,9 @@
                     flex-direction: column;
                     justify-content: space-between;
                     transition: 330ms ease-out;
+                    @media screen and (min-width: 768px) {
+                        display:none;
+                    }
                     .bar {
                         border-radius: 5px;
                         width: 100%;
@@ -51,7 +118,6 @@
                         transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
                         transform-origin: left;
                     }
-                    
                 }
                 .navbar__toggle.active {
                     color: $offWhite;
@@ -69,7 +135,7 @@
                 flex-direction: column;
                 position: absolute;
                 transition: all .75s ease;
-                background: transparent;
+                background-color: transparent;
                 right: -1000px;
                 width: 55%;
                 top: 0;
@@ -79,13 +145,45 @@
                 list-style: none;
                 padding-top: 8rem;
                 height: 100vh;
+                @media screen and (min-width: 768px) {
+                    flex-direction: row;
+                    justify-content: right;
+                    height: auto;
+                    width: 100%;
+                    position: static;
+                    margin-top: 0;
+                    align-items: center;
+                    margin-right: 1rem;
+                    padding-top: 0;
+                }
+                @media screen and (min-width: 1312px) {
+                    display: flex;
+                    list-style: none;
+                    margin: 0;
+                    justify-content: center;
+                    background-color: transparent;
+                }
                 .navbar__menu {
                     list-style: none;
                     margin-left: -.3rem;
+                    @media screen and (min-width: 768px) {
+                        display: flex;
+                        list-style: none;
+                        align-items: center;
+                        margin-left: 0;
+                        flex-direction: row;
+                        margin-top: .7rem;
+                    }
+                    @media screen and (min-width: 1312px) {
+                        background-color:transparent;
+                    }
                     .sidebar__name {
                         padding-bottom: 2rem;
                         color: $offWhite;
                         list-style: none;
+                        @media screen and (min-width: 768px) {
+                            display: none;
+                        }
                         h3 {
                             font-size: 1.7rem;
                         }
@@ -97,6 +195,13 @@
                     }
                     .navbar__item {
                         margin: 1.75rem 0;
+                        @media screen and (min-width: 768px) {
+                            margin: 0 1rem;
+                        }
+                        @media screen and (min-width: 1312px) {
+                            margin: 0 20px;
+                            height: 2.5rem;
+                        }
                         h1 {
                             font-size: 2.7rem;
                             color: $offWhite;
@@ -108,8 +213,35 @@
                             font-weight: 600;
                             color: $offWhite;
                             opacity: 1;
+                            @media screen and (min-width: 768px) {
+                                color: $darkModeGrey;
+                                font-size: 1.1rem;
+                                font-weight: 600;
+                                position: relative;
+                                height: 100%;
+                                cursor: pointer;
+                            }
+                            @media screen and (min-width: 1312px) {
+                                font-size: 1.2rem;
+                            }
                             &::after {
                                 background: $offTeal;
+                                @media screen and (min-width: 768px) {
+                                    content: '';
+                                    position: absolute;
+                                    top: 1rem;
+                                    left: 0;
+                                    z-index: -1;
+                                    width: 0%;
+                                    height: .7rem;
+                                    background: $offTeal;
+                                    transition: 200ms ease-in;
+                                }
+                            }
+                            @media screen and (min-width: 768px) {
+                                &:hover::after {
+                                    width: 100%;
+                                }
                             }
                         }
                         
@@ -121,6 +253,15 @@
                         display: block;
                         margin: 1.5rem 0 2rem 0;
                         color: $offWhite;
+                        @media screen and (min-width: 768px) {
+                            color: $offWhite;
+                            display: block;
+                            margin-left: 1.25rem;
+                            margin-top: 2rem;
+                        }
+                        @media screen and (min-width: 1312px) {
+                            display:none;
+                        }
                         button {
                             padding: .4rem 1.6rem;
                             opacity: 1;
@@ -133,19 +274,32 @@
                             z-index: 1;
                             position: relative;
                             transition: 200ms ease;
+                            @media screen and (min-width: 768px) {
+                                padding: .4rem 1.6rem;
+                                font-weight: 400;
+                                font-family: 'Helvetica', sans-serif;
+                                border: 1px solid currentColor;
+                                color: currentColor;
+                                background: none;
+                                outline: none;
+                                font-size: 1rem;
+                                z-index: 1;
+                                position: relative;
+                                transition: 200ms ease;
+                            }
                             &:hover {
                                 opacity: 0.5;
                                 background-color: rgba(250, 250, 250, .25);
                             }
                         }
                     }
-                    .tab__toggle {
-                        display: none;
-                    }
                     .menu__socials {
                         display: flex;
                         width: 70%;
                         margin-top: 50%;
+                        @media screen and (min-width: 768px) {
+                            display: none;
+                        }
                         .li__icon {
                             transition: 200ms ease;
                             font-size: 3.25rem;
@@ -238,11 +392,20 @@
                     .tab__toggle {
                         display: none;
                         z-index: 0;
+                        @media screen and (min-width: 768px) {
+                            display: flex;
+                            margin-top: .5rem;
+                            margin-left: 2rem;
+                            margin-right: -1.2rem;
+                        }
                     }
                     .menu__socials {
                         display: flex;
                         width: 70%;
                         margin-top: 20vh;
+                        @media screen and (min-width: 768px) {
+                            display:none;
+                        }
                         .li__icon {
                             transition: 200ms ease;
                             font-size: 3rem;
@@ -277,143 +440,48 @@
                     opacity: .05;
                     font-size: 3rem;
                     transform: rotate(-90deg);
+                    @media screen and (min-width: 768px) {
+                        display:none;
+                    }
                 }
             }
             .nav__button__div {
-                h1 {
-                    &:hover {
-                        color: $offBlack;
-                        background-color: $offWhite;
+                display:none;
+                @media screen and (min-width: 1312px) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 1.25rem;
+                    margin-top: -.3rem;
+                }
+                a {
+                    @media screen and (min-width: 1312px) {
+                        padding: .5rem 1.8rem;
+                        font-weight: 400;
+                        color: $offWhite;
+                        background-color: $offTeal;
+                        border-radius: 3px;
+                        font-size: 1rem;
+                        transition: 500ms ease;
+                        border:1px solid $offBlack;
                     }
+                    &:hover {
+                        color: $offTeal;
+                        background-color: $offBlack;
+                        border:1px solid $offTeal;
+                    }
+                }
+            }
+            .side__menu__toggle {
+                @media screen and (min-width: 1312px) {
+                    display:none;
                 }
             }
         }
     }
     .socials {
         display: none;
-    }
-    .download__cv {
-        display: none;
-    }
-    .link {
-        color: currentColor;
-    }
-}
-
-.navbar.active {
-    height: 6rem;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
-}
-
-.nav__hidden {
-    transform: translateY(-8rem);
-}
-
-@media screen and (min-width: 768px) {
-    .overlay {
-        .navbar {
-            height: 9rem;
-            .navbar__container {
-                width: 90%;
-                margin-top: 1rem;
-                .nav__logo {
-                    margin-left: 1.5rem;
-                    width: 3.75rem;
-                    margin-top: .6rem;
-                }
-                .mobile__toggles {
-                    .navbar__toggle {
-                        display: none;
-                    }
-                }
-                .sidebar {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: right;
-                    height: auto;
-                    width: 100%;
-                    list-style: none;
-                    position: static;
-                    margin-top: 0;
-                    align-items: center;
-                    margin-right: 1rem;
-                    padding-top: 0;
-                    background-color: transparent;
-                    .navbar__menu {
-                        display: flex;
-                        list-style: none;
-                        align-items: center;
-                        margin-left: 0;
-                        flex-direction: row;
-                        margin-top: .7rem;
-                        .sidebar__name {
-                            display: none;
-                        }
-                        .navbar__item {
-                            margin: 0 1rem;
-                            .navbar__links {
-                                color: $lightModeGrey;
-                                font-size: 1.1rem;
-                                font-weight: 600;
-                                position: relative;
-                                height: 100%;
-                                &::after {
-                                    content: '';
-                                    position: absolute;
-                                    top: 1rem;
-                                    left: 0;
-                                    
-                                    z-index: -1;
-                                    width: 0%;
-                                    height: .7rem;
-                                    background: $offRed;
-                                    transition: 200ms ease-in;
-                                }
-                                &:hover::after {
-                                    width: 100%;
-                                }
-                            }
-                            
-                        }
-                        .mobile__contact {
-                            color: $offBlack;
-                            display: block;
-                            margin-left: 1.25rem;
-                            margin-top: 2rem;
-                            button {
-                                padding: .4rem 1.6rem;
-                                font-weight: 400;
-                                font-family: 'Helvetica', sans-serif;
-                                border: 1px solid currentColor;
-                                color: currentColor;
-                                background: none;
-                                outline: none;
-                                font-size: 1rem;
-                                z-index: 1;
-                                position: relative;
-                                transition: 200ms ease;
-                                &:hover {
-                                    background-color: rgba(250, 250, 250, .25);
-                                }
-                            }
-                        }
-                        .tab__toggle {
-                            display: flex;
-                            margin-top: .5rem;
-                            margin-left: 2rem;
-                            margin-right: -1.2rem;
-                        }
-                        .sidebar__h1 {
-                            display: none;
-                        }
-                        .menu__socials {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
-        .socials {
+        @media screen and (min-width: 768px) {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -422,10 +490,12 @@
             left: 6.8%;
             z-index: 99;
             color: currentColor;
-            .link {
-                color: currentColor;
-            }
-            .linked__icon {
+        }
+        @media screen and (min-width: 1312px) {
+            left: 8%;
+        }
+        .linked__icon {
+            @media screen and (min-width: 768px) {
                 font-size: 2rem;
                 color: currentColor;
                 transition: 300ms ease-in;
@@ -435,7 +505,12 @@
                     transform: scale(1.2);
                 }
             }
-            .git__icon {
+            @media screen and (min-width: 1312px) {
+                font-size: 2.2rem;
+            }
+        }
+        .git__icon {
+            @media screen and (min-width: 768px) {
                 margin-top: 10px;
                 font-size: 1.6rem;
                 margin-bottom: 1.1rem;
@@ -447,115 +522,54 @@
                     transform: scale(1.2);
                 }
             }
+            @media screen and (min-width: 1312px) {
+                margin-top: 1rem;
+                font-size: 2.2rem;
+                margin-bottom: 1.75rem;
+            }
         }
-        
+        p {
+            margin: 40px 0;
+            font-size: 1.1rem;
+        }
     }
-    .navbar.active {
-        height: 6rem;
-        padding-top: 1rem;
+    .download__cv {
+        display: none;
+    }
+    .link {
+        color: currentColor;
     }
 }
 
-
-
-@media screen and (min-width: 1312px) {
-    .overlay {
-        .navbar {
-            position: fixed;
-            height: 13rem;
-            display: flex;
-            width: 100%;
-            z-index: 99;
-            margin-bottom: -1rem;
-            .nav__hidden {
-                transform: translateY(-12rem);
-            }
-            .navbar__container {
-                width: 83%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: 2.5rem;
-                .nav__logo {
-                    width: 4rem;
-                    transform: scale(1.2);
-                    margin-left: 0;
-                    margin-top: .5rem;
-                }
-                .navbar__toggle {
-                    display: none;
-                }
-                .sidebar {
-                    display: flex;
-                    list-style: none;
-                    margin-top: 0;
-                    justify-content: center;
-                    background-color: transparent;
-                    .navbar__menu {
-                        margin-left: 3rem;
-                        background-color: transparent;
-                        .navbar__item {
-                            margin: 0 20px;
-                            height: 2.5rem;
-                            .navbar__links {
-                                font-size: 1.2rem;
-                            }
-                        }
-                        .mobile__contact {
-                            display: none;
-                        }
-                        
-                        .menu__socials {
-                            display: none;
-                        }
-                        .tab__toggle {
-                            display: none;
-                        }
-                    }
-                    
-                }
-                .nav__button__div {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-left: 1.25rem;
-                    margin-top: -.3rem;
-                    h1 {
-                        padding: .5rem 1.8rem;
-                        font-weight: 400;
-                        border: 1px solid currentColor;
-                        border-radius: 3px;
-                        color: currentColor;
-                        font-size: 1rem;
-                        transition: 500ms ease;
-                        &:hover {
-                            background-color: #1c1c1c;
-                            color: $offWhite;
-                        }
-                    }
-                }
-                .side__menu__toggle {
-                    display: none;
-                }
-            }
-        }
-        .socials {
-            left: 8%;
-            .linked__icon {
-                font-size: 2.9rem;
-            }
-            .git__icon {
-                margin-top: 1rem;
-                font-size: 2.4rem;
-                margin-bottom: 1.75rem;
-            }
-            p {
-                margin: 40px 0;
-                font-size: 1.1rem;
-            }
+.navbar.active {
+    height: 5rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(.5rem);
+    z-index:999;
+    @media screen and (min-width: 768px) {
+        height: 6rem;
+        padding-top: 1rem;
+    }
+    @media screen and (min-width: 1312px) {
+        height: 8rem;
+    }
+    .navbar__container {
+        .nav__logo {
+            width: 2.75em;
         }
     }
-    .navbar.active {
-        height: 8.5rem;
+}
+
+.nav__hidden {
+    transform: translateY(-4rem);
+    backdrop-filter: none;
+    @media screen and (min-width: 768px) {
+        transform: translateY(-4.8rem);
+        backdrop-filter: blur(0em) !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+    @media screen and (min-width: 1312px) { 
+        transform: translateY(-5.25rem);
     }
 }
