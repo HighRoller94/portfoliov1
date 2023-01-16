@@ -1,14 +1,20 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 import Head from 'next/head'
-
+import BackgroundAnimation from '../components/BackgroundAnimation'
 import NavOverlay from '../components/NavOverlay'
 import Hero from '../components/Hero'
 import About from '../components/About'
-import Projects from '../components/Projects'
+import Projects from '../components/Projects/Projects'
 import Skills from '../components/Skills'
-import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+
+const variants = {
+  hidden: { opacity: 0 },
+  enter: { opacity: 1 },
+  exit: { opacity: 0 },
+}
 
 export default function Home() {
 
@@ -17,7 +23,7 @@ export default function Home() {
     const cursor = document.querySelector(".cursor");
     const focus = document.querySelectorAll(".focus")
     document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.clientY - 15)+"px; left: "+(e.clientX - 15)+"px;")
+      cursor.setAttribute("style", "top: " + (e.clientY - 15) + "px; left: " + (e.clientX - 15) + "px;")
     });
     focus.forEach(link => {
       link.addEventListener('mouseover', () => {
@@ -30,7 +36,13 @@ export default function Home() {
   });
 
   return (
-    <div>
+    <motion.div
+      variants={variants} 
+      initial="hidden"
+      animate="enter" 
+      exit="exit" 
+      transition={{ type: 'linear' }}
+    >
       <Head>
         <title>Ash Bridges | Front End Developer</title>
         <meta name="description" content="Ash Bridges Portfolio" />
@@ -39,13 +51,13 @@ export default function Home() {
       </Head>
       <div className="cursor"></div>
       <div className="border"></div>
-    <NavOverlay />
-    <Hero />
-    <About />
-    <Projects />
-    <Skills />
-    <Contact />
-    <Footer />
-    </div>
+      <BackgroundAnimation />
+      <NavOverlay />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Footer />
+    </motion.div>
   )
 }
