@@ -52,6 +52,7 @@ export default function Home() {
       <div className="cursor"></div>
       <div className="border"></div>
       <BackgroundAnimation />
+      
       <NavOverlay />
       <Hero />
       <About />
