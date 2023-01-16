@@ -11,15 +11,6 @@ function Footer() {
 
             <div className="footer__section">
 
-                <div className="footer__contact ">
-                    <h2>Got an idea for a project?
-                        <Link href="/contact"> 
-                            <span className="focus"> Get in touch!</span>
-                        </Link>
-                    </h2>
-                </div>
-
-
                 <div>
 
                     <svg id="Layer_1" className="footer__logo2 focus" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.01 229.13">
