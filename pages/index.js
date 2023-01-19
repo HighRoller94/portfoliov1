@@ -2,13 +2,15 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 import Head from 'next/head'
-import BackgroundAnimation from '../components/BackgroundAnimation'
 import NavOverlay from '../components/NavOverlay'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Projects from '../components/Projects/Projects'
-import Skills from '../components/Skills'
+import Skills from '../components/Skills/Skills'
+import GetInTouch from '../components/GetInTouch';
 import Footer from '../components/Footer'
+
+import { AnimatePresence } from 'framer-motion'
 
 const variants = {
   hidden: { opacity: 0 },
@@ -18,30 +20,14 @@ const variants = {
 
 export default function Home() {
 
-  useEffect(() => {
-
-    const cursor = document.querySelector(".cursor");
-    const focus = document.querySelectorAll(".focus")
-    document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: " + (e.clientY - 15) + "px; left: " + (e.clientX - 15) + "px;")
-    });
-    focus.forEach(link => {
-      link.addEventListener('mouseover', () => {
-        cursor.classList.add('link-focus')
-      })
-      link.addEventListener('mouseleave', () => {
-        cursor.classList.remove('link-focus')
-      })
-    })
-  });
-
   return (
+
     <motion.div
-      variants={variants} 
+      variants={variants}
       initial="hidden"
-      animate="enter" 
-      exit="exit" 
-      transition={{ type: 'linear' }}
+      animate="enter"
+      exit="exit"
+      transition={{ type: 'linear', duration: 1 }}
     >
       <Head>
         <title>Ash Bridges | Front End Developer</title>
@@ -49,16 +35,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="cursor"></div>
-      <div className="border"></div>
-      <BackgroundAnimation />
 
       <NavOverlay />
       <Hero />
-      
+
       <About />
       <Projects />
       <Skills />
+      <GetInTouch />
       <Footer />
     </motion.div>
   )
