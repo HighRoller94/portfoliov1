@@ -1,61 +1,112 @@
 @import '../variables.module';
 
-.projects__section {
+.projectsSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
-    .projects__header {
-        padding-top: 6rem;
-        margin-top: 0;
+    @media screen and (min-width: 1312px) {
+        margin-top: -8rem;
+    }
+    .projectsTitle {
         display: flex;
         flex-direction: column;
-        width: 75%;
+        width: 80%;
         margin: 0 auto;
-        margin-bottom: 2rem;
-        h1 {
-            position:relative;
-            font-family: $headerFont;
+        padding-top: 6rem;
+        
+        @media screen and (min-width: 768px) {
+            width: 70%;
+            padding-top: 3rem;
+        }
+        @media screen and (min-width: 1312px) {
+            width: 65%;
+            padding-top:10rem;
+        }
+        span {
+            color: $offTeal;
             font-weight: 700;
-            color: currentColor;
-            font-size: $headerFontSize;
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -1rem;
-                left: 0;
-                height: .8rem;
-                width: 4rem;
-                border-radius: 2rem;
-                background-color: $offTeal;
-            }
+            font-size: 1.2rem;
         }
         p {
-            width: 100%;
-            font-size: $mobileBodyFontSize;
-            font-weight: 400;
-            color: $darkModeGrey;
-            margin-top: $mobileHeaderMargin;
             span {
-                color: $offTeal;
+                font-size:1rem;
             }
         }
     }
+
+    .projectsHeader {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        font-family: $headerFont;
+        font-weight: 700;
+        color: currentColor;
+        height: fit-content;
+        position: relative;
+        span {
+            color: $offRed;
+            font-weight: 700;
+            font-size: $headerFontSize;
+            display: inline-flex;
+            flex-direction: row;
+            width: fit-content;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            height: .6rem;
+            width: 3rem;
+            border-radius: 2rem;
+            background-color: $offTeal;
+            @media screen and (min-width: 768px) {
+                bottom: -.75rem;
+                width: 3.5rem;
+                height: .7rem;
+            }
+        }
+
+    }
+
+    p {
+        width: 100%;
+        font-size: $mobileBodyFontSize;
+        font-weight: 400;
+        color: $darkModeGrey;
+        margin-top: $mobileHeaderMargin;
+        margin-top: 2rem;
+        line-height:1.6;
+        span {
+            font-size: $mobileBodyFontSize;
+            color: $offTeal;
+            font-size: 1rem;
+        }
+    }
+
     .projects {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
-        
+        margin-top: 2rem;
         grid-row-gap: 0;
+
         @media screen and (min-width: 768px) {
+            margin-top: 2rem;
+        }
+        @media screen and (min-width: 1312px) {
+            width: 65%;
             margin-top: 3rem;
         }
 
-        
     }
 }
 
@@ -64,30 +115,34 @@
     .projects__section {
         text-align: left;
         padding-top: 0rem;
+
         .projects__header {
             text-align: left;
             justify-content: flex-start;
             align-items: flex-start;
-            width: 70%;
+
             h1 {
                 padding: 0;
                 margin-left: 0;
+
                 &::after {
                     bottom: -.4rem;
                 }
             }
+
             p {
                 margin-top: $headerMargin;
             }
         }
+
         .projects {
             margin-top: 5rem;
             grid-template-columns: 1fr;
             width: 70%;
             justify-content: center;
-            grid-row-gap: 5rem;
+            grid-row-gap: 3rem;
             grid-column-gap: 2.5rem;
-            
+
         }
     }
 
@@ -98,35 +153,36 @@
         position: relative;
         margin-top: -2rem;
         padding-top: 9rem;
+
         .projects__header {
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
             padding-top: 0;
-            width: 65%;
             margin: 0 auto;
-            h1 {
-
-            }
             p {
                 width: 100%;
             }
         }
+
         .projects {
             margin-top: 6rem;
             display: flex;
             justify-content: flex-start;
             width: 65%;
-            
+
             .reverse {
                 flex-direction: row-reverse;
+
                 .project__text {
                     margin-left: 0;
+
                     p {
                         width: 85%;
                     }
                 }
             }
+
             .illume {
                 height: 22rem;
             }

@@ -3,64 +3,101 @@
 $skillsHeaderFontSize: 2.2rem;
 $toolsHeaderFontSize: 1.2rem;
 
-.skills__row {
+.skillsRow {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: -2rem;
+    margin-top: -1rem;
     height: 100%;
-    padding-top: 6rem;
+    padding-top: 3rem;
     position: relative;
+
     @media screen and (min-width: 768px) {
-        padding-bottom:13rem;
+        padding-bottom: 8rem;
+        margin-top: 0;
+        padding-top: 2rem;
     }
+
     @media screen and (min-width: 1312px) {
-        padding-bottom:10rem;
+        margin-top: -3rem;
+        padding-top: 8rem;
+        padding-bottom: 6rem;
     }
-    .bg__skills {
-        display: flex;
-        position: absolute;
-        font-size: 10rem;
-        font-weight: 500;
-        color: $offWhite;
-        opacity: .025;
-        top: 10rem;
-        left: -7rem;
-    }
-    .skills__header {
+
+    .skillsHeader {
         display: flex;
         flex-direction: column;
-        width: 75%;
+        width: 80%;
         margin: 0 auto;
         margin-bottom: 1rem;
-        h1 {
-            font-size: $headerFontSize;
+
+        @media screen and (min-width: 768px) {
+            width: 70%;
+        }
+
+        @media screen and (min-width: 1312px) {
+            width:65%;
+        }
+        span {
+            color: $offTeal;
+            font-size:1.2rem;
+            font-weight:700;
+        }
+        .skillsTitle {
+            display: flex;
+            flex-direction: column;
             width: 100%;
+            margin: 0 auto;
             font-family: $headerFont;
             font-weight: 700;
+            color: currentColor;
+            height: fit-content;
             position: relative;
+
+            span {
+                color: $offRed;
+                font-weight: 700;
+                font-size: $headerFontSize;
+                display: inline-flex;
+                flex-direction: row;
+                width: fit-content;
+            }
+
             &::after {
                 content: '';
                 position: absolute;
                 bottom: -1rem;
                 left: 0;
-                height: .8rem;
-                width: 4rem;
+                height: .6rem;
+                width: 3rem;
                 border-radius: 2rem;
                 background-color: $offTeal;
+                @media screen and (min-width: 768px) {
+                    bottom: -1rem;
+                    width: 3.5rem;
+                    height: .7rem;
+                }
             }
+
         }
+
         p {
-            font-weight: 400;
-            margin-top: $mobileHeaderMargin;
             width: 100%;
-            font-size: $mobileBodyFontSize;
+            font-size: $bodyFontSize;
+            font-weight: 400;
+            color: $darkModeGrey;
+            margin-top: $mobileHeaderMargin;
+            margin-top: 2rem;
+            line-height: 1.6;
+
             span {
                 color: $offTeal;
+                font-size: $bodyFontSize;
             }
         }
     }
-    .skills__container {
+
+    .skillsContainer {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -68,172 +105,23 @@ $toolsHeaderFontSize: 1.2rem;
         justify-content: center;
         align-items: center;
         margin-left: 0;
-        margin-top: 6rem;
-        .skills__section {
-            width: 75%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-            min-width:250px;
-            padding-bottom: 3rem;
-            margin-bottom: 6rem;
-            text-align: center;
-            background-color: $lightModeGrey;
-            border-radius: 1rem;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            &:nth-child(4) {
-                margin-bottom:5rem;
-            }
-            .skills__icon {
-                position: relative;
-                top: -3.5rem;
-                color: #a7fff9;
-                fill: $offBlack;
-                transition: 200ms ease-in;
-                transform: scale(.9);
-            }
-            .skills__head {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-top: -2.5rem;
-                color: lightgrey;
-                h2 {
-                    font-family: 'Helvetica Neue', sans-serif;
-                    font-weight: 600;
-                    margin-top: .8rem;
-                    color: $offWhite;
-                    font-size: $skillsHeaderFontSize;
-                }
-                p {
-                    margin-top: 1.5rem;
-                    font-size: $mobileBodyFontSize;
-                    width: 75%;
-                    
-                    font-weight: 400;
-                }
-            }
-            .tools__header {
-                color: lightgrey;
-                h3 {
-                    margin-top: 1.5rem;
-                    font-size: $toolsHeaderFontSize;
-                    font-weight: 600;
-                    position: relative;
-                    font-family: 'Helvetica Neue', sans-serif;
-                    
-                }
-                .tools {
-                    margin: 1rem auto;
-                    h3 {
-                        color: $offWhite;
-                    }
-                    h2 {
-                        font-size: $mobileBodyFontSize;
-                        opacity: 0.8;
-                        font-weight: 500;
-                        margin: .3rem auto;
-                    }
-                }
-                .extras {
-                    margin: 1rem auto;
-                    h2 {
-                        font-size: $mobileBodyFontSize;
-                        opacity: 0.8;
-                        font-weight: 500;
-                        margin: .3rem auto;
-                    }
-                }
-            }
-        }
-        .bg__skills2 {
-            display: flex;
-            font-size: 6rem;
-            top: 35rem;
-            left: 4rem;
-            position: absolute;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 500;
-            color: $offWhite;
-            opacity: .025;
-        }
-        .bg__skills3 {
-            display: block;
-            font-size: 10rem;
-            top: 80rem;
-            right: 4rem;
-            position: absolute;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 500;
-            color: $offWhite;
-            opacity: .025;
-        }
-    }
-}
+        margin-top: 2rem;
 
-
-@media screen and (min-width: 768px) {
-    .skills__row {
-        margin-top: 0;
-        padding-top: 6rem;
-        .bg__skills {
-            opacity: .01;
-            top: 0;
-            font-size: 35rem;
-        }
-        .skills__header {
-            width: 70%;
-            h1 {
-                &::after {
-                    bottom: -.4rem;
-                }
-            }
-            p {
-                margin-top: $headerMargin;
-            }
-        }
-        .skills__container {
+        @media screen and (min-width: 768px) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: flex-start;
             justify-content: center;
             width: 70%;
-            margin: 6rem auto 0 auto;
-            gap: .5rem;
-            .skills__section {
-                width: 95%;
-                margin-bottom: 0;
-                .skills__icon {
-                    transform: scale(.9);
-                }
-                .skills__head {
-                    h2 {
-                        font-size: 1.5rem;
-                    }
-                }
-                .tools__header {
-                    h3 {
-                        font-size: 1.25rem;
-                    }
-                }
-            }
-            .skills__section:nth-child(4) {
-                margin-top: 5rem;
-                margin-bottom: -3rem;
-            }
-            .bg__skills2 {
-                opacity: .01;
-                top: 25rem;
-                font-size: 35rem;
-            }
-            .bg__skills3 {
-                opacity: .01;
-                top: 0;
-                font-size: 35rem;
-            }
+            margin: 3rem auto 0 auto;
+            gap: 1.5rem;
+        }
+
+        @media screen and (min-width: 1312px) {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 10%;
+            margin: 4rem auto 0 auto;
+            width: 65%;
         }
     }
 }
@@ -245,69 +133,30 @@ $toolsHeaderFontSize: 1.2rem;
         justify-content: center;
         margin-top: -5rem;
         padding-top: 9rem;
+
         .bg__skills {
             font-size: 35rem;
             opacity: .01;
             top: -10rem;
             left: 30rem;
         }
+
         .skills__header {
             justify-content: flex-start;
             align-items: flex-start;
             text-align: left;
             width: 65%;
             margin: 0 auto 4rem auto;
+
             h1 {
                 width: 100%;
             }
+
             p {
                 text-align: left;
                 width: 100%;
             }
         }
-        .skills__container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-column-gap: 10%;
-            margin: 4rem auto 0 auto;
-            width: 65%;
-            .bg__skills2 {
-                display: none;
-            }
-            .skills__section {
-                width: 100%;
-                height: 100%;
-                padding-bottom: 1.3rem;
-                .skills__icon {
-                    width: 5.5rem;
-                    transform: scale(1);
-                }
-                .skills__head {
-                    margin-top: -2.75rem;
-                    align-items: center;
-                    h2 {
-                        font-size: 1.7rem;
-                    }
-                    p {
-                        font-size: 1rem;
-                        width: 65%;
-                    }
-                }
-                .tools__header {
-                    h3 {
-                        font-size: $toolsHeaderFontSize;
-                    }
-                    .tools {
-                        margin: 1.5rem auto;
-                    }
-                }
-            }
-            .skills__section:nth-child(4) {
-                margin-top: 0;
-            }
-            .bg__skills3 {
-                display: none;
-            }
-        }
+
     }
 }

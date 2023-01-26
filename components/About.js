@@ -1,20 +1,55 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image'
 
-import me from '../images/me.svg';
+import { useInView } from 'react-intersection-observer';
+import { motion } from "framer-motion";
 
-function About() {
+import AboutStyles from '../styles/components/About.module.scss';
+
+import me from '../images/me.svg';
+import AnimatedText from "./AnimatedText";
+
+function About({ offsetY }) {
+
+    const placeholderText = [
+        { type: "heading", text: "A little about me." }
+    ];
+
+    const container = {
+        visible: {
+            transition: {
+                staggerChildren: 0.03
+            }
+        }
+    };
     
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.475
+    });
+
     return (
-        <div className="about__section" data-scroll-section id="about">
-            <div className="about__container">
-                <h1 data-aos="fade-right" className="about__header">A little about me.</h1>
-                <div className="about__text">
-                    <p data-aos="fade-right" data-aos-delay="200">
-                    Hey there, I'm Ash, a <span>freelance front-end developer</span> from the UK. I have a background in visual communications, and have since turned to web development, where I quickly found a passion I didnt know was there! <br /><br />Always eager to learn new skills, I enjoy spending my time learning <span>new ways to bring designs to life</span>, and helping businesses make their mark on the web.
+        <div className={AboutStyles.aboutSection} data-scroll-section id="about">
+            <div ref={ref} className={AboutStyles.aboutContainer} >
+                
+                <motion.div className={AboutStyles.aboutHeader}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                variants={container}
+                >
+                <span>.01</span>
+                <div className={AboutStyles.aboutTitle}>
+                    {placeholderText.map((item, index) => {
+                        return <AnimatedText {...item} key={index} />;
+                    })}
+                </div>
+                </motion.div>
+                <div className={AboutStyles.aboutText}>
+                    <p>
+                        Hey there, I'm Ash, a <span>front-end developer</span> from the UK. I have a background in visual communications, and have since turned to web development, where I quickly found a passion I didnt know was there! <br /><br />Always eager to learn new skills, I enjoy spending my time learning <span>new ways to bring designs to life</span> and helping businesses make their mark on the web. Feel free to browse over my work, and thanks for stopping by!
                     </p>
-                    <div className="aboutImage">
-                        <Image 
+                    <div className={AboutStyles.aboutImage}  >
+                        <Image
                             fill
                             src={me}
                             alt="Ash Bridges"
