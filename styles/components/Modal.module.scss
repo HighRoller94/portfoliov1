@@ -1,3 +1,4 @@
+@import '../variables.module';
 
 .modalBackdrop {
     position: fixed;
@@ -6,32 +7,166 @@
     height: 100%;
     width: 100%;
     background: #000000e1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+
     .modal {
-        width: clamp(80%, 200px, 90%);
-        height: clamp(80%, 700px, 90%);
+        width: clamp(80%, 200px, 70%);
+        height: fit-content;
+        max-height: 90%;
         margin: auto;
-        padding: 0 2rem;
-        border-radius:12px;
-        display:flex;
+        padding: 1rem 2rem .7rem 2rem;
+        border-radius: 12px;
+        display: flex;
         flex-direction: column;
-        justify-content:center;
+        align-items: center;
         background-color: $offBlack;
-        z-index:99999;
-        position:fixed;
-        left:0;
-        right:0;
-        top:0;
-        bottom:0;
-        margin-left:auto;
-        margin-right:auto;
+        z-index: 99999;
+        overflow-y: scroll;
+        margin: 3rem 0 2rem 0;
+        padding-bottom: 2rem;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width:1200px;
+        margin-top: 1.75rem;
         filter: drop-shadow(0 0 0.2rem rgb(113, 219, 212));
-        h1 {
-            color:$offWhite;
+        @media screen and (min-width: 1312px) {
+            padding:1rem;
+            margin-top: 5rem;
         }
-      }
-  }
-  
+        .modalClose {
+            position: absolute;
+            right: 1rem;
+            top: .5rem;
+            width: 30px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index:99999;
+            .modalCloseIcon {
+                font-size: 1.3rem;
+                color: $offTeal;
+            }
+            @media screen and (min-width: 768px) {
+                right: 1.5rem;
+                top: .8rem;
+            }
+        }
+
+        .modalContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: .5rem 0 2.5rem 0;
+            @media screen and (min-width: 768px) {
+                text-align:center;
+                padding: 2.5rem 0;
+            }
+            h4 {
+                color: currentColor;
+                letter-spacing: .4rem;
+                color: $offTeal;
+                margin-top: 3rem;
+                
+                @media screen and (min-width: 768px) {
+                    margin-top: 1.5rem;
+                }
+                @media screen and (min-width: 1312px) {
+                    margin-top: 1rem;
+                }
+            }
+
+            h2 {
+                font-family: $headerFont;
+                font-weight: 600;
+                margin-top: 0.3rem;
+                font-size: 1.5rem;
+                transition: all .3s ease-in-out;
+            }
+
+            p {
+                margin: .5rem 0;
+                color: $darkModeGrey;
+                line-height: 1.6;
+                width: 100%;
+                font-size: $mobileBodyFontSize;
+                font-weight: 400;
+                transition: all .3s ease-in-out;
+                @media screen and (min-width: 1312px) {
+                    width: 70%;
+                    margin: 0 auto;
+                }
+            }
+
+            .btns {
+                display: flex;
+                align-items: center;
+                margin-top: 1.5rem;
+                @media screen and (min-width: 768px) {
+                    margin: 0 auto;
+                    margin-top: 1.5rem;
+                }
+                .siteBtn {
+                    display: flex;
+                    align-items: center;
+                    transition: 200ms ease-in;
+                    border: none;
+                    outline: none;
+                    color: $offWhite;
+                    font-size: 1rem;
+                    background: $offTeal;
+                    margin-right: 2rem;
+                    padding: .4rem .8rem;
+                    border-radius: 3px;
+                    border: 1px solid $offTeal;
+                    font-weight: 500;
+                    z-index: 1;
+                    transition: 300ms ease-in-out;
+                    @media screen and (min-width: 768px) {
+                        padding: .5rem 1rem;
+                    }
+
+                    &:hover {
+                        background: transparent;
+                        color: $offTeal;
+                        filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212));
+                        transition: 500ms ease-in-out;
+                    }
+                }
+
+                .gitBtn {
+                    background: none;
+                    outline: none;
+                    display: flex;
+                    font-size: 1rem;
+                    border-radius: 1rem;
+                    border: none;
+                    align-items: center;
+                    color: $offWhite;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $offTeal;
+                        filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212)) grayscale(0) saturate(90%) brightness(80%);
+                        transition: 500ms ease-in-out;
+                    }
+                }
+
+                .icon {
+                    font-size: 1.75rem !important;
+                    margin-right: .5rem;
+                }
+            }
+        }
+
+    }
+}
+

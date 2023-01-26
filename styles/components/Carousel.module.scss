@@ -1,48 +1,75 @@
+@import '../variables.module';
+
 .carousel {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 100%;
-    height: 50%;
     position: relative;
-
+    margin-top: 2.5rem;
+    @media screen and (min-width: 768px) {
+        margin-top: 2.25rem;
+    }
     .carouselImage {
+        display:flex;
+        justify-content: center;
         position: Relative;
         height: 100%;
         width: 100%;
+        padding: 2.75rem 0;
+        min-height: 30vh;
+        transition: 500ms ease-in-out;
+        margin: 1rem auto;
+        max-height:30vh;
+        @media screen and (min-width: 768px) {
+            min-height: 40vh;
+            max-height: 40vh;
+        }
+        @media screen and (min-width: 1312px) {
+            min-height:45vh;
+            width:fit-content;
+            max-height: 45vh;
+        }
+        
+        img {
+            position: static !important;
+            
+            object-fit: cover;
+            @media screen and (min-width: 768px) {
+                object-fit: contain;
+            }
+        }
+        
     }
 
     .carouselArrow {
         position: absolute;
-        bottom: 0;
-        width: 50px;
-        background-color: red;
-        height: 50px;
+        bottom: -1.25rem;
         cursor: pointer;
-    }
-
-    .left {
-        left: 0;
-    }
-
-    .right {
-        right: 0;
-    }
+        font-size: 2rem;
+        color: $offTeal;
+        display:none;
+        border-radius: 50%;
+    }      
 
     .carouselIndicators {
         position: absolute;
         left: 0;
         right: 0;
         width: 100%;
-        bottom: 0;
+        bottom: -1rem;
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
         display: flex;
         text-align: center;
-
+        @media screen and (min-width: 768px) {
+            bottom: -2rem;
+        }
+        @media screen and (min-width: 1312px) {
+            bottom: -2.25rem;
+        }
         div {
-            background-color: white;
+            background-color: $offWhite;
             border-radius: 50%;
             width: 10px;
             height: 10px;
@@ -57,5 +84,38 @@
             border-radius: 2rem;
             transition: 200ms ease-in-out;
         }
+    }
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+
+.rtds-slider-wrapper {
+    min-height: 35vh;
+    max-height:35vh !important;
+    filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212));
+    @media screen and (min-width: 768px) {
+        min-height: 40vh;
+        max-height:40vh !important;
+    }
+    @media screen and (min-width: 1312px) {
+        min-height:45vh;
+        max-height:45vh !important;
+        width:fit-content;
+        
+        max-height:1000px;
+    }
+}
+.rtds-single-slide-styles {
+    cursor:none;
+    div {
+        display:block !important;
+        padding: 0 !important;
     }
 }

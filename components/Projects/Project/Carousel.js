@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Slider from "react-touch-drag-slider";
+
+import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/Fa'
+
+import CarouselStyles from '../../../styles/components/Carousel.module.scss';
 
 export default function Carousel({ slides }) {
     const [currentIndex, setCurrentIndex] = useState(0)
-
 
     const goToPrevious = () => {
         const isFirstSlide = currentIndex === 0
@@ -21,24 +25,39 @@ export default function Carousel({ slides }) {
         setCurrentIndex(slideIndex)
     }
 
-    console.log(slides)
     return (
-        <div className="carousel">
-            <div className="carouselImage">
-                <Image
-                    src={`/images/${slides[currentIndex]}`}
-                    alt="Project Image"
-                    fill
-                />
+        <div className={CarouselStyles.carousel}>
+            <Slider
+                onSlideComplete={(i) => {
+                    setCurrentIndex(i)
+                }}
+                activeIndex={currentIndex}
+                threshHold={100}
+                transition={0.3}
+                scaleOnDrag={false}
+            >
+                {slides.map(slide=> (
+                    <div className={`${CarouselStyles.carouselImage} carouselImage`}>
+                        <Image
+                            src={`/images/${slide}`}
+                            alt="Project Image"
+                            fill
+                        />
+                    </div>
+                ))}
+            </Slider>
+            {/* <div onClick={goToPrevious}>
+                <FaChevronCircleLeft className={`${CarouselStyles.carouselArrow} left`} />
             </div>
-            <div className="carouselArrow left" onClick={goToPrevious}></div>
-            <div className="carouselArrow right" onClick={goToNext}></div>
-            <div className="carouselIndicators">
+            <div onClick={goToNext}>
+                <FaChevronCircleRight className={`${CarouselStyles.carouselArrow} right`} />
+            </div> */}
+            <div className={CarouselStyles.carouselIndicators}>
                 {slides.map((slide, index) => (
-                    <div 
-                        key={index} 
+                    <div
+                        key={index}
                         onClick={() => goToSlide(index)}
-                        className={index === currentIndex ? "active" : ""}
+                        className={index === currentIndex ? `${CarouselStyles.active}` : ""}
                     >
                     </div>
                 ))}
