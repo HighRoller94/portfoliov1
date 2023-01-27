@@ -22,8 +22,8 @@ const variants = {
 export default function Home() {
   const [downloaded, setDownloaded] = useState(false);
 
-  const [offsetY, setOffSetY]  = useState()
-  
+  const [offsetY, setOffSetY] = useState()
+
   const handleScroll = () => setOffSetY(window.pageYOffset);
 
   useEffect(() => {
@@ -62,21 +62,36 @@ export default function Home() {
       </Head>
 
       <NavOverlay />
-
-      <Hero
-        offsetY={offsetY}
-        toggle={toggle}
-        downloaded={downloaded}
-      />
-      <About offsetY={offsetY}/>
-      <Projects offsetY={offsetY}/>
-      <Skills offsetY={offsetY}/>
-      <GetInTouch offsetY={offsetY}/>
-      <Footer
-        toggle={toggle}
-        downloaded={downloaded}
-        offsetY={offsetY}
-      />
+      <AnimatePresence>
+        <Hero
+          key="hero"
+          offsetY={offsetY}
+          toggle={toggle}
+          downloaded={downloaded}
+        />
+        <About 
+        offsetY={offsetY} 
+        key="about"
+        />
+        <Projects 
+        offsetY={offsetY} 
+        key="projects"
+        />
+        <Skills
+         offsetY={offsetY}
+         key="skills" 
+         />
+        <GetInTouch
+         offsetY={offsetY}
+         key="getintouch"
+          />
+        <Footer
+          key="footer"
+          toggle={toggle}
+          downloaded={downloaded}
+          offsetY={offsetY}
+        />
+      </AnimatePresence>
     </motion.div >
   )
 }

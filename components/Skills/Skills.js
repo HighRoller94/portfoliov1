@@ -32,16 +32,17 @@ function Skills() {
         <div ref={ref} className={SkillsStyles.skillsRow} data-scroll-section id="skills">
             <div className={SkillsStyles.skillsHeader}>
                 <span>.03</span>
-                <motion.div 
+                <motion.h2 
                     className={SkillsStyles.skillsTitle}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
                     variants={container}
                 >
-                {placeholderText.map((item, index) => {
+                    What I've picked up.
+                {/* {placeholderText.map((item, index) => {
                     return <AnimatedText {...item} key={index} />;
-                })}
-                </motion.div>
+                })} */}
+                </motion.h2>
                 <p>Here are a few <span>things I've picked up</span> along the way.</p>
             </div>
             <div className={SkillsStyles.skillsContainer}>

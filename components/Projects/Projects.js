@@ -38,17 +38,18 @@ function Projects() {
         <div ref={ref} className={ProjectsStyles.projectsSection} data-scroll-section id="projects">
         <div className={ProjectsStyles.projectsTitle}>
             <span>.02</span>
-            <motion.div 
+            <motion.h2 
                 className={ProjectsStyles.projectsHeader}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={container}
             >
-                {placeholderText.map((item, index) => {
+                Things I've built.
+                {/* {placeholderText.map((item, index) => {
                         return <AnimatedText {...item} key={index} />;
-                })}
+                })} */}
                 
-            </motion.div>
+            </motion.h2>
             <p>Check out some of the <span>projects I've been working on.</span></p>
         </div>
         

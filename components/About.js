@@ -38,11 +38,12 @@ function About({ offsetY }) {
                 variants={container}
                 >
                 <span>.01</span>
-                <div className={AboutStyles.aboutTitle}>
-                    {placeholderText.map((item, index) => {
+                <h2 className={AboutStyles.aboutTitle}>
+                    A little about me.
+                    {/* {placeholderText.map((item, index) => {
                         return <AnimatedText {...item} key={index} />;
-                    })}
-                </div>
+                    })} */}
+                </h2>
                 </motion.div>
                 <div className={AboutStyles.aboutText}>
                     <p>

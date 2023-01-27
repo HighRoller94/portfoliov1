@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
 import { TiTick } from 'react-icons/Ti'
 
-
 function Home({ offsetY, toggle, downloaded }) {
 
     useEffect(() => {

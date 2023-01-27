@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 // Word wrapper
 const Wrapper = (props) => {
-  // We'll do this to prevent wrapping of words using CSS
   return <span className="word-wrapper">{props.children}</span>;
 };
 
@@ -43,7 +42,7 @@ const AnimatedCharacters = (props) => {
   }
 
   // Add a space ("\u00A0") to the end of each word
-  words.map((word) => {
+  words.map((word, index) => {
     return word.push("\u00A0");
   });
 

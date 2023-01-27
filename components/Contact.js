@@ -48,16 +48,17 @@ function Contact({ offsetY }) {
                 <div ref={ref} className="contact">
                     <div className="contact__header">
                         <h2>What's next?</h2>
-                        <motion.div 
+                        <motion.h2 
                             className="contact__title"
                             initial="hidden"
                             animate={inView ? "visible" : "hidden"}
                             variants={container}
                         >
-                        {placeholderText.map((item, index) => {
+                            Get in touch!
+                        {/* {placeholderText.map((item, index) => {
                             return <AnimatedText {...item} key={index} />;
-                        })}
-                        </motion.div>
+                        })} */}
+                        </motion.h2>
                     </div>
                     <div className="contact__text">
                         <p>I'd love to hear from you, feel free to shoot me a message!</p>
