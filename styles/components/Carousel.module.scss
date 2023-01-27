@@ -25,9 +25,9 @@
             max-height: 40vh;
         }
         @media screen and (min-width: 1312px) {
-            min-height:45vh;
+            min-height:50vh;
             width:fit-content;
-            max-height: 45vh;
+            max-height: 50vh;
         }
         
         img {
@@ -105,8 +105,8 @@
         max-height:40vh !important;
     }
     @media screen and (min-width: 1312px) {
-        min-height:45vh;
-        max-height:45vh !important;
+        min-height:40vh;
+        max-height:40vh !important;
         width:fit-content;
         
         max-height:1000px;

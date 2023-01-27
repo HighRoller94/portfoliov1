@@ -68,6 +68,10 @@
             padding: .5rem 0 2.5rem 0;
             @media screen and (min-width: 768px) {
                 text-align:center;
+                padding: 2rem 0;
+            }
+            @media screen and (min-width: 768px) {
+                text-align:center;
                 padding: 2.5rem 0;
             }
             h4 {
@@ -100,6 +104,11 @@
                 font-size: $mobileBodyFontSize;
                 font-weight: 400;
                 transition: all .3s ease-in-out;
+                @media screen and (min-width: 768px) {
+                    width: 85%;
+                    margin: 0 auto;
+                    margin-top:.5rem;
+                }
                 @media screen and (min-width: 1312px) {
                     width: 70%;
                     margin: 0 auto;
@@ -112,7 +121,7 @@
                 margin-top: 1.5rem;
                 @media screen and (min-width: 768px) {
                     margin: 0 auto;
-                    margin-top: 1.5rem;
+                    margin-top: 2rem;
                 }
                 .siteBtn {
                     display: flex;

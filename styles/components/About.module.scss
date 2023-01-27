@@ -52,7 +52,7 @@
             @media screen and (min-width: 768px) {
                 padding: 0;
                 background: none;
-                line-height: 1.2;
+                line-height: 1.6;
             }
 
             @media screen and (min-width: 1312px) {
@@ -68,6 +68,7 @@
 
             .aboutTitle {
                 font-size: $headerFontSize;
+                margin-top:-.5rem;
                 span {
                     margin-bottom:0;
                     font-weight: 700;
@@ -168,8 +169,8 @@
                     position: static !important;
                     border-radius: 50%;
                     margin-left: auto;
-                    width: 60% !important;
-                    min-width: 200px;
+                    width: 50% !important;
+                    min-width: 180px;
                     transition: .3s ease-in-out;
                     filter: grayscale(100);
 
