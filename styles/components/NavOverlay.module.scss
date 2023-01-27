@@ -85,8 +85,8 @@
             }
 
             .nav__logo {
-                width: 3rem;
-                height: 2.8rem;
+                width: 3.2rem;
+                height: 3rem;
                 transition: 200ms ease-in-out;
                 margin-top: -1rem;
                 margin-left: -.5rem;
@@ -596,9 +596,9 @@
 
         .navbar__container {
             .nav__logo {
-                transform: scale(1.5);
+                transform: scale(1.2);
                 margin-top: -1.1rem;
-                margin-left: 1rem;
+                margin-left: 1.2rem;
             }
 
             .sidebar .navbar__menu {
@@ -633,13 +633,10 @@
             .nav__button__div a {
                 margin-top:.9rem;
             }
-            .navbar__container {
                 .nav__logo {
-                    width: 3rem;
-                    transform: scale(1.4);
+                    transform: scale(1.3);
                     margin-top: .5rem;
-                    margin-left: -1.5rem;
-                }
+                    margin-left: -.7rem;
             }
         }
     }
