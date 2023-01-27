@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { ImGithub } from 'react-icons/Im';
-import { FaLinkedin } from 'react-icons/Fa';
+import { ImGithub } from 'react-icons/im';
+import { FaLinkedin } from 'react-icons/fa';
 
-import { BsArrowLeftShort } from 'react-icons/Bs'
+import { BsArrowLeftShort } from 'react-icons/bs'
 import Link from 'next/link'
 
 function AltNavOverlay() {
