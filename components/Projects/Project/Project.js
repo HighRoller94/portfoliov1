@@ -1,16 +1,24 @@
 
-import { useState } from 'react';
 import Image from 'next/image';
+
+import ProjectStyles from '../../../styles/components/Project.module.scss';
+import { useInView } from 'react-intersection-observer';
 
 import { ImGithub } from 'react-icons/Im';
 import { BiWorld } from 'react-icons/Bi';
 
-function Project({ data, setModalData, handleModal, title, type, desc, image, gitLink, siteLink, languages}) {
+function Project({ data, setModalData, handleModal, title, type, desc, image, gitLink, siteLink, languages, offsetY}) {
+    
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2
+    });
 
     return (
         <>
-            <div className="project">
-                <div className="projectImage" onClick={() => {
+            <div ref={ref} className={inView ? `${ProjectStyles.project} showProject` : `${ProjectStyles.project} hideProject`}>
+            
+                <div className={`${ProjectStyles.projectImage} projectImage`} onClick={() => {
                     setModalData(data)
                     handleModal()
                 }}>
@@ -21,25 +29,25 @@ function Project({ data, setModalData, handleModal, title, type, desc, image, gi
                     />
                 </div>
                 
-                <div data-aos="fade-up" className="project__text">
+                <div className={ProjectStyles.projectText}>
                     <h4>{type}</h4>
                     <h1>{title}</h1>
                     <p>{desc}</p>
-                    <div className="project__languages">
+                    <div className={ProjectStyles.projectLanguages}>
                         {languages.map((language, index)=> (
                             <span key={index}>{language}</span>
                         ))}    
                     </div>
-                    <div className="btns">
+                    <div className={ProjectStyles.btns}>
                         <a className="link" href={siteLink} target="_blank" rel="noreferrer">
-                            <button className="site__btn focus">
-                                <BiWorld className="icon"/>
+                            <button className={`${ProjectStyles.siteBtn} focus`}>
+                                <BiWorld className={ProjectStyles.icon}/>
                                 Live Site
                             </button>
                         </a>
                         <a className="link" href={gitLink} target="_blank" rel="noreferrer">
-                            <button className="git__btn focus">
-                                <ImGithub className="icon"/>
+                            <button className={`${ProjectStyles.gitBtn} focus`}>
+                                <ImGithub className={ProjectStyles.icon}/>
                                 View Code
                             </button>
                         </a>

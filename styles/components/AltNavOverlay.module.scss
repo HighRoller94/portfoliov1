@@ -1,12 +1,26 @@
+@import '../variables.module';
+
 .alt {
     box-shadow:none !important;
+    height: 5rem !important;
+    @media screen and (min-width: 1312px) {
+        height: 10rem !important;
+    }
     .backIcon {
-        font-size:4rem;
-        margin-left: -1.5rem;
+        margin-top: 1rem;
+        font-size: 2.5rem;
+        margin-left: -.6rem;
         transition: 200ms ease-in;
+        @media screen and (min-width: 768px) {
+            font-size:4rem;
+            margin-left: 0rem;
+        }
+        @media screen and (min-width: 1312px) {
+            font-size:5rem;
+            margin-left: -1.5rem;
+        }
         &:hover { 
             color: $offTeal;
-            transform: scale(1.1);
         }
     }
 }

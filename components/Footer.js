@@ -1,16 +1,110 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
+import { motion } from 'framer-motion';
 
+import { RiDownloadCloud2Fill } from 'react-icons/Ri'
 import { ImGithub } from 'react-icons/Im';
 import { FaLinkedin } from 'react-icons/Fa';
 
-function Footer() {
+function Footer({ toggle, downloaded }) {
+
+    
+    useEffect(() => {
+
+        // OFFSET SOCIALS 
+
+        var socialFloat = document.querySelector('.socials');
+        var footer = document.querySelector('.footer__section');
+        var downloadIcon = document.querySelector('.download')
+
+        function checkOffset() {
+            function getRectTop(el){
+                var rect = el.getBoundingClientRect();
+                return rect.top;
+            }
+
+            if(document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
+                socialFloat.style.position = 'fixed'; // restore when you scroll up
+                socialFloat.style.bottom = "0px"
+                downloadIcon.style.position = 'fixed'; // restore when you scroll up
+                downloadIcon.style.bottom = "100px"
+
+            if((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop - 5)) {
+                socialFloat.style.position = 'absolute';
+                socialFloat.style.bottom = "175px"
+                downloadIcon.style.position = 'absolute';
+                downloadIcon.style.bottom = "220px"
+            }
+        }
+
+        document.addEventListener("scroll", function(){
+            checkOffset();
+        });
+
+        
+        const showDownload = () => {
+            if (window.scrollY > 500) {
+                downloadIcon.classList.add('show')
+            } else {
+                downloadIcon.classList.remove('show')
+            }
+        }
+        
+        document.addEventListener('scroll', showDownload);
+
+    }, [])
+
+    const pathVariants = {
+        hidden: {
+            opacity: 0,
+            pathLength: 0
+        },
+        visible: {
+            opacity: 1,
+            pathLength: 1,
+            transition: {
+                duration: .75,
+                delay: 2,
+                ease: "easeInOut"
+            }
+        }
+    }
 
     return (
         <>
 
             <div className="footer__section">
 
+                <div className="socials" >
+                    <motion.a
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 3.25, duration: 1 }}
+                        className="link" href="https://www.linkedin.com/in/ash-bridges/" target="_blank" rel="noreferrer" >
+                        <FaLinkedin className="linked__icon focus" />
+                    </motion.a>
+                    <motion.a
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 3, duration: 1 }}
+                        className="link" href="https://github.com/HighRoller94" target="_blank" rel="noreferrer" >
+                        <ImGithub className="git__icon focus" />
+                    </motion.a>
+                    <motion.svg initial="hidden" animate="visible" xmlns="http://www.w3.org/2000/svg" width="2" height="210" viewBox="0 0 2 210">
+                        <motion.path variants={pathVariants} id="Path_48" data-name="Path 48" d="M14904.395,1586.325V1356.831" transform="translate(-14903.395 -1356.831)" fill="currentColor" stroke="currentColor" strokeWidth="3" />
+                    </motion.svg>
+                </div>
+                
+
+                {!downloaded ? (
+                        <>
+                            <a className="download link" href="cv/Ash-Bridges-CV.pdf" onClick={toggle} target="_blank">
+                                <RiDownloadCloud2Fill className="icon" />
+                            </a>
+                        </>
+                    ) : (
+                        <h2>Got it</h2>
+                    )}
                 <div>
 
                     <svg id="Layer_1" className="footer__logo2 focus" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.01 229.13">
@@ -27,8 +121,8 @@ function Footer() {
                         <ImGithub className="gh__icon" />
                     </a>
                 </div>
-                <div className="footer__copyright">
-                    <p>Designed and Developed by <span>Ash Bridges</span></p>
+                <div className="footer__copyright ">
+                    <p>Handcrafted by <span>Ash Bridges </span> &copy; 2022</p>
                 </div>
             </div>
         </>

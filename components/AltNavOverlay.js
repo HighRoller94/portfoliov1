@@ -6,8 +6,27 @@ import { FaLinkedin } from 'react-icons/Fa';
 import { BsArrowLeftShort } from 'react-icons/Bs'
 import Link from 'next/link'
 
+import AltNavOverlayStyles from '../styles/components/AltNavOverlay.module.scss';
 
 function AltNavOverlay() {
+
+    useEffect(() => {
+        const nav = document.querySelector('.navbar');
+        const navMenu = document.querySelector(".sidebar");
+        let lastScrollY = window.scrollY;
+        window.addEventListener("scroll", () => {
+            if (lastScrollY < window.scrollY) {
+                if (navMenu.classList.contains('active')) {
+                    return;
+                } else {
+                    nav.classList.add('nav__hidden');
+                }
+            } else {
+                nav.classList.remove('nav__hidden');
+            }
+            lastScrollY = window.scrollY;
+        })
+    }, [])
 
     return (
         <motion.div className="overlay"
@@ -26,9 +45,7 @@ function AltNavOverlay() {
                                 <h3>Ash Bridges</h3>
                                 <h4>Web Developer</h4>
                             </li>
-                            <li className="mobile__contact focus">
-                                <pageLink to="contact"><button className="navbar__links">Contact</button></pageLink>
-                            </li>
+
                             <div className="tab__toggle">
                             </div>
                             <div className="menu__socials">
@@ -42,19 +59,6 @@ function AltNavOverlay() {
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div className="socials" >
-                    <motion.a 
-                            className="link" href="https://www.linkedin.com/in/ash-bridges/" target="_blank" rel="noreferrer" >
-                        <FaLinkedin className="linked__icon focus" />
-                    </motion.a>
-                    <motion.a
-                            className="link" href="https://github.com/HighRoller94" target="_blank" rel="noreferrer" >
-                        <ImGithub className="git__icon focus" />
-                    </motion.a>
-                    <motion.svg initial="hidden" animate="visible" xmlns="http://www.w3.org/2000/svg" width="2" height="229.494" viewBox="0 0 2 229.494">
-                        <motion.path id="Path_48" data-name="Path 48" d="M14904.395,1586.325V1356.831" transform="translate(-14903.395 -1356.831)" fill="currentColor" stroke="currentColor" strokeWidth="3"/>
-                    </motion.svg>
             </div>
         </motion.div>
     )

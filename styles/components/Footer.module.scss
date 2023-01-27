@@ -1,65 +1,135 @@
 @import '../variables.module';
 
 .footer__section {
-    width: 75%;
-    margin: 0rem auto 5rem auto;
+    width: 100%;
+    padding: .5rem 0 2rem 0;
     display: flex;
+    align-self:flex-end;
+    margin-top: auto;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 99;
-    position:relative;
+    background-color: teal;
+    position: absolute;
+    bottom: -200px;
+    z-index:999;
     @media screen and (min-width: 768px) { 
-        margin-top: 3rem;
+        margin-top: 2rem;
+        padding: .5rem 0 3rem 0;
     }
     @media screen and (min-width: 1312px) {
         margin-top: 0rem;
-        margin: 0rem auto 8rem auto;
+        padding: .5rem 0 5rem 0;
+        bottom: -250px;
     }
-    a {
-        width:100%;
-        .footer__contact {
-            display:flex;
-            font-size: .85rem;
-            width:100%;
-            text-align:center;
-            border-radius: .5rem;
-            color: $offWhite;
-            margin-bottom: 4rem;
-            transition: 300ms ease-in-out;
-            h2 {
-                font-weight: 500;
-                a {
-                    span {
-                        font-weight: 700;
-                        color: $offTeal;
-                    }
-                }
+    .socials {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 6.8%;
+        z-index: -1;
+        color: currentColor;
+        @media screen and (min-width: 768px) {
+            display: flex;
+        }
+    
+        @media screen and (min-width: 1312px) {
+            left: 8%;
+        }
+    
+        .linked__icon {
+            @media screen and (min-width: 768px) {
+                font-size: 2rem;
+                color: currentColor;
+                transition: 300ms ease-in;
+    
                 &:hover {
-                    span {
-                        color: #a7fff9;
-                    }
+                    color: $offTeal;
+                    cursor: none;
+                    filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212));
                 }
             }
-
-            @media screen and (min-width: 768px) { 
-                width: 87%;
-                font-size: 1rem;
-            }
+    
             @media screen and (min-width: 1312px) {
-                margin-bottom: 5rem;
-                width: 100%;
-                font-size: 1rem;
+                font-size: 2.2rem;
             }
         }
-    }
     
+        .git__icon {
+            @media screen and (min-width: 768px) {
+                margin-top: 10px;
+                font-size: 1.6rem;
+                margin-bottom: 1.1rem;
+                color: currentColor;
+                transition: 300ms ease-in;
+    
+                &:hover {
+                    color: $offTeal;
+                    cursor: none;
+                    filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212));
+                }
+            }
+    
+            @media screen and (min-width: 1312px) {
+                margin-top: 1rem;
+                font-size: 2.2rem;
+                margin-bottom: 1.75rem;
+            }
+        }
+    
+        svg {
+            color: teal;
+        }
+    
+        p {
+            margin: 40px 0;
+            font-size: 1.1rem;
+        }
+    }
+    .download {
+        position:fixed;
+        bottom: -10rem;
+        right: 8.5%;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        background-color: $offTeal;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        transition: opacity 200ms ease;
+        font-size:2rem;
+        @media screen and (min-width: 768px) { 
+            width: 20px;
+            height: 20px;
+            font-size:3rem;
+            bottom: 0rem;
+        }
+    }
+    .show {
+        @media screen and (min-width: 768px) { 
+            opacity: 1;
+            visibility: visible;
+            bottom: 100px;
+            right: 5.5%;
+        }
+        @media screen and (min-width: 1312px) {
+            bottom: 7rem;
+            transition: opacity 200ms ease;
+            right: 8.5%;
+        }
+    }
     .footer__links {
         display: flex;
         justify-content: space-between;
         width: 85%;
         align-items: center;
-        margin: 1rem 0 1.5rem 0;
+        margin: 1rem 0;
         @media screen and (min-width: 768px) { 
             margin-bottom: .5rem;
         }
@@ -82,29 +152,37 @@
         display: none;
         @media screen and (min-width: 768px) { 
             display: flex;
-            height: 4rem;
-            margin: 1.5rem 0;
+            height: 3rem;
+            margin: .5rem 0 .25rem 0;
         }
         @media screen and (min-width: 1312px) {
-            margin: .5rem 0;
+            height: 3rem;
+            margin-top: 0.5rem;
         }
     }
+
     .footer__icons {
         display: flex;
         align-items: center;
         justify-content: center;
         color: $offWhite;
-        margin: 1rem 0 1.5rem 0;
+        margin: 1rem 0 0.5rem 0;
         @media screen and (min-width: 768px) { 
             display: none;
         }
         .li__icon {
-            font-size: 3rem;
+            font-size: 2rem;
             margin: 0 20px;
+            &:hover {
+                opacity: .7;
+            }
         }
         .gh__icon {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             margin: 0 20px;
+            &:hover {
+                opacity: .7;
+            }
         }
         .link {
             color: currentColor;
@@ -114,15 +192,20 @@
         display: flex;
         align-items: center;
         text-align:center;
-        margin-top: 1rem;
+        margin-top: .5rem;
+        
         @media screen and (min-width: 1312px) {
             display: flex;
             align-items: center;
+            margin-top: .5rem;
         }
         p {
             font-weight: 400;
-            font-size: .9rem;
-            color: $darkModeGrey;
+            font-size: 0.8rem;
+            color: $offWhite;
+            @media screen and (min-width: 1312px) {
+                font-size: 0.8rem;
+            }
             span {
                 color: $offTeal;
             }

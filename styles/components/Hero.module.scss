@@ -9,12 +9,12 @@
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-
     @media screen and (min-width: 768px) {
         padding-top: 25vh;
         align-items: flex-start;
         justify-content: flex-start;
         margin-left: 15%;
+        margin-bottom: 4%;
     }
 
     @media screen and (min-width: 1312px) {
@@ -38,14 +38,17 @@
         }
 
         @media screen and (min-width: 1312px) {
-            height: 22rem;
+            height: 28rem;
             margin-left: 0;
 
         }
         h2 {
             font-weight: 400;
-            font-size: 1.3rem;
-            margin-bottom: .2rem;
+            font-size: 1.1rem;
+            margin-bottom: 0rem;
+            @media screen and (min-width: 768px) {
+                font-size: 1.3rem;
+            }
         }
 
         .swipe__text {
@@ -72,10 +75,10 @@
             }
 
             h3 {
-                margin-top: -1rem;
+                margin-top: -0.5rem;
                 width: auto;
-                font-weight: 400;
-                font-size: clamp(1.4rem, 3.5vw, 2.3rem);
+                font-weight: 700;
+                font-size: clamp(1.4rem, 3.5vw, 2rem);
                 background: none;
                 opacity: 0;
                 color: $darkModeGrey;
@@ -83,7 +86,7 @@
                 animation-delay: 1s;
 
                 @media screen and (min-width: 768px) {
-                    margin-top: -1.5rem;
+                    margin-top: -.5rem;
                 }
             }
 
@@ -107,9 +110,8 @@
         }
 
         .secondary {
-            width: 80%;
+            width: 100%;
             @media screen and (min-width: 1312px) {
-                padding-top: .5rem;
                 width: 100%;
             }
             &::after {
@@ -119,26 +121,25 @@
     }
 
     .download__btn {
-        margin-top: 4rem;
+        margin-top: 2rem;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
-        position: absolute;
-        bottom: 7rem;
+        width: fit-content;
+        transition: 200ms ease-in;
         @media screen and (min-width: 1312px) {
-            bottom: 2rem;
             margin-left: .3rem;
         }
         button {
             text-decoration: none;
-            padding: .6rem 1rem;
+            padding: .4rem .8rem;
             position: relative;
             text-transform: uppercase;
-            color: $offWhite;
-            border: 1px solid $offWhite;
+            background-color: $offTeal;
+            border: 1px solid $offTeal;
             outline: none;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
             border-radius: 3px;
             transition: transform 300ms ease-in-out;
@@ -174,13 +175,16 @@
             }
 
             .icon {
+                display:none;
                 font-size:1.8rem;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 transition: opacity 1s transform 1s;
-                display: flex;
+                @media screen and (min-width: 768px) {
+                    display:flex;
+                }
 
             }
 
@@ -217,7 +221,7 @@
 
             &:hover a,
             &:focus a {
-                color: $offWhite;
+                color: $offTeal;
             }
         }
 
@@ -242,110 +246,8 @@
         }
     }
 
-    .download__btn.active {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        transition: 500ms ease-in-out;
-        display: none;
-
-        @media screen and (min-width: 768px) {
-            display: block;
-            bottom: 4rem;
-            right: 3rem;
-            z-index:9999;
-        }
-
-        @media screen and (min-width: 1312px) { 
-            display: flex;
-            flex-direction: column-reverse;
-            bottom: 8rem;
-            right: 9%;
-            transition: 200ms ease-in;
-
-        }
-
-        button {
-            @media screen and (min-width: 768px) {
-                height: 45px;
-                width: 45px;
-                padding: 0;
-                border-radius: 50%;
-                margin-left: 1rem;
-            }
-
-            @media screen and (min-width: 1312px) {
-                height: 52px;
-                width: 52px;
-            }
-
-            .span {
-                @media screen and (min-width: 768px) {
-                    display: none;
-                }
-            }
-
-            .download {
-                z-index:999999;
-                @media screen and (min-width: 768px) {
-                    display: block;
-                    opacity: 1;
-                    transform: scale(.8);
-                }
-
-                @media screen and (min-width: 1312px) {
-                    transform: scale(.9);
-                }
-
-                .icon {
-                    color: $offBlack;
-                    @media screen and (min-width: 768px) {
-                        opacity: 1;
-                        width: 30px;
-                        height: 30px;
-                        margin-top: -.1rem;
-                        margin-left: .1rem;
-                    }
-
-                    @media screen and (min-width: 1312px) {
-                        margin-left: 0.08rem;
-                    }
-                }
-            }
-
-            &::before {
-                @media screen and (min-width: 1312px) {
-                    display: none;
-                }
-            }
-            &:hover,
-            &:focus {
-                opacity: .7;
-                @media screen and (min-width: 1312px) {
-                    transform: scale(1.1);
-                }
-            }
-
-            &:hover a,
-            &:focus a {
-                color: $offBlack;
-                @media screen and (min-width: 1312px) {
-                    color: $offWhite;
-                }
-            }
-            h2 {
-                @media screen and (min-width: 768px) {
-                    margin-left: 0;
-                    margin-bottom: 1rem;
-                }
-            }
-        }
-
-
-    }
-
     .clicked {
-
+        
         @media screen and (min-width: 768px) {
             .download {
                 display: none;
@@ -353,7 +255,7 @@
         }
 
         @media screen and (min-width: 1312px) {
-            padding: 0;
+            bottom:1.5rem;
         }
 
         h2 {
@@ -361,6 +263,8 @@
             margin-left: 1rem;
             letter-spacing: 1px;
             transition: 200ms ease-in-out;
+            color: $offTeal;
+            font-weight:700;
             &:hover {
                 color: $lightTeal;
             }
@@ -385,6 +289,7 @@
             .icon {
                 color: $offBlack;
                 width:30px !important;
+                display:flex;
             }
 
             a {
@@ -414,12 +319,9 @@
         align-content: center;
         justify-content: center;
         width: 30px;
-        margin-top: 7rem;
+        margin-top: 4rem;
         margin-bottom: 1rem;
         height: 50px;
-        @media screen and (min-width: 1312px) {
-            display: none;
-        }
         .mouse {
             display: flex;
             align-content: center;

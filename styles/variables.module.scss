@@ -2,12 +2,15 @@
 
 
 $offBlack: #101010;
-$offWhite: #ffffff;
+$offWhite: #f7f7f7;
 $lightModeGrey: #373737;
 $darkModeGrey:  #cccccc;
 $offRed: #f08080;
 $offTeal: #71DBD4;
 $lightTeal: #a7fff9;
+
+
+$possibleTeal: #91eeca;
 
 $headerMargin: 2rem;
 $mobileHeaderMargin: 3rem;
@@ -15,7 +18,8 @@ $headerFont: 'Poppins';
 
 // MOBILE
 
-$heroTitleSize: clamp(4rem, 12vw, 8rem); 
-$headerFontSize: clamp(2rem, 5.5vw, 3rem); 
+$heroTitleSize: clamp(4rem, 10vw, 8rem); 
+$headerFontSize: clamp(1.8rem, 4.5vw, 3rem); 
+$bodyFontSize : clamp(.95rem, 1vw, 1rem);
 
 $mobileBodyFontSize: .95rem;

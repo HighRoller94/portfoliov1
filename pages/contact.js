@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import Head from 'next/head'
 
 import BackgroundAnimation from '../components/Background'
 import AltNavOverlay from '../components/AltNavOverlay'
@@ -13,18 +14,38 @@ const variants = {
 }
 
 export default function ContactPage() {
-
+    const [offsetY, setOffSetY]  = useState()
+  
+    const handleScroll = () => setOffSetY(window.pageYOffset);
+    
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, [])
+      
     return (
-        <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="enter"
-            exit="exit"
-            transition={{ type: 'linear', duration: 1 }}
-        >
-            <AltNavOverlay />
-            <Contact />
-            <Footer />
-        </motion.div>
+        <>
+            <Head>
+                <title>Ash Bridges | Contact</title>
+                <meta 
+                    name="description" 
+                    content="Got an idea for a project? Get in touch!" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/logoFill.svg" />
+            </Head>
+
+            <motion.div
+                variants={variants}
+                initial="hidden"
+                animate="enter"
+                exit="exit"
+                transition={{ type: 'linear', duration: 1 }}
+            >
+                <AltNavOverlay />
+                <Contact offsetY={offsetY} />
+                <Footer />
+            </motion.div>
+        </>
     )
 }

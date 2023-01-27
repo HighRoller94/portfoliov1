@@ -5,12 +5,20 @@ function GetInTouch() {
 
     return (
         <>
-            <div className="footer__contact ">
-                <h2>Got an idea for a project?
-                    <Link href="/contact">
-                        <span className="focus"> Get in touch!</span>
-                    </Link>
-                </h2>
+            <div className="getInTouch">
+                <div className="wrapper"> 
+                    <h1>
+                        What's next?
+                    </h1>
+                    <p>
+                        Got an idea for a project? Get in touch and let's grab a drink sometime!
+                    </p>
+                    <button>
+                        <Link href="/contact">
+                            <span className="focus">Lets go</span>
+                        </Link>
+                    </button>
+                </div>
             </div>
         </>
 

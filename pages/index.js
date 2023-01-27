@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 import Head from 'next/head'
 import NavOverlay from '../components/NavOverlay'
@@ -19,6 +20,21 @@ const variants = {
 }
 
 export default function Home() {
+  const [downloaded, setDownloaded] = useState(false);
+
+  const [offsetY, setOffSetY]  = useState()
+  
+  const handleScroll = () => setOffSetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [])
+
+  const toggle = () => {
+    setDownloaded(true)
+  }
 
   return (
 
@@ -30,20 +46,37 @@ export default function Home() {
       transition={{ type: 'linear', duration: 1 }}
     >
       <Head>
-        <title>Ash Bridges | Front End Developer</title>
-        <meta name="description" content="Ash Bridges Portfolio" />
+        <title>Ash Bridges | Web Developer</title>
+        <meta name="description" content="Web Developer, designer, fella with a keyboard. Check out my works and thanks for stopping by." />
+        <meta property="og:title" content="Ash Bridges" />
+        <meta
+          property="og:description"
+          content="Web Developer and Designer"
+        />
+        <meta
+          property="og:image"
+          content="https://example.com/images/cool-page.jpg"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logoFill.svg" />
       </Head>
 
       <NavOverlay />
-      <Hero />
 
-      <About />
-      <Projects />
-      <Skills />
-      <GetInTouch />
-      <Footer />
-    </motion.div>
+      <Hero
+        offsetY={offsetY}
+        toggle={toggle}
+        downloaded={downloaded}
+      />
+      <About offsetY={offsetY}/>
+      <Projects offsetY={offsetY}/>
+      <Skills offsetY={offsetY}/>
+      <GetInTouch offsetY={offsetY}/>
+      <Footer
+        toggle={toggle}
+        downloaded={downloaded}
+        offsetY={offsetY}
+      />
+    </motion.div >
   )
 }

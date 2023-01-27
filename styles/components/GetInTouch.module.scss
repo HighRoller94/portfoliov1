@@ -1,40 +1,86 @@
-.footer__contact {
+@import '../variables.module';
+
+.getInTouch {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     font-size: .85rem;
     width: 80%;
-    margin: 0 auto;
-    text-align: center;
     border-radius: .5rem;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 0.2rem rgb(49, 49, 49));
+    text-align: center;
     color: $offWhite;
-    margin-bottom: 4rem;
+    margin: 1rem auto 4rem auto;
+    background-color: $lightModeGrey;
     transition: 300ms ease-in-out;
     z-index: 999;
-    h2 {
-        font-weight: 500;
-
-        a {
-            span {
-                font-weight: 700;
-                color: $offTeal;
-            }
-        }
-
-        &:hover {
-            span {
-                color: #a7fff9;
-            }
-        }
-    }
 
     @media screen and (min-width: 768px) {
-        width: 87%;
+        width: 70%;
         font-size: 1rem;
+        margin: 1rem auto 3rem auto;
     }
 
     @media screen and (min-width: 1312px) {
-        margin-bottom: 5rem;
-        width: 100%;
+        margin-bottom: 4rem;
+        width: 50%;
         font-size: 1.2rem;
     }
+
+    .wrapper {
+        width: 90%;
+        margin: 0 auto;
+        padding: 1.5rem 0 2.25rem 0;
+        font-size: .8rem;
+
+        h1 {
+            @media screen and (min-width: 1312px) {
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            padding: 1rem 0 1.5rem 0;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            color: $darkModeGrey;
+            line-height: 1.6;
+            @media screen and (min-width: 1312px) {
+                font-size: 1rem;
+            }
+        }
+
+        button {
+            border: 1px solid $offTeal;
+            font-weight: 700;
+            width: fit-content;
+            margin: 0 auto;
+            border-radius: 0.3rem;
+            background-color: $offTeal;
+            font-size: 1.3rem;
+            padding: .4rem 1rem;
+            transition: 200ms ease-in;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            a {
+                span {
+                    font-weight: 700;
+                    color: $offWhite;
+                }
+            }
+            &:hover {
+                border: 1px solid $offTeal;
+                background-color: $lightModeGrey;
+                filter: drop-shadow(0 0 0.2rem rgb(113, 219, 212));
+                span {
+                    color: $offWhite;
+                    
+                }
+            }
+        }
+    }
+
+
+
 }

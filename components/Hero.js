@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
 import { TiTick } from 'react-icons/Ti'
-import { RiDownloadCloud2Fill } from 'react-icons/Ri'
 
-function Home() {
-    const [downloaded, setDownloaded] = useState(false);
 
-    const toggle = () => {
-        const download = document.querySelector('.download__btn');
-        download.classList.add('clicked');
-        setDownloaded(true)
-    }
+function Home({ offsetY, toggle, downloaded }) {
 
     useEffect(() => {
         const download = document.querySelector('.download__btn');
+
         const downloadMorph = () => {
-            download.classList.toggle('active', window.scrollY > 500);
+            if (window.scrollY > 500) {
+                download.style.opacity = '0';
+            } else {
+                download.style.opacity = '1';
+            }
         }
 
         window.addEventListener("scroll", downloadMorph);
-    })
+
+
+    }, []);
 
     return (
         <div className="hero__section" data-scroll-section id="home">
@@ -33,7 +33,7 @@ function Home() {
                     <h1>I'm Ash.</h1>
                 </div>
                 <div className="swipe__text secondary" >
-                    <h3>A <span>freelance web developer</span> from the UK!</h3>
+                    <h3>A <span>web developer</span> based in Kent.</h3>
                 </div>
                 <motion.div
                     className="download__btn fade focus"
@@ -46,18 +46,16 @@ function Home() {
                                 <a className="span link" href="cv/Ash-Bridges-CV.pdf" onClick={toggle} target="_blank">
                                     Download CV
                                 </a>
-                                <a className="download link" href="cv/Ash-Bridges-CV.pdf" onClick={toggle} target="_blank">
-                                    <RiDownloadCloud2Fill className="icon"/>
-                                </a>
                             </button>
                         </>
                     ) : (
-                        <>
-                            <button className="link downloaded">
-                                <TiTick className="icon"/>
+                        <div className="downloaded">
+                            <button className="link">
+                                <TiTick className="icon" />
                             </button>
                             <h2>Got it!</h2>
-                        </>
+                        </div>
+
                     )}
 
                 </motion.div>

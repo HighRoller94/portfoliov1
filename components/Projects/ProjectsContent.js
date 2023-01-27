@@ -1,14 +1,16 @@
 export const ProjectsContent  = [
     {
-        image: '/marquet.svg',
+        image: '/marquet1.svg',
         gallery: [
-            '/marquet.svg',
-            '/marquet.svg',
-            '/marquet.svg',
+            '/marquet1.svg',
+            '/marquet2.svg',
+            '/marquet4.svg',
+            '/marquet3.svg',
         ],
-        type: 'Website',
+        type: 'Featured Project',
         title: 'Marquet',
-        desc: 'Marquet is a responsive ecommerce multipage website that features full cart functionality, built with HTML, SASS and JS.',
+        desc: 'Marquet is a responsive ecommerce multipage website that features full cart functionality. Built with HTML, CSS and JS.',
+        longerDesc: 'Built with HTML, and utilising SASS and pure JS, Marquet is an ecommerce site that features full cart functionality,and uses session and local storage to simulate a backend. ',
         languages: [
             'HTML',
             'CSS',
@@ -18,15 +20,17 @@ export const ProjectsContent  = [
         gitLink: 'https://github.com/HighRoller94/marquet-ecommerce'
     },
     {
-        image: '/eatz.svg',
+        image: '/eatz4.svg',
         gallery: [
-            '/eatz.svg',
-            '/eatz.svg',
-            '/eatz.svg',
+            '/eatz4.svg',
+            '/eatz2.svg',
+            '/eatz3.svg',
+            '/eatz1.svg',
         ],
-        type: 'Website',
+        type: 'Featured Project',
         title: 'Eatz',
         desc: 'Eatz is a recipe-lookup web application built with React and SASS, connected to an external API.',
+        longerDesc: 'Eatz is a recipe-lookup web application built with React and SASS, connected to an external API.',
         languages: [
             'React',
             'Edamam API'
@@ -35,19 +39,22 @@ export const ProjectsContent  = [
         gitLink: 'https://github.com/HighRoller94/eatz-recipe-app'
     },
     {
-        image: '/pyre.svg',
+        image: '/pyre1.svg',
         gallery: [
-            '/pyre.svg',
-            '/pyre.svg',
-            '/pyre.svg',
+            '/pyre2.svg',
+            '/pyre3.svg',
+            '/pyre5.svg',
+            '/pyre4.svg',
+            '/pyre1.svg',
         ],
-        type: 'Web App',
+        type: 'Featured Project',
         title: 'Pyre',
         desc: 'Music player app with a simple dashboard layout. Built with React and SASS, Pyre uses the Spotify API to allows users to login, listen and manage their media.',
+        longerDesc: 'Music player app with a simple dashboard layout. Built with React and SASS, Pyre uses the Spotify API to allows users to login, listen and manage their media.',
         languages: [
             'React',
             'Express',
-            'Spotify API'
+            'Spotify'
         ],
         siteLink: 'https://pyre-2e47e.web.app/',
         gitLink: 'https://github.com/HighRoller94/pyre'
@@ -59,9 +66,10 @@ export const ProjectsContent  = [
             '/illume.svg',
             '/illume.svg',
         ],
-        type: 'Website',
+        type: 'Featured Project',
         title: 'Illume',
         desc: 'Illume is an ongoing social media site that aims to help creatives and businesses. Built with React, Illume includes a number of features such as custom authentication, user based profiles and cart functionality.',
+        longerDesc: 'Illume is an ongoing social media site that aims to help creatives and businesses. Built with React, Illume includes a number of features such as custom authentication, user based profiles and cart functionality.',
         languages: [
             'React',
             'Firebase',

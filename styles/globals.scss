@@ -3,7 +3,8 @@
 @import './components/NavOverlay.module.scss';
 @import './components/AltNavOverlay.module.scss';
 @import './components/Modal.module.scss';
-@import './components/BackgroundAnimation.module.scss';
+@import './components/GetInTouch.module.scss';
+@import './components/Background.module.scss';
 @import './components/Hero.module.scss';
 @import './components/About.module.scss';
 @import './components/Projects.module.scss';
@@ -12,6 +13,19 @@
 @import './components/Skills.module.scss';
 @import './components/Contact.module.scss';
 @import './components/Footer.module.scss';
+
+.arrowBig {
+  position:absolute;
+  width:450px;
+  right: 22%;
+  top:9%;
+}
+
+#_next {
+  position: relative;
+  height:100%;
+  min-height: 75vh;
+}
 
 * {
   margin: 0;
@@ -28,84 +42,82 @@ a {
 }
 
 body {
-  overflow-x: hidden;
-
   background-color: $offBlack;
   color: $offWhite;
   transition: 200ms ease-in-out;
+  position:relative;
   margin: 0;
   padding: 0;
-  height: 100%;
   $accentColor: $offTeal;
   $textColor: $darkModeGrey;
+  min-height: 75vh;
 }
 
-// BORDER BITS
-
-.border {
-  position: fixed;
-  overflow-x:hidden;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  border: 15px solid black;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  background: transparent;
-  pointer-events: none;
-  transition: 200ms ease-in-out;
-}
-
-@media screen and (min-width: 768px) {
-  .border {
-
-      border: 25px solid black;
-  }
-}
-
-@media screen and (min-width: 1312px) {
-  .border {
-      border: 35px solid black;
-      border-width: 50px 70px 50px 70px;
-  }
-}
-// CURSOR BITS
-
-.cursor {
-  width: 30px;
-  height: 30px;
-  border: 1px solid currentColor;
-  opacity: 1;
-  border-radius: 50%;
-  position: fixed;
-  z-index: 9999999;
-  animation: cursorAnim 2s infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes cursorAnim {
-  from {
-      transform: scale(1.2);
-  }
-  to {
-      transform: scale(.7);
-  }
-}
-
+// CURSOR 
 
 .link-focus {
   border: 1px solid $offTeal;
   opacity: .7;
   transform: scale(1.2);
   animation: none;
+  transition: background-color 200ms ease-in;
+  background-color: $offTeal;
+}
+
+.projectFocus {
+  border: 1px solid $offTeal;
+  opacity: 1;
+  transform: scale(1.8);
+  animation: none;
+  transition: background-color 200ms ease-in;
+  background-color: $offTeal;
+}
+
+.carouselFocus {
+  border: 1px solid $offTeal;
+  opacity: 1;
+  transform: scale(1.5);
+  animation: none;
+  transition: background-color 200ms ease-in;
   background-color: $offTeal;
 }
 
 .link {
   text-decoration: none;
   color: currentColor;
+}
+
+
+.hideProject {
+  opacity:0;
+  filter: blur(3px);
+  transform: translateY(20%);
+  transition: 1s ease !important;
+}
+
+.showProject {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: 1s ease !important;
+}
+
+.hideSkills {
+  opacity:0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: 1.5s ease !important;
+}
+
+.showSkills {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: 1.5s ease !important;
+  &:nth-child(2) {
+    transition-delay: 200ms !important;
+  }
+  &:nth-child(3) {
+    transition-delay: 400ms !important;
+  }
 }

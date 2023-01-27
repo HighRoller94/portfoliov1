@@ -1,10 +1,12 @@
-.main-area {
+@import '../variables.module';
+
+.mainArea {
     position: fixed;
     width: 100%;
     height: 100vh;
     background: none;
     top: 0;
-
+    z-index: -1;
     .circles {
         position: absolute;
         top: 0;
@@ -21,7 +23,9 @@
             background: rgba(113, 219, 212, 0.2);
             bottom: -150px;
             animation: animate 20s linear infinite;
-
+            @media screen and (min-width: 768px) {                  
+                bottom: -100px;
+            }
             &:nth-child(1) {
                 left: 25%;
                 width: 80px;
@@ -64,6 +68,12 @@
                 width: 35px;
                 height: 35px;
                 animation-delay: 8s;
+                display:none;
+                opacity:0;
+                visibility:hidden;
+                @media screen and (min-width: 1312px) {
+                    display:block;
+                }
             }
 
             &:nth-child(7) {
@@ -71,6 +81,12 @@
                 width: 130px;
                 height: 130px;
                 animation-delay: 7s;
+                display:none;
+                opacity:0;
+                visibility:hidden;
+                @media screen and (min-width: 1312px) {
+                    display:block;
+                }
             }
 
             &:nth-child(8) {
@@ -79,6 +95,12 @@
                 height: 25px;
                 animation-delay: 15s;
                 animation-duration: 45s;
+                display:none;
+                opacity:0;
+                visibility:hidden;
+                @media screen and (min-width: 1312px) {
+                    display:block;
+                }
             }
 
             &:nth-child(9) {
@@ -99,6 +121,67 @@
         }
     }
 }
+
+.socialsParent {
+    position:relative;
+    
+}
+
+
+.border {
+    position: fixed;
+    overflow-x:hidden;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background: transparent;
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+    @media screen and (min-width: 768px) {
+        border: 25px solid black;
+    }
+    @media screen and (min-width: 1312px) {
+        border: 35px solid black;
+        border-width: 50px 70px 50px 70px;
+    }
+  }
+  
+  .cursor {
+    width: 30px;
+    height: 30px;
+    border: 1px solid currentColor;
+    opacity: 1;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9999999;
+    animation: cursorAnim 2s infinite alternate;
+    pointer-events: none;
+    transition: background-color 200ms ease-in;
+    span {
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      height:100%;
+      font-size: .55rem;
+      font-weight: 700;
+      color: $offWhite;
+    }
+  }
+  
+  @keyframes cursorAnim {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(.7);
+    }
+  }
 
 @keyframes animate {
     0% {
