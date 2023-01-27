@@ -4,9 +4,9 @@ import Carousel from './Carousel'
 
 import ModalStyles from '../../../styles/components/Modal.module.scss';
 
-import { ImGithub } from 'react-icons/Im';
-import { BiWorld } from 'react-icons/Bi';
-import { MdClose } from 'react-icons/Md';
+import { ImGithub } from 'react-icons/im';
+import { BiWorld } from 'react-icons/bi';
+import { MdClose } from 'react-icons/md';
 
 function Modal({ modalOpen, handleModal, title, type, longerDesc, gallery, gitLink, siteLink }) {
     const [index, setIndex] = useState(0);

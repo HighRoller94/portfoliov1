@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
 import { motion } from 'framer-motion';
 
-import { RiDownloadCloud2Fill } from 'react-icons/Ri'
-import { ImGithub } from 'react-icons/Im';
-import { FaLinkedin } from 'react-icons/Fa';
+import { RiDownloadCloud2Fill } from 'react-icons/ri'
+import { ImGithub } from 'react-icons/im';
+import { FaLinkedin } from 'react-icons/fa';
 
 function Footer({ toggle, downloaded }) {
 

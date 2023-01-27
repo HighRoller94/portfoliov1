@@ -7,8 +7,6 @@ import { FaLinkedin } from 'react-icons/Fa';
 import { BsArrowLeftShort } from 'react-icons/Bs'
 import Link from 'next/link'
 
-import AltNavOverlayStyles from '../styles/components/AltNavOverlay.module.scss';
-
 function AltNavOverlay() {
 
     useEffect(() => {

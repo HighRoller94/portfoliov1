@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import useRunOnce from "./useRunOnce.js";
 import Image from 'next/image'
 
-import { ImGithub } from 'react-icons/Im';
-import { FaLinkedin } from 'react-icons/Fa';
+import { ImGithub } from 'react-icons/im';
+import { FaLinkedin } from 'react-icons/fa';
 
 import logoFill from '../images/logoFill.svg';
 import logo from '../images/logo.svg';

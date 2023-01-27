@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Slider from "react-touch-drag-slider";
 
-import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/Fa'
-
 import CarouselStyles from '../../../styles/components/Carousel.module.scss';
 
 export default function Carousel({ slides }) {

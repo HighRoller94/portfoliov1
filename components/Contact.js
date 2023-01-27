@@ -5,8 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
 
 import AnimatedText from './AnimatedText';
-import { FiMail } from 'react-icons/Fi';
-import { TiTick } from 'react-icons/Ti'
+import { FiMail } from 'react-icons/fi';
+import { TiTick } from 'react-icons/ti'
 
 function Contact({ offsetY }) {
     const [status, setStatus] = useState(false);

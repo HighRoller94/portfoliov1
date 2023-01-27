@@ -4,8 +4,8 @@ import Image from 'next/image';
 import ProjectStyles from '../../../styles/components/Project.module.scss';
 import { useInView } from 'react-intersection-observer';
 
-import { ImGithub } from 'react-icons/Im';
-import { BiWorld } from 'react-icons/Bi';
+import { ImGithub } from 'react-icons/im';
+import { BiWorld } from 'react-icons/bi';
 
 function Project({ data, setModalData, handleModal, title, type, desc, image, gitLink, siteLink, languages, offsetY}) {
     

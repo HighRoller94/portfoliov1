@@ -1,5 +1,5 @@
-import { FaLaptopCode, FaPencilRuler } from 'react-icons/Fa'
-import { AiOutlineCodepen } from 'react-icons/Ai'
+import { FaLaptopCode, FaPencilRuler } from 'react-icons/fa'
+import { AiOutlineCodepen } from 'react-icons/ai'
 
 export const SkillsContent  = [
     {

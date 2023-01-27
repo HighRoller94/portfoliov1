@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
-import { TiTick } from 'react-icons/Ti'
+import { TiTick } from 'react-icons/ti'
 
 function Home({ offsetY, toggle, downloaded }) {
 
