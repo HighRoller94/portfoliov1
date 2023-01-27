@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import { ImGithub } from 'react-icons/Im';
 import { FaLinkedin } from 'react-icons/Fa';
+
 import { BsArrowLeftShort } from 'react-icons/Bs'
 import Link from 'next/link'
 

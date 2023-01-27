@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 import Head from 'next/head'
 import NavOverlay from '../components/NavOverlay'
