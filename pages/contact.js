@@ -30,12 +30,13 @@ export default function ContactPage() {
                 <meta 
                     name="description" 
                     content="Got an idea for a project? Get in touch!" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/logoFill.svg" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <link rel="icon" href="/logoFill.svg" />
             </Head>
 
             <AnimatePresence>
                 <motion.div
+                    className="contactPage"
                     key="contact"
                     variants={variants}
                     initial="hidden"
