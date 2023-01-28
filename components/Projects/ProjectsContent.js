@@ -59,25 +59,25 @@ export const ProjectsContent  = [
         siteLink: 'https://pyre-2e47e.web.app/',
         gitLink: 'https://github.com/HighRoller94/pyre'
     },
-    {
-        image: '/illume.svg',
-        gallery: [
-            '/illume.svg',
-            '/illume.svg',
-            '/illume.svg',
-        ],
-        type: 'Featured Project',
-        title: 'Illume',
-        desc: 'Illume is an ongoing social media site that aims to help creatives and businesses. Built with React, Illume includes a number of features such as custom authentication, user based profiles and cart functionality.',
-        longerDesc: 'Illume is an ongoing social media site that aims to help creatives and businesses. Built with React, Illume includes a number of features such as custom authentication, user based profiles and cart functionality.',
-        languages: [
-            'React',
-            'Firebase',
-            'Routing'
-        ], 
-        siteLink: 'https://illume-68c8e.web.app/home',
-        gitLink: 'https://github.com/HighRoller94/illume-app'
-    },
+    // {
+    //     image: '/illume.svg',
+    //     gallery: [
+    //         '/illume.svg',
+    //         '/illume.svg',
+    //         '/illume.svg',
+    //     ],
+    //     type: 'Featured Project',
+    //     title: 'Illume',
+    //     desc: 'Illume is an ongoing social media site that aims to help creatives and businesses. Built with React, Illume includes a number of features such as custom authentication, user based profiles and cart functionality.',
+    //     longerDesc: 'Illume is an ongoing social media site that aims to help creatives and businesses. Built with React, Illume includes a number of features such as custom authentication, user based profiles and cart functionality.',
+    //     languages: [
+    //         'React',
+    //         'Firebase',
+    //         'Routing'
+    //     ], 
+    //     siteLink: 'https://illume-68c8e.web.app/home',
+    //     gitLink: 'https://github.com/HighRoller94/illume-app'
+    // },
 ]
   
 export default {
