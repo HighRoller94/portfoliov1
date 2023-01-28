@@ -3,9 +3,11 @@
 .alt {
     box-shadow:none !important;
     height: 5rem !important;
+    background-color:transparent !important;
     @media screen and (min-width: 1312px) {
         height: 10rem !important;
     }
+    
     .backIcon {
         margin-top: 1rem;
         font-size: 2.5rem;

@@ -3,10 +3,16 @@ import emailjs from '@emailjs/browser';
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
-
+import { AnimatePresence } from 'framer-motion'
 import AnimatedText from './AnimatedText';
 import { FiMail } from 'react-icons/fi';
 import { TiTick } from 'react-icons/ti'
+
+const variants = {
+    hidden: { opacity: 0 },
+    enter: { opacity: 1 },
+    exit: { opacity: 0 },
+}
 
 function Contact({ offsetY }) {
     const [status, setStatus] = useState(false);
@@ -82,28 +88,44 @@ function Contact({ offsetY }) {
                     </div>
                 </div>
                 {!status ? (
-                <form className="contact__form" ref={form} noValidate autoComplete="off" onSubmit={sendEmail}>
-                    <div className="text__field">
-                        <input type="text" name="name" autoComplete="off" required />
-                        <label htmlFor="name" className="label-name" ><span className="content-name">Name</span></label>
-                    </div>
-                    <div className="text__field">
-                        <input type="text" name="email" autoComplete="off" required />
-                        <label htmlFor="name" className="label-name" ><span className="content-name">Email</span></label>
-                    </div>
-                    <div className="text__area">
-                        <textarea type="text" rows="10" name="message" autoComplete="off" required />
-                        <label htmlFor="name" className="label-name" ><span className="content-name">Message</span></label>
-                    </div>
-                    
-                        <button type="submit" className="send__btn focus">Send message!</button>
-                    
-                </form>
+                    <AnimatePresence>
+                        <motion.form 
+                            className="contact__form" ref={form} noValidate autoComplete="off" onSubmit={sendEmail}
+                            variants={variants}
+                            initial="hidden"
+                            animate="enter"
+                            exit="exit"
+                            transition={{ type: 'linear', duration: 1 }}>
+                            <div className="text__field">
+                                <input type="text" name="name" autoComplete="off" required />
+                                <label htmlFor="name" className="label-name" ><span className="content-name">Name</span></label>
+                            </div>
+                            <div className="text__field">
+                                <input type="text" name="email" autoComplete="off" required />
+                                <label htmlFor="name" className="label-name" ><span className="content-name">Email</span></label>
+                            </div>
+                            <div className="text__area">
+                                <textarea type="text" rows="10" name="message" autoComplete="off" required />
+                                <label htmlFor="name" className="label-name" ><span className="content-name">Message</span></label>
+                            </div>
+                            
+                                <button type="submit" className="send__btn focus">Send message!</button>
+                            
+                        </motion.form>
+                    </AnimatePresence>
                 ) : (
-                    <div className='statusSent'>
-                        <TiTick className='icon' />
-                        <p>Thanks for your message. I'll get in touch as soon as I can!</p>
-                    </div>
+                    <AnimatePresence>
+                        <motion.div className='statusSent' 
+                            variants={variants}
+                            initial="hidden"
+                            animate="enter"
+                            exit="exit"
+                            transition={{ type: 'linear', duration: 1 }}
+                            >
+                            <TiTick className='icon' />
+                            <p>Thanks for your message. I'll get in touch as soon as I can!</p>
+                        </motion.div>
+                    </AnimatePresence>
                 )}
             </div>
         </div>
