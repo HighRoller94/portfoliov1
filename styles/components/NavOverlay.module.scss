@@ -102,9 +102,9 @@
 
                 @media screen and (min-width: 1312px) {
                     width: 3.5rem;
-                    transform: scale(1.2);
+                    transform: scale(1.4);
                     margin-left: -.8rem;
-                    margin-top: .5rem;
+                    margin-top: 1rem;
                 }
             }
 
@@ -268,11 +268,10 @@
                                 font-weight: 600;
                                 position: relative;
                                 height: 100%;
-                                cursor: pointer;
                             }
 
                             @media screen and (min-width: 1312px) {
-                                font-size: 1.2rem;
+                                font-size: 1.1rem;
                             }
 
                             &:hover {
@@ -626,7 +625,7 @@
                     margin-right: .8rem;
                     .navbar__links {
                         color:rgb(54, 54, 54);
-                        font-size: 1.2rem;
+                        font-size: 1.1rem;
                     }
                 }
             }
