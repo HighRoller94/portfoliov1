@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
 import { TiTick } from 'react-icons/ti'
+import Image from 'next/image'
+import { Link } from 'react-scroll';
+import blob from '../images/blob.svg';
 
 function Home({ offsetY, toggle, downloaded }) {
 
-    useEffect(() => {
-        const download = document.querySelector('.download__btn');
+    // useEffect(() => {
+    //     const download = document.querySelector('.download__btn');
 
-        const downloadMorph = () => {
-            if (window.scrollY > 500) {
-                download.style.opacity = '0';
-            } else {
-                download.style.opacity = '1';
-            }
-        }
+    //     const downloadMorph = () => {
+    //         if (window.scrollY > 500) {
+    //             download.style.opacity = '0';
+    //         } else {
+    //             download.style.opacity = '1';
+    //         }
+    //     }
 
-        window.addEventListener("scroll", downloadMorph);
+    //     window.addEventListener("scroll", downloadMorph);
 
 
-    }, []);
+    // }, []);
 
     return (
         <div className="hero__section" data-scroll-section id="home">
@@ -35,28 +38,13 @@ function Home({ offsetY, toggle, downloaded }) {
                     <h3>A <span>web developer</span> based in Kent.</h3>
                 </div>
                 <motion.div
-                    className="download__btn fade focus"
+                    className="btn fade focus"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 2, duration: 1 }}>
-                    {!downloaded ? (
-                        <>
-                            <button className="link">
-                                <a className="span link" href="cv/Ash-Bridges-CV.pdf" onClick={toggle} target="_blank">
-                                    Download CV
-                                </a>
-                            </button>
-                        </>
-                    ) : (
-                        <div className="downloaded">
-                            <button className="link">
-                                <TiTick className="icon" />
-                            </button>
-                            <h2>Got it!</h2>
-                        </div>
-
-                    )}
-
+                    <Link to="projects">
+                        View Projects
+                    </Link>
                 </motion.div>
                 <motion.div
                     className="scroll__btn"
@@ -67,8 +55,16 @@ function Home({ offsetY, toggle, downloaded }) {
                         <div className="scroller"></div>
                     </div>
                 </motion.div>
-            </div>
 
+            </div>
+            {/* <div className="blobbieHolder">
+                <Image
+                    className="blobbie"
+                    fill
+                    src={blob}
+                    alt="Ash Bridges"
+                />
+            </div> */}
         </div>
     )
 }

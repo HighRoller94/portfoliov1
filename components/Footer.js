@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link'
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 import { RiDownloadCloud2Fill } from 'react-icons/ri'
 import { ImGithub } from 'react-icons/im';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaArrowUp } from 'react-icons/fa';
 
 function Footer({ toggle, downloaded }) {
 
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    }
     
     useEffect(() => {
 
@@ -95,16 +98,18 @@ function Footer({ toggle, downloaded }) {
                     </motion.svg>
                 </div>
                 
-
-                {!downloaded ? (
+                <a className="download link" onClick={scrollToTop}>
+                    <FaArrowUp className="icon" />
+                </a>
+                {/* {!downloaded ? (
                         <>
                             <a className="download link" href="cv/Ash-Bridges-CV.pdf" onClick={toggle} target="_blank">
-                                <RiDownloadCloud2Fill className="icon" />
+                                <AiOutlineArrowUp className="icon" />
                             </a>
                         </>
                     ) : (
                         <h2>Got it</h2>
-                    )}
+                    )} */}
                 <div>
 
                     <svg id="Layer_1" className="footer__logo2 focus" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.01 229.13">

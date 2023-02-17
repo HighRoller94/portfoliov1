@@ -43,8 +43,7 @@
         background-repeat: no-repeat;
         object-fit: cover;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        transition: 500ms ease-in-out;
-        cursor: pointer;
+        transition: 1000ms ease-in-out;
         margin-bottom: 1.5rem;
 
         @media screen and (min-width: 768px) {
@@ -64,11 +63,11 @@
             border-radius: .25rem !important;
             object-fit: cover;
             filter: drop-shadow(0 0 0.2rem rgb(113, 219, 212)) grayscale(100) saturate(90%) brightness(50%);
-            transition: 200ms ease-in-out;
+            transition: 400ms ease-in-out;
 
             &:hover {
                 filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212)) grayscale(0) saturate(90%) brightness(80%);
-                transition: 200ms ease-in-out;
+                transition: 400ms ease-in-out;
             }
         }
     }
