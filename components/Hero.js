@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion'
-import { TiTick } from 'react-icons/ti'
-import Image from 'next/image'
+
 import { Link } from 'react-scroll';
-import blob from '../images/blob.svg';
 
 function Home({ offsetY, toggle, downloaded }) {
 
