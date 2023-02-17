@@ -47,7 +47,7 @@ function About({ offsetY }) {
                 </motion.div>
                 <div className={AboutStyles.aboutText}>
                     <p>
-                        Hey there, I'm Ash, a <span>front-end developer</span> from the UK. I have a background in visual communications, and have since turned to web development, where I quickly found a passion I didnt know was there! <br /><br />Always eager to learn new skills, I enjoy spending my time learning <span>new ways to bring designs to life</span> and helping businesses make their mark on the web. Feel free to browse over my work, and thanks for stopping by!
+                        Hey there, I'm Ash, a <span>web developer</span> from the UK. I have a background in visual communications, and have since turned to web development, combining my creative experience with my more technical interests.<br /><br />Always eager to learn new skills, I enjoy spending my time learning <span>new ways to bring designs to life</span> and helping people make their mark on the web. Feel free to browse over my work, and thanks for stopping by!
                     </p>
                     <div className={AboutStyles.aboutImage}  >
                         <Image
