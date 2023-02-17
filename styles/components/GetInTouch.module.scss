@@ -19,11 +19,11 @@
     @media screen and (min-width: 768px) {
         width: 70%;
         font-size: 1rem;
-        margin: 1rem auto 3rem auto;
+        margin: 1rem auto 4rem auto;
     }
 
     @media screen and (min-width: 1312px) {
-        margin-bottom: 4rem;
+        margin: 1rem auto 7rem auto !important;
         width: 50%;
         font-size: 1.2rem;
     }
@@ -36,7 +36,7 @@
 
         h1 {
             @media screen and (min-width: 1312px) {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
         }
 
@@ -59,8 +59,8 @@
             margin: 0 auto;
             border-radius: 0.3rem;
             background-color: $offTeal;
-            font-size: 1.3rem;
-            padding: .4rem 1rem;
+            font-size: 1rem;
+            padding: .4rem 1.2rem;
             transition: 200ms ease-in;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             a {
@@ -80,7 +80,4 @@
             }
         }
     }
-
-
-
 }

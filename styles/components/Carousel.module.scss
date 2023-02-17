@@ -44,7 +44,6 @@
     .carouselArrow {
         position: absolute;
         bottom: -1.25rem;
-        cursor: pointer;
         font-size: 2rem;
         color: $offTeal;
         display:none;
@@ -73,7 +72,6 @@
             border-radius: 50%;
             width: 10px;
             height: 10px;
-            cursor: pointer;
             margin: 0 5px;
             transition: 200ms ease-in-out;
         }

@@ -11,7 +11,7 @@ function GetInTouch() {
                         What's next?
                     </h1>
                     <p>
-                        Got an idea for a project? Get in touch and let's grab a drink sometime!
+                        Got an idea for a project? Get in touch and let's schedule a chat sometime!
                     </p>
                     <button>
                         <Link href="/contact">

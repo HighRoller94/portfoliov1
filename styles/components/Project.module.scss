@@ -64,7 +64,6 @@
             object-fit: cover;
             filter: drop-shadow(0 0 0.2rem rgb(113, 219, 212)) grayscale(100) saturate(90%) brightness(50%);
             transition: 400ms ease-in-out;
-
             &:hover {
                 filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212)) grayscale(0) saturate(90%) brightness(80%);
                 transition: 400ms ease-in-out;

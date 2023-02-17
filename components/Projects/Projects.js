@@ -50,7 +50,7 @@ function Projects() {
                 })} */}
                 
             </motion.h2>
-            <p>Check out some of the <span>projects I've been working on.</span></p>
+            <p>Check out some of the <span>projects I've worked on.</span></p>
         </div>
         
         <div className={ProjectsStyles.projects}>
@@ -70,6 +70,18 @@ function Projects() {
                     setModalData={setModalData}
                 />
             ))}
+ 
+            {/* <div className="moreProjects">
+                <div className="arrow left">
+                    <span className="shaft"></span>
+                </div>
+                <div className="main">
+                    <span>Explore More</span>
+                    <div className="arrow right">
+                        <span className="shaft"></span>
+                    </div>
+                </div>
+            </div> */}
         </div>
         <AnimatePresence
             initial={false}
