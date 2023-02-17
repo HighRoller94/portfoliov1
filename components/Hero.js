@@ -55,14 +55,6 @@ function Home({ offsetY, toggle, downloaded }) {
                 </motion.div>
 
             </div>
-            {/* <div className="blobbieHolder">
-                <Image
-                    className="blobbie"
-                    fill
-                    src={blob}
-                    alt="Ash Bridges"
-                />
-            </div> */}
         </div>
     )
 }
