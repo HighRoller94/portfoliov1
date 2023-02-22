@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 import { useInView } from 'react-intersection-observer';
@@ -18,17 +18,34 @@ function Contact({ offsetY }) {
     const [status, setStatus] = useState(false);
     const form = useRef();
 
-    const placeholderText = [
-        { type: "heading", text: "Get in touch!" }
-    ];
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let interval = null;
 
-    const container = {
-        visible: {
-            transition: {
-                staggerChildren: 0.03
-            }
-        }
-    };
+    useEffect(() => {
+        document.querySelector('#contactTitle').onmouseover = e => {
+            let iteration = 0;
+            clearInterval(interval);
+
+            interval = setInterval(() => {
+                e.target.innerText = e.target.innerText
+                .split("")
+                .map((letter, index) => {
+                    if(index < iteration) {
+                    return e.target.dataset.value[index];
+                    }
+                
+                    return letters[Math.floor(Math.random() * 26)]
+                })
+                .join("");
+                
+                if(iteration >= e.target.dataset.value.length){ 
+                clearInterval(interval);
+                }
+                
+                iteration += 1 / 3;
+            }, 10);
+        }   
+    })
 
     const { ref, inView } = useInView({
         triggerOnce: true
@@ -53,12 +70,13 @@ function Contact({ offsetY }) {
             
                 <div ref={ref} className="contact">
                     <div className="contact__header">
-                        <h2>What's next?</h2>
+                        <h2>.04</h2>
                         <motion.h2 
                             className="contact__title"
                             initial="hidden"
                             animate={inView ? "visible" : "hidden"}
-                            variants={container}
+                            data-value="Get in touch!"
+                            id="contactTitle"
                         >
                             Get in touch!
                         {/* {placeholderText.map((item, index) => {
@@ -67,7 +85,7 @@ function Contact({ offsetY }) {
                         </motion.h2>
                     </div>
                     <div className="contact__text">
-                        <p>I'd love to hear from you, feel free to shoot me a message!</p>
+                        <p>What's next? I'd love to hear from you, feel free to shoot me a message!</p>
                         <div className="contact__mail focus">
                             <FiMail className="icon" />
                             <a href="mailto:ashbridgescodes@gmail.com">

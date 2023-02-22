@@ -9,6 +9,7 @@ import Projects from '../components/Projects/Projects'
 import Skills from '../components/Skills/Skills'
 import GetInTouch from '../components/GetInTouch';
 import Footer from '../components/Footer'
+import Contact from '../components/Contact'
 
 import { AnimatePresence } from 'framer-motion'
 
@@ -46,7 +47,7 @@ export default function Home() {
     >
       <Head>
         <title>Ash Bridges | Web Developer</title>
-        <meta name="description" content="Web Developer, designer, fella with a keyboard. Check out my works and thanks for stopping by." />
+        <meta name="description" content="Web Developer, designer, fella with a keyboard. Check out my works and thanks for stopping by!" />
         <meta property="og:title" content="Ash Bridges" />
         <meta
           property="og:description"
@@ -80,9 +81,9 @@ export default function Home() {
          offsetY={offsetY}
          key="skills" 
          />
-        <GetInTouch
+        <Contact
          offsetY={offsetY}
-         key="getintouch"
+         key="contact"
           />
         <Footer
           key="footer"
