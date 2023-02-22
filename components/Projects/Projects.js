@@ -17,17 +17,34 @@ function Projects() {
         setModalOpen(!modalOpen)
     }
 
-    const placeholderText = [
-        { type: "heading", text: "Things I've built." }
-    ];
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let interval = null;
 
-    const container = {
-        visible: {
-            transition: {
-                staggerChildren: 0.03
-            }
-        }
-    };
+    useEffect(() => {
+        document.querySelector('#projectsTitle').onmouseover = e => {
+            let iteration = 0;
+            clearInterval(interval);
+
+            interval = setInterval(() => {
+                e.target.innerText = e.target.innerText
+                .split("")
+                .map((letter, index) => {
+                    if(index < iteration) {
+                    return e.target.dataset.value[index];
+                    }
+                
+                    return letters[Math.floor(Math.random() * 26)]
+                })
+                .join("");
+                
+                if(iteration >= e.target.dataset.value.length){ 
+                clearInterval(interval);
+                }
+                
+                iteration += 1 / 3;
+            }, 10);
+        }   
+    })
 
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -42,7 +59,8 @@ function Projects() {
                 className={ProjectsStyles.projectsHeader}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                variants={container}
+                id="projectsTitle"
+                data-value="Things I've built."
             >
                 Things I've built.
                 {/* {placeholderText.map((item, index) => {

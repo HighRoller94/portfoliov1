@@ -32,9 +32,15 @@
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   cursor:none;
-  ::-webkit-scrollbar {
-      display: none;
-  }
+}
+
+html {
+  scrollbar-width: big;
+  scrollbar-color: $offTeal $offBlack;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
 }
 
 a {

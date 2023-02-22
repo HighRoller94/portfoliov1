@@ -158,6 +158,7 @@
 
 .cursor {
     display:none;
+    transition: 200ms ease-in;
     @media screen and (min-width: 768px) {
         display:block;
         width: 30px;

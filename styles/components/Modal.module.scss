@@ -17,8 +17,8 @@
         height: fit-content;
         max-height: 90%;
         margin: auto;
-        padding: 1rem 2rem .7rem 2rem;
-        border-radius: 12px;
+        padding: 1rem 1rem .7rem 1rem;
+        border-radius: 5px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -38,8 +38,8 @@
         margin-top: 1.75rem;
         filter: drop-shadow(0 0 0.2rem rgb(113, 219, 212));
         @media screen and (min-width: 1312px) {
-            padding:1rem;
             margin-top: 5rem;
+            width: 70%;
         }
         .modalClose {
             position: absolute;

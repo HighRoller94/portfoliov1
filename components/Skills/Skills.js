@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
@@ -7,21 +7,37 @@ import SkillsStyles from '../../styles/components/Skills.module.scss';
 
 import SkillsContainer from './Skill/SkillsContainer';
 import { SkillsContent } from './SkillsContent';
-import AnimatedText from "../AnimatedText";
 
 function Skills() {
  
-    const placeholderText = [
-        { type: "heading", text: "What I've picked up." }
-    ];
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let interval = null;
 
-    const container = {
-        visible: {
-            transition: {
-                staggerChildren: 0.03
-            }
-        }
-    };
+    useEffect(() => {
+        document.querySelector('#skillsTitle').onmouseover = e => {
+            let iteration = 0;
+            clearInterval(interval);
+
+            interval = setInterval(() => {
+                e.target.innerText = e.target.innerText
+                .split("")
+                .map((letter, index) => {
+                    if(index < iteration) {
+                    return e.target.dataset.value[index];
+                    }
+                
+                    return letters[Math.floor(Math.random() * 26)]
+                })
+                .join("");
+                
+                if(iteration >= e.target.dataset.value.length){ 
+                clearInterval(interval);
+                }
+                
+                iteration += 1 / 3;
+            }, 10);
+        }   
+    })
 
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -36,7 +52,8 @@ function Skills() {
                     className={SkillsStyles.skillsTitle}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
-                    variants={container}
+                    id="skillsTitle"
+                    data-value="What I've picked up."
                 >
                     What I've picked up.
                 {/* {placeholderText.map((item, index) => {

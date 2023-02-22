@@ -1,25 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion'
 
 import { Link } from 'react-scroll';
 
 function Home({ offsetY, toggle, downloaded }) {
-
-    // useEffect(() => {
-    //     const download = document.querySelector('.download__btn');
-
-    //     const downloadMorph = () => {
-    //         if (window.scrollY > 500) {
-    //             download.style.opacity = '0';
-    //         } else {
-    //             download.style.opacity = '1';
-    //         }
-    //     }
-
-    //     window.addEventListener("scroll", downloadMorph);
-
-
-    // }, []);
 
     return (
         <div className="hero__section" data-scroll-section id="home">
@@ -30,9 +14,12 @@ function Home({ offsetY, toggle, downloaded }) {
                     Hey,
                 </motion.h2>
                 <div className="swipe__text">
-                    <h1>I'm Ash.</h1>
+                    <h1 data-value="I'm Ash." id="heroTitle">I'm Ash.</h1>
                 </div>
-                <div className="swipe__text secondary" >
+                <div 
+                className="swipe__text secondary"
+
+                >
                     <h3>A <span>web developer</span> based in Kent.</h3>
                 </div>
                 <motion.div
@@ -48,7 +35,7 @@ function Home({ offsetY, toggle, downloaded }) {
                     className="scroll__btn"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2.5, duration: 1 }}>
+                    transition={{ delay: 2, duration: 1 }}>
                     <div className="mouse">
                         <div className="scroller"></div>
                     </div>

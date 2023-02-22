@@ -8,23 +8,54 @@
     height: 100%;
     width: 85%;
     margin: 0 auto;
-    @media screen and (min-width: 1312px) {
-        margin-top: -8rem;
-    }
     .projectsTitle {
         display: flex;
         flex-direction: column;
         width: 100%;
         margin: 0 auto;
-        padding-top: 6rem;
-        
+        padding-top:3rem;
         @media screen and (min-width: 768px) {
-            width: 70%;
-            padding-top: 3rem;
+            width: 82%;
         }
         @media screen and (min-width: 1312px) {
             width: 77%;
-            padding-top:10rem;
+            margin-top: 3rem;
+            padding: 0;
+        }
+        .projectsHeader {
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            font-family: $headerFont;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            font-size: $headerFontSize;
+            span {
+                font-weight: 700;
+                font-size: $headerFontSize;
+                display: inline-flex;
+                flex-direction: row;
+                width: fit-content;
+            }
+    
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1rem;
+                left: 0;
+                height: .6rem;
+                width: 3rem;
+                border-radius: 2rem;
+                background-color: $offTeal;
+                @media screen and (min-width: 768px) {
+                    bottom: -.75rem;
+                    width: 3.5rem;
+                    height: .7rem;
+                }
+            }
+    
         }
         span {
             color: $offTeal;
@@ -36,45 +67,6 @@
                 font-size:1rem;
             }
         }
-    }
-
-    .projectsHeader {
-        margin-top: 0;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin: 0 auto;
-        font-family: $headerFont;
-        font-weight: 700;
-        color: currentColor;
-        height: fit-content;
-        position: relative;
-        font-size: $headerFontSize;
-        span {
-            color: $offRed;
-            font-weight: 700;
-            font-size: $headerFontSize;
-            display: inline-flex;
-            flex-direction: row;
-            width: fit-content;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: -1rem;
-            left: 0;
-            height: .6rem;
-            width: 3rem;
-            border-radius: 2rem;
-            background-color: $offTeal;
-            @media screen and (min-width: 768px) {
-                bottom: -.75rem;
-                width: 3.5rem;
-                height: .7rem;
-            }
-        }
-
     }
 
     p {

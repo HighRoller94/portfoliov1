@@ -34,9 +34,9 @@ function Footer({ toggle, downloaded }) {
 
             if((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop - 5)) {
                 socialFloat.style.position = 'absolute';
-                socialFloat.style.bottom = "175px"
+                socialFloat.style.bottom = "165px"
                 downloadIcon.style.position = 'absolute';
-                downloadIcon.style.bottom = "220px"
+                downloadIcon.style.bottom = "210px"
             }
         }
 
@@ -98,7 +98,7 @@ function Footer({ toggle, downloaded }) {
                     </motion.svg>
                 </div>
                 
-                <a className="download link" onClick={scrollToTop}>
+                <a className="download link focus" onClick={scrollToTop}>
                     <FaArrowUp className="icon" />
                 </a>
                 {/* {!downloaded ? (
@@ -117,7 +117,7 @@ function Footer({ toggle, downloaded }) {
                         <path d="M307.68,265.91h60.13c15.42,0,25.27,5.45,31.78,15.48,3.83,5.92,6.14,15.18,6.14,22.93,0,9.05-2,18.11-6.66,23.9-2.44,3.06-4.69,4.93-9.26,7.47,6.71,2.8,10.1,5.25,13.43,8.77q8.82,9.38,8.81,25.88c0,9.24-1.93,19.82-7.25,27.31-7.94,11.2-21.44,17.6-38.77,17.6H307.68Zm52.79,63.51q11.34,0,17.64-3.42,9.9-5.37,9.9-19.34t-10.53-18.94Q371.54,285,359.84,285H327.9v44.44Zm7.54,64c11,0,16-4.09,20-9,2.94-4.36,3.74-8,3.74-14.19,0-10.42-3-16.58-11.61-20.36-4.55-2-9.38-2.29-16.88-2.29h-33l.26,45.81Z" transform="translate(-167.64 -233.05)" fill="currentColor" /><rect width="251.01" height="229.13" fill="none" />
                     </svg>
 
-                </div>
+                    </div>
                 <div className="footer__icons">
                     <a data-aos="fade-up" className="link" href="https://www.linkedin.com/in/ash-bridges/" target="_blank" rel="noreferrer">
                         <FaLinkedin className="li__icon" />

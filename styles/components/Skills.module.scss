@@ -6,7 +6,8 @@ $toolsHeaderFontSize: 1.2rem;
 .skillsRow {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
     margin-top: -1rem;
     height: 100%;
     padding-top: 3rem;
@@ -19,24 +20,24 @@ $toolsHeaderFontSize: 1.2rem;
     }
 
     @media screen and (min-width: 1312px) {
-        margin-top: -3rem;
-        padding-top: 8rem;
+        padding-top: 4rem;
         padding-bottom: 6rem;
+        width: 100%;
     }
 
     .skillsHeader {
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         margin-bottom: 1rem;
 
         @media screen and (min-width: 768px) {
-            width: 70%;
+            width: 82%;
         }
 
         @media screen and (min-width: 1312px) {
-            width:65%;
+            width:65.5%;
         }
         span {
             color: $offTeal;
@@ -46,14 +47,14 @@ $toolsHeaderFontSize: 1.2rem;
         .skillsTitle {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            margin: 0 auto;
+            width:fit-content;
             font-family: $headerFont;
             font-weight: 700;
             color: currentColor;
             height: fit-content;
             position: relative;
             font-size: $headerFontSize;
+            letter-spacing: 1px;
             span {
                 color: $offRed;
                 font-weight: 700;
