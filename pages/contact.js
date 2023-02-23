@@ -35,6 +35,7 @@ export default function ContactPage() {
             </Head>
 
             <AnimatePresence>
+            <AltNavOverlay />
                 <motion.div
                     className="contactPage"
                     key="contact"
@@ -43,8 +44,7 @@ export default function ContactPage() {
                     animate="enter"
                     exit="exit"
                     transition={{ type: 'linear', duration: 1 }}
-                >
-                    <AltNavOverlay />
+                > 
                     <Contact offsetY={offsetY} />
                     <Footer />
                 </motion.div>
