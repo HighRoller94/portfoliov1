@@ -17,8 +17,8 @@ function About({ offsetY }) {
     });
 
     return (
-        <div className={AboutStyles.aboutSection} data-scroll-section id="about">
-            <div ref={ref} className={AboutStyles.aboutContainer} >
+        <div className={AboutStyles.aboutSection}>
+            <div ref={ref} className={AboutStyles.aboutContainer} data-scroll-section id="about" >
                 <Header 
                     pre=".01"
                     heading="A little about me."

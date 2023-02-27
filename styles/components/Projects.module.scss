@@ -13,6 +13,11 @@
         text-align: left;
         padding-top: 0rem;
     }
+    @media screen and (min-width: 1312px) {
+        padding-top:8rem;
+        margin-top: -8rem;
+    }
+    
     .projectsTitle {
         display: flex;
         flex-direction: column;
@@ -78,8 +83,6 @@
 @media screen and (min-width: 1312px) {
     .projects__section {
         position: relative;
-        margin-top: -2rem;
-        padding-top: 9rem;
 
         .projects__header {
             display: flex;

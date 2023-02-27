@@ -16,42 +16,6 @@ function NavOverlay() {
     const [downloaded, setDownloaded] = useState(false);
     const [show, setShow] = useState();
 
-    // useRunOnce({
-    //     fn: () => {
-    //       // This will not rerun when reloading the page.
-    //       setAnimate(false)
-    //     },
-    //     // Try to change this key.
-    //     sessionKey: "changeMeAndFnWillRerun"
-    //   });
-
-    const toggle = () => {
-        setDownloaded(true)
-    }
-
-    let seen;
-
-    // const count = () => {
-    //     var numberOfVisits = sessionStorage.getItem("numberOfVisits");
-    //     numberOfVisits = +numberOfVisits + 1; 
-
-    //     if (numberOfVisits == null) {
-            
-    //     } 
-        
-    //     sessionStorage.setItem("numberOfVisits", numberOfVisits);
-    //     console.log(numberOfVisits);
-    //     if (numberOfVisits == 1) {
-    //         console.log('SHOW')
-    //         seen = true;
-    //         console.log(seen)
-    //     } else {
-    //         console.log('HIDE')
-    //         seen = false;
-    //         console.log(seen)
-    //     }
-    // }
-
     useEffect(() => {
 
         // PROCESS SCROLLBAR
@@ -120,7 +84,7 @@ function NavOverlay() {
     return (
         <motion.div className="overlay"
             animate={{ opacity: 1 }}
-            initial={seen == false ? { opacity: 1 } : { opacity: 0 } }
+
             transition={{ delay: 2, duration: 1 }}>
             <div className="navbar">
                 <div className="barContainer">
@@ -148,21 +112,21 @@ function NavOverlay() {
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2, duration: 1 }} 
                                     className="navbar__item focus">
-                                <Scroll to="about" offset={-80}><h1 className="navbar__links focus">About</h1></Scroll>
+                                <Scroll to="about" offset={-70}><h1 className="navbar__links focus">About</h1></Scroll>
                             </motion.li>
                             <motion.li 
                                     initial={{ opacity: 0}}
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2.25, duration: 1 }} 
                                     className="navbar__item focus">
-                                <Scroll to="projects" offset={-120}><h1 className="navbar__links focus">Portfolio</h1></Scroll>
+                                <Scroll to="projects" offset={-30}><h1 className="navbar__links focus">Portfolio</h1></Scroll>
                             </motion.li>
                             <motion.li 
                                     initial={{ opacity: 0}}
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2.5, duration: 1 }} 
                                     className="navbar__item focus">
-                                <Scroll to="skills" offset={-75}><h1 className="navbar__links focus">Skills</h1></Scroll>
+                                <Scroll to="skills" offset={-25}><h1 className="navbar__links focus">Skills</h1></Scroll>
                             </motion.li>
                             <li className="mobile__contact focus">
                                 <Scroll to="contact"><button className="navbar__links">Contact</button></Scroll>

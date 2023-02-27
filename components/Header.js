@@ -47,9 +47,9 @@ const Header = ({ id, pre, heading, sub, highlighted}) => {
         if (inView) {
             console.log(inView)
             const e = document.getElementById(`${id}`)
-            setInterval(animatedText(e), 5000)
+            animatedText(e)
         }
-    }, [])
+    }, [inView])
 
     return (
         <div ref={ref} className={HeaderStyles.container}>
