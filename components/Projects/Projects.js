@@ -32,7 +32,7 @@ function Projects() {
                 // sub="Check out some of the"
                 // highlighted="projects I've worked on."
             />
-            <p>Check out some of the <span>projects I've worked on.</span></p>
+            <p>Check out some of the <span>projects I've worked on...</span></p>
         </div>
         
         <div className={ProjectsStyles.projects}>

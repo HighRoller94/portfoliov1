@@ -14,7 +14,7 @@
         align-items: center;
         width: 100%;
         transition: 500ms;
-        
+
         @media screen and (min-width: 768px) {
             height: 9rem;
         }
@@ -90,6 +90,7 @@
                 transition: 200ms ease-in-out;
                 margin-top: -1rem;
                 margin-left: -.5rem;
+
                 img {
                     position: static !important;
                 }
@@ -130,7 +131,7 @@
                     .bar {
                         border-radius: 5px;
                         width: 100%;
-                        height: 4px;
+                        height: 3px;
                         background-color: currentColor;
                     }
 
@@ -183,7 +184,7 @@
 
                 @media screen and (min-width: 768px) {
                     flex-direction: row;
-                    justify-content: right;
+                    justify-content: center;
                     height: auto;
                     width: 100%;
                     position: static;
@@ -198,6 +199,7 @@
                     list-style: none;
                     margin: 0;
                     margin-top: -1rem;
+                    margin-left: 3.5rem;
                     background-color: transparent;
                 }
 
@@ -208,8 +210,9 @@
                     @media screen and (min-width: 768px) {
                         display: flex;
                         list-style: none;
-                        
-                        align-items: right;
+
+
+                        align-items: center;
                         margin-left: 0;
                         flex-direction: row;
                         margin-top: .7rem;
@@ -225,10 +228,11 @@
                         color: $offWhite;
                         list-style: none;
                         margin-left: -.2rem;
+
                         @media screen and (min-width: 736px) {
-                            display:none;
+                            display: none;
                         }
-    
+
                         h3 {
                             font-size: 1.7rem;
                         }
@@ -272,6 +276,7 @@
                             transition: 200ms ease-in;
                             font-weight: 500;
                             color: $offWhite;
+
                             @media screen and (min-width: 768px) {
                                 color: $offWhite;
                                 font-size: .7rem;
@@ -303,7 +308,7 @@
                         @media screen and (min-width: 768px) {
                             color: $offWhite;
                             display: block;
-                            
+
                             margin-left: 1.25rem;
                             margin-top: 2rem;
                         }
@@ -336,8 +341,9 @@
                                 transition: 500ms ease;
                                 border: 1px solid $offTeal;
                             }
+
                             @media screen and (min-width: 1312px) {
-                                font-size:1rem;
+                                font-size: 1rem;
                             }
 
                             &:hover {
@@ -553,7 +559,7 @@
                         font-size: 1rem;
                         background-color: $offTeal;
                         transition: 500ms ease;
-                        border:1px solid $offTeal;
+                        border: 1px solid $offTeal;
                     }
 
                     &:hover {
@@ -587,51 +593,65 @@
     background-color: $offWhite;
     // backdrop-filter: blur(1em) !important;
     z-index: 999;
+
     @media screen and (min-width: 768px) {
         height: 4.8rem;
         padding-top: 1rem;
     }
+
     @media screen and (min-width: 1312px) {
         height: 6rem;
         padding-top: 1rem;
     }
+
     .navbar__container {
         width: 90% !important;
+
         .nav__logo {
             margin-top: -.4rem;
             margin-left: -.5rem;
             width: 2.2rem;
             height: 3rem;
+
             @media screen and (min-width: 768px) {
                 transform: scale(1.25);
                 margin-top: -.5rem;
                 margin-left: 1.2rem;
             }
         }
+
         .mobile__toggles {
             .navbar__toggle {
                 width: 22px;
-                height:22px;
-                margin-top:-6px;
+                height: 22px;
+                margin-top: -6px;
                 margin-right: -2px;
+
                 .bar {
                     background-color: $offBlack;
-                    height:3px;
+                    height: 3px;
+                    border-radius: 5px;
                 }
             }
         }
 
-        .sidebar .navbar__menu {
-            @media screen and (min-width: 768px) {
-                margin-top: -.4rem;
-                margin-left: 0;
-                .navbar__item {
-                    margin-right: .8rem;
-                    .navbar__links {
-                        color:$offBlack;
-                        font-size: .7rem;
-                    }
+        .sidebar {
+            margin-left: 3.5rem;
 
+            .navbar__menu {
+                @media screen and (min-width: 768px) {
+                    margin-top: -.4rem;
+                    margin-left: 0;
+
+                    .navbar__item {
+                        margin-right: .8rem;
+
+                        .navbar__links {
+                            color: $offBlack;
+                            font-size: .7rem;
+                        }
+
+                    }
                 }
             }
         }
@@ -639,34 +659,39 @@
 
     @media screen and (min-width: 1312px) {
         height: 6.5rem;
+
         .navbar__container {
             width: 83% !important;
+
             .sidebar .navbar__menu {
-                margin-top: 1.9rem;
+                margin-top: 43px;
                 margin-left: 1.2rem;
+
                 .navbar__item {
                     margin-right: .8rem;
+
                     .navbar__links {
-                        color:$offWhite;
                         font-size: .8rem;
                         text-transform: uppercase;
                         letter-spacing: .2rem;
-                        
+
                     }
                 }
             }
+
             .nav__button__div a {
-                margin-top:.93rem;
+                margin-top: .93rem;
             }
-                .nav__logo {
-                    transform: scale(1.2);
-                    margin-top: .5rem;
-                    margin-left: -.7rem;
+
+            .nav__logo {
+                transform: scale(1.2);
+                margin-top: .5rem;
+                margin-left: -.7rem;
             }
         }
     }
 
-    
+
 }
 
 .nav__hidden {
@@ -675,13 +700,15 @@
 
     @media screen and (min-width: 768px) {
         transform: translateY(-4.25rem);
-        backdrop-filter: blur(1em) !important;
         background: none !important;
         box-shadow: none !important;
-    }.navbar__item {
+    }
+
+    .navbar__item {
         margin-right: .8rem;
+
         .navbar__links {
-            color:$offWhite;
+            color: $offWhite;
             font-size: 1rem;
         }
     }

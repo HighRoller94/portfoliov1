@@ -48,15 +48,19 @@ $toolsHeaderFontSize: 1.2rem;
         }
 
         p {
-            width: 100%;
+            margin: 0 auto;
+            width: 90%;
             font-size: $bodyFontSize;
             font-weight: 400;
             color: $darkModeGrey;
             margin-top: $mobileHeaderMargin;
             margin-top: 2rem;
             line-height: 1.6;
+            
             @media screen and (min-width: 1312px) {
+                
                 text-align:left;
+                width: 100%;
             }
             span {
                 color: $offTeal;

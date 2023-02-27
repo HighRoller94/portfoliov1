@@ -19,7 +19,7 @@ function Home({ offsetY, toggle, downloaded }) {
                     Hey,
                 </motion.h2>
                 <div className="swipe__text">
-                    <h1 data-value="I'm Ash." id="heroTitle">I'm Ash</h1>
+                    <h1 data-value="I'm Ash." id="heroTitle">I'm Ash!</h1>
                 </div>
                 <div 
                 className="swipe__text secondary"

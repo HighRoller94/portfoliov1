@@ -356,7 +356,7 @@
             left: 0;
             right: 0;
             text-align: center;
-            width: 1px;
+            width: 2px;
             background-color:white;
             animation: extend 1s linear infinite;
             animation-play-state: paused;
@@ -378,7 +378,7 @@
                 span {
                     position: absolute;
                     bottom:0;
-                    width: 1px;
+                    width: 2px;
                     height: 12px;
                     background-color: white;
                     transform: translateY(1px) translateX(2.9px) rotate(30deg);
@@ -517,7 +517,7 @@
 
 @keyframes extendBig {
     0% {
-        height: 70px;
+        height: 100px;
     }
     25% {
         height: 250px;
