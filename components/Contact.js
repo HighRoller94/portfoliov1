@@ -120,7 +120,7 @@ function Contact({ offsetY }) {
                                 <label htmlFor="name" className="label-name" ><span className="content-name">Message</span></label>
                             </div>
                             
-                                <button type="submit" className="send__btn focus">Send message!</button>
+                                <button type="submit" className="send__btn focus">Lets chat</button>
                             
                         </motion.form>
                     </AnimatePresence>
