@@ -13,20 +13,18 @@
     z-index: 99999;
 
     .modal {
+        border-radius: 5px;
         width: clamp(80%, 200px, 70%);
         height: fit-content;
-        max-height: 90%;
+        max-height: 82%;
         margin: auto;
-        padding: 1rem 1rem .7rem 1rem;
-        border-radius: 5px;
+        padding: 1rem 1rem 3rem 1rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; 
         background-color: $offBlack;
         z-index: 99999;
-        overflow-y: scroll;
         margin: 3rem 0 2rem 0;
-        padding-bottom: 2rem;
         position: fixed;
         left: 0;
         right: 0;
@@ -36,15 +34,22 @@
         margin-right: auto;
         max-width:1200px;
         margin-top: 1.75rem;
-        filter: drop-shadow(0 0 0.2rem rgb(113, 219, 212));
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow:scroll;
+        filter: drop-shadow(0 0 0.1rem rgb(113, 219, 212));
+        &::-webkit-scrollbar {
+            display:none;
+
+        }
         @media screen and (min-width: 1312px) {
             margin-top: 5rem;
             width: 70%;
         }
         .modalClose {
-            position: absolute;
+            position: fixed;
             right: 1rem;
-            top: .5rem;
+            top: .4rem;
             width: 30px;
             height: 40px;
             display: flex;
@@ -65,7 +70,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: .5rem 0 2.5rem 0;
+            padding: .5rem 0 0 0;
             @media screen and (min-width: 768px) {
                 text-align:center;
                 padding: 2rem 0;
@@ -76,10 +81,13 @@
             }
             h4 {
                 color: currentColor;
-                letter-spacing: .4rem;
+                letter-spacing: .3rem;
+                text-transform:uppercase;
                 color: $offTeal;
-                margin-top: 3rem;
-                
+                font-size: .7rem;
+                opacity: .8;
+                margin-top: .8rem;
+
                 @media screen and (min-width: 768px) {
                     margin-top: 1.5rem;
                 }
@@ -91,17 +99,18 @@
             h2 {
                 font-family: $headerFont;
                 font-weight: 600;
-                margin-top: 0.3rem;
-                font-size: 1.5rem;
+                margin: 0.5rem 0 0 0;
+                font-size: 1.6rem;
                 transition: all .3s ease-in-out;
             }
 
             p {
-                margin: .5rem 0;
+                margin: .5rem auto;
                 color: $darkModeGrey;
                 line-height: 1.6;
-                width: 100%;
-                font-size: $mobileBodyFontSize;
+                width: 90%;
+
+                font-size: $bodyFontSize;
                 font-weight: 400;
                 transition: all .3s ease-in-out;
                 @media screen and (min-width: 768px) {
@@ -115,10 +124,42 @@
                 }
             }
 
+            .projectLanguages {
+                display: flex;
+                justify-content: flex-start;
+                margin: 1rem auto 0rem auto;
+                text-align:center;
+                @media screen and (min-width: 768px) {
+                    text-align: left;
+                    margin-top: .5rem;
+                }
+    
+                @media screen and (min-width: 1312px) {
+                    margin-top: .8rem;
+                }
+    
+                span {
+                    background-color: $lightModeGrey;
+                    font-size: .85rem;
+                    border-radius: 1rem;
+                    padding: .3rem 1rem;
+                    margin-right: 1rem;
+                    color: $offWhite;
+                    &:nth-child(3) {
+                        margin-right: 0;
+                    }
+                    @media screen and (min-width: 768px) {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+
             .btns {
                 display: flex;
                 align-items: center;
-                margin-top: 1.5rem;
+                margin: 0 auto;
+                margin-top: 2rem;
+
                 @media screen and (min-width: 768px) {
                     margin: 0 auto;
                     margin-top: 2rem;
@@ -127,20 +168,21 @@
                     display: flex;
                     align-items: center;
                     transition: 200ms ease-in;
-                    border: none;
-                    outline: none;
                     color: $offWhite;
-                    font-size: 1rem;
-                    background: $offTeal;
-                    margin-right: 2rem;
+                    border: 1px solid $offTeal;
+                    outline: none;
+                    font-size: .9rem;
+                    margin-right: 1rem;
                     padding: .4rem .8rem;
                     border-radius: 3px;
-                    border: 1px solid $offTeal;
+                    background: $offTeal;
                     font-weight: 500;
                     z-index: 1;
                     transition: 300ms ease-in-out;
+
                     @media screen and (min-width: 768px) {
                         padding: .5rem 1rem;
+                        font-size: 1rem;
                     }
 
                     &:hover {
@@ -149,19 +191,29 @@
                         filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212));
                         transition: 500ms ease-in-out;
                     }
+                    .icon {
+                        font-size: 1.5rem !important;
+                        margin-right: .5rem;
+                        @media screen and (min-width: 768px) {
+                            font-size: 1.75rem !important;
+                        }
+                    }
                 }
 
                 .gitBtn {
                     background: none;
                     outline: none;
                     display: flex;
-                    font-size: 1rem;
+                    font-size: .9rem;
                     border-radius: 1rem;
                     border: none;
                     align-items: center;
                     color: $offWhite;
                     text-decoration: none;
 
+                    @media screen and (min-width: 768px) {
+                        font-size: 1rem;
+                    }
                     &:hover {
                         color: $offTeal;
                         filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212)) grayscale(0) saturate(90%) brightness(80%);
@@ -170,8 +222,11 @@
                 }
 
                 .icon {
-                    font-size: 1.75rem !important;
-                    margin-right: .5rem;
+                    font-size: 1.3rem;
+                    margin-right: .6rem;
+                    @media screen and (min-width: 768px) {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }

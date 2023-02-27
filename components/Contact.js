@@ -4,9 +4,11 @@ import emailjs from '@emailjs/browser';
 import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
 import { AnimatePresence } from 'framer-motion'
-import AnimatedText from './AnimatedText';
+
 import { FiMail } from 'react-icons/fi';
 import { TiTick } from 'react-icons/ti'
+
+import Header from './Header'
 
 const variants = {
     hidden: { opacity: 0 },
@@ -67,23 +69,14 @@ function Contact({ offsetY }) {
     return (
         <div className="contact__section" data-scroll-section id="contact">
             <div className="contact__container">
-            
                 <div ref={ref} className="contact">
-                    <div className="contact__header">
-                        <h2>.04</h2>
-                        <motion.h2 
-                            className="contact__title"
-                            initial="hidden"
-                            animate={inView ? "visible" : "hidden"}
-                            data-value="Get in touch!"
-                            id="contactTitle"
-                        >
-                            Get in touch!
-                        {/* {placeholderText.map((item, index) => {
-                            return <AnimatedText {...item} key={index} />;
-                        })} */}
-                        </motion.h2>
-                    </div>
+                    <Header 
+                        pre=".04"
+                        heading="Get in touch!"
+                        id="contactTitle"
+                        // sub="What's next? I'd love to hear from you, feel free to shoot me a message!"
+                        highlighted="projects I've worked on."
+                    />
                     <div className="contact__text">
                         <p>What's next? I'd love to hear from you, feel free to shoot me a message!</p>
                         <div className="contact__mail focus">

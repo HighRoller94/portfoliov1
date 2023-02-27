@@ -8,7 +8,7 @@ import { ImGithub } from 'react-icons/im';
 import { BiWorld } from 'react-icons/bi';
 import { MdClose } from 'react-icons/md';
 
-function Modal({ modalOpen, handleModal, title, type, longerDesc, gallery, gitLink, siteLink }) {
+function Modal({ modalOpen, handleModal, languages, title, type, longerDesc, gallery, gitLink, siteLink }) {
     const [index, setIndex] = useState(0);
 
     const handleSelect = (selectedIndex, e) => {
@@ -80,6 +80,11 @@ function Modal({ modalOpen, handleModal, title, type, longerDesc, gallery, gitLi
                         <h4>{type}</h4>
                         <h2>{title}</h2>
                         <p>{longerDesc}</p>
+                        <div className={ModalStyles.projectLanguages}>
+                            {languages.map((language, index) => (
+                                <span key={index}>{language}</span>
+                            ))}
+                        </div>
                         <div className={ModalStyles.btns}>
                             <a className="link" href={siteLink} target="_blank" rel="noreferrer">
                                 <button className={`${ModalStyles.siteBtn} focus`}>

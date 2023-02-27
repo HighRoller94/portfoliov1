@@ -1,17 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-
 import Head from 'next/head'
 import NavOverlay from '../components/NavOverlay'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Projects from '../components/Projects/Projects'
 import Skills from '../components/Skills/Skills'
-import GetInTouch from '../components/GetInTouch';
 import Footer from '../components/Footer'
 import Contact from '../components/Contact'
-
-import { AnimatePresence } from 'framer-motion'
 
 const variants = {
   hidden: { opacity: 0 },
@@ -31,10 +27,6 @@ export default function Home() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [])
-
-  const toggle = () => {
-    setDownloaded(true)
-  }
 
   return (
 
@@ -62,36 +54,32 @@ export default function Home() {
       </Head>
 
       <NavOverlay />
-      <AnimatePresence>
-        <Hero
-          key="hero"
-          offsetY={offsetY}
-          toggle={toggle}
-          downloaded={downloaded}
-        />
-        <About 
-        offsetY={offsetY} 
-        key="about"
-        />
-        <Projects 
-        offsetY={offsetY} 
-        key="projects"
-        />
-        <Skills
-         offsetY={offsetY}
-         key="skills" 
-         />
-        <Contact
-         offsetY={offsetY}
-         key="contact"
+          <Hero
+            key="hero"
+            offsetY={offsetY}
           />
-        <Footer
-          key="footer"
-          toggle={toggle}
-          downloaded={downloaded}
+          <About 
+          offsetY={offsetY} 
+          key="about"
+          data-scroll-section
+          />
+          <Projects 
+          offsetY={offsetY} 
+          key="projects"
+          />
+          <Skills
           offsetY={offsetY}
-        />
-      </AnimatePresence>
+          key="skills" 
+          />
+          <Contact
+          offsetY={offsetY}
+          key="contact"
+            />
+          <Footer
+            key="footer"
+            offsetY={offsetY}
+          />
     </motion.div >
+    
   )
 }

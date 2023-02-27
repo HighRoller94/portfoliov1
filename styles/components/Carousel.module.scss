@@ -5,7 +5,7 @@
     flex-direction: column;
     width: 100%;
     position: relative;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     @media screen and (min-width: 768px) {
         margin-top: 2.25rem;
     }
@@ -14,7 +14,7 @@
         justify-content: center;
         position: Relative;
         height: 100%;
-        width: 100%;
+        width: 95%;
         padding: 2.75rem 0;
         min-height: 30vh;
         transition: 500ms ease-in-out;
@@ -55,7 +55,7 @@
         left: 0;
         right: 0;
         width: 100%;
-        bottom: -1rem;
+        bottom: -0.2rem;
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
@@ -70,10 +70,14 @@
         div {
             background-color: $offWhite;
             border-radius: 50%;
-            width: 10px;
-            height: 10px;
+            width: 7px;
+            height: 7px;
             margin: 0 5px;
             transition: 200ms ease-in-out;
+            @media screen and (min-width: 768px) {
+                width: 10px;
+                height: 10px;
+            }
         }
 
         .active {
@@ -97,7 +101,7 @@
 .rtds-slider-wrapper {
     min-height: 35vh;
     max-height:35vh !important;
-    filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212));
+
     @media screen and (min-width: 768px) {
         min-height: 40vh;
         max-height:40vh !important;

@@ -5,39 +5,11 @@ import { motion } from "framer-motion";
 
 import SkillsStyles from '../../styles/components/Skills.module.scss';
 
+import Header from '../Header'
 import SkillsContainer from './Skill/SkillsContainer';
 import { SkillsContent } from './SkillsContent';
 
 function Skills() {
- 
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let interval = null;
-
-    useEffect(() => {
-        document.querySelector('#skillsTitle').onmouseover = e => {
-            let iteration = 0;
-            clearInterval(interval);
-
-            interval = setInterval(() => {
-                e.target.innerText = e.target.innerText
-                .split("")
-                .map((letter, index) => {
-                    if(index < iteration) {
-                    return e.target.dataset.value[index];
-                    }
-                
-                    return letters[Math.floor(Math.random() * 26)]
-                })
-                .join("");
-                
-                if(iteration >= e.target.dataset.value.length){ 
-                clearInterval(interval);
-                }
-                
-                iteration += 1 / 3;
-            }, 10);
-        }   
-    })
 
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -47,20 +19,14 @@ function Skills() {
     return (
         <div ref={ref} className={SkillsStyles.skillsRow} data-scroll-section id="skills">
             <div className={SkillsStyles.skillsHeader}>
-                <span>.03</span>
-                <motion.h2 
-                    className={SkillsStyles.skillsTitle}
-                    initial="hidden"
-                    animate={inView ? "visible" : "hidden"}
+                <Header 
+                    pre=".03"
+                    heading="What I've picked up."
                     id="skillsTitle"
-                    data-value="What I've picked up."
-                >
-                    What I've picked up.
-                {/* {placeholderText.map((item, index) => {
-                    return <AnimatedText {...item} key={index} />;
-                })} */}
-                </motion.h2>
-                <p>Here are a few <span>things I've picked up</span> along the way.</p>
+                    // sub="Here are a few things I've picked up"
+                    // highlighted=" along the way."
+                />
+                <p>Here are a few things I've picked up <span>along the way.</span></p>
             </div>
             <div className={SkillsStyles.skillsContainer}>
                 {SkillsContent.map((content, index) => (

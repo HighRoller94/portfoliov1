@@ -8,6 +8,11 @@
     height: 100%;
     width: 85%;
     margin: 0 auto;
+    text-align:center;
+    @media screen and (min-width: 768px) {
+        text-align: left;
+        padding-top: 0rem;
+    }
     .projectsTitle {
         display: flex;
         flex-direction: column;
@@ -16,71 +21,37 @@
         padding-top:3rem;
         @media screen and (min-width: 768px) {
             width: 82%;
+            margin:0;
         }
         @media screen and (min-width: 1312px) {
             width: 77%;
-            margin-top: 1rem;
+            margin-top: -.5rem;
             padding: 0;
         }
-        .projectsHeader {
-            margin-top: 0;
-            display: flex;
-            flex-direction: column;
-            width: fit-content;
-            font-family: $headerFont;
-            font-weight: 700;
-            letter-spacing: 1px;
-            position: relative;
-            font-size: $headerFontSize;
+        p {
+            margin-top: 2rem;
+            font-size: $bodyFontSize;
+            font-weight: 400;
+            color: $darkModeGrey;
+            line-height: 1.6;
+
+            @media screen and (min-width: 768px) {
+                margin-left: .5rem;
+                width: 100%;
+                margin-top: 2rem;
+                text-align:center;
+            }
+
+            @media screen and (min-width: 1312px) {
+                margin-left: 0;
+                text-align:left;
+                width: 65%;
+            }
+
             span {
                 font-weight: 700;
-                font-size: $headerFontSize;
-                display: inline-flex;
-                flex-direction: row;
-                width: fit-content;
+                color: $offTeal;
             }
-    
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -1rem;
-                left: 0;
-                height: .6rem;
-                width: 3rem;
-                border-radius: 2rem;
-                background-color: $offTeal;
-                @media screen and (min-width: 768px) {
-                    bottom: -.75rem;
-                    width: 3.5rem;
-                    height: .7rem;
-                }
-            }
-    
-        }
-        span {
-            color: $offTeal;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        p {
-            span {
-                font-size:1rem;
-            }
-        }
-    }
-
-    p {
-        width: 100%;
-        font-size: $mobileBodyFontSize;
-        font-weight: 400;
-        color: $darkModeGrey;
-        margin-top: $mobileHeaderMargin;
-        margin-top: 2rem;
-        line-height:1.6;
-        span {
-            font-size: $mobileBodyFontSize;
-            color: $offTeal;
-            font-size: 1rem;
         }
     }
 
@@ -90,11 +61,11 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 2rem;
+        margin-top: 1rem;
         grid-row-gap: 0;
-
+        
         @media screen and (min-width: 768px) {
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
         @media screen and (min-width: 1312px) {
             width: 77%;
@@ -102,44 +73,6 @@
         }
 
     }
-}
-
-
-@media screen and (min-width: 768px) {
-    .projects__section {
-        text-align: left;
-        padding-top: 0rem;
-
-        .projects__header {
-            text-align: left;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-            h1 {
-                padding: 0;
-                margin-left: 0;
-
-                &::after {
-                    bottom: -.4rem;
-                }
-            }
-
-            p {
-                margin-top: $headerMargin;
-            }
-        }
-
-        .projects {
-            margin-top: 5rem;
-            grid-template-columns: 1fr;
-            width: 70%;
-            justify-content: center;
-            grid-row-gap: 3rem;
-            grid-column-gap: 2.5rem;
-
-        }
-    }
-
 }
 
 @media screen and (min-width: 1312px) {
@@ -175,10 +108,6 @@
                         width: 85%;
                     }
                 }
-            }
-
-            .illume {
-                height: 22rem;
             }
         }
     }

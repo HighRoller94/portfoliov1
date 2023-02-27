@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image'
 
 import { useInView } from 'react-intersection-observer';
@@ -7,38 +7,9 @@ import { motion } from "framer-motion";
 import AboutStyles from '../styles/components/About.module.scss';
 
 import me from '../images/me.svg';
-import AnimatedText from "./AnimatedText";
+import Header from './Header'
 
 function About({ offsetY }) {
-
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let interval = null;
-
-    useEffect(() => {
-        document.querySelector('#aboutTitle').onmouseover = e => {
-            let iteration = 0;
-            clearInterval(interval);
-
-            interval = setInterval(() => {
-                e.target.innerText = e.target.innerText
-                .split("")
-                .map((letter, index) => {
-                    if(index < iteration) {
-                    return e.target.dataset.value[index];
-                    }
-                
-                    return letters[Math.floor(Math.random() * 26)]
-                })
-                .join("");
-                
-                if(iteration >= e.target.dataset.value.length){ 
-                clearInterval(interval);
-                }
-                
-                iteration += 1 / 3;
-            }, 10);
-        }   
-    })
 
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -48,19 +19,11 @@ function About({ offsetY }) {
     return (
         <div className={AboutStyles.aboutSection} data-scroll-section id="about">
             <div ref={ref} className={AboutStyles.aboutContainer} >
-                
-                <motion.div className={AboutStyles.aboutHeader}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                >
-                <span>.01</span>
-                <h2 data-value="A little about me." id="aboutTitle" className={AboutStyles.aboutTitle}>
-                    A little about me.
-                    {/* {placeholderText.map((item, index) => {
-                        return <AnimatedText {...item} key={index} />;
-                    })} */}
-                </h2>
-                </motion.div>
+                <Header 
+                    pre=".01"
+                    heading="A little about me."
+                    id="aboutTitle"
+                />
                 <div className={AboutStyles.aboutText}>
                     <motion.p 
                     initial={{ opacity: 0}}

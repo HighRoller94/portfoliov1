@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { AnimatePresence, wait, motion} from 'framer-motion'
+import React, { useState } from 'react';
+import { AnimatePresence, wait } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
 
 import ProjectsStyles from '../../styles/components/Projects.module.scss';
 
 import Modal from './Project/Modal';
-import AnimatedText from "../AnimatedText";
+import Header from '../Header'
 import { ProjectsContent } from './ProjectsContent';
 import Project from './Project/Project';
 
@@ -17,35 +17,6 @@ function Projects() {
         setModalOpen(!modalOpen)
     }
 
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let interval = null;
-
-    useEffect(() => {
-        document.querySelector('#projectsTitle').onmouseover = e => {
-            let iteration = 0;
-            clearInterval(interval);
-
-            interval = setInterval(() => {
-                e.target.innerText = e.target.innerText
-                .split("")
-                .map((letter, index) => {
-                    if(index < iteration) {
-                    return e.target.dataset.value[index];
-                    }
-                
-                    return letters[Math.floor(Math.random() * 26)]
-                })
-                .join("");
-                
-                if(iteration >= e.target.dataset.value.length){ 
-                clearInterval(interval);
-                }
-                
-                iteration += 1 / 3;
-            }, 10);
-        }   
-    })
-
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.2
@@ -54,20 +25,13 @@ function Projects() {
     return (
         <div ref={ref} className={ProjectsStyles.projectsSection} data-scroll-section id="projects">
         <div className={ProjectsStyles.projectsTitle}>
-            <span>.02</span>
-            <motion.h2 
-                className={ProjectsStyles.projectsHeader}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
+            <Header 
+                pre=".02"
+                heading="Things I've built."
                 id="projectsTitle"
-                data-value="Things I've built."
-            >
-                Things I've built.
-                {/* {placeholderText.map((item, index) => {
-                        return <AnimatedText {...item} key={index} />;
-                })} */}
-                
-            </motion.h2>
+                // sub="Check out some of the"
+                // highlighted="projects I've worked on."
+            />
             <p>Check out some of the <span>projects I've worked on.</span></p>
         </div>
         

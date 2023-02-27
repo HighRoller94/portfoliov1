@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 
-$offBlack: #0F0C0C;
+$offBlack: #0f0c0c;
 $offWhite: #f7f7f7;
 $lightModeGrey: #373737;
 $darkModeGrey:  #cccccc;
@@ -19,8 +19,8 @@ $headerFont: 'Poppins', sans-serif;
 
 // MOBILE
 
-$heroTitleSize: clamp(3.5rem, 10vw, 8.5rem); 
-$headerFontSize: clamp(1.7rem, 4.5vw, 2.8rem); 
+$heroTitleSize: clamp(4.5rem, 10vw, 8rem); 
+$headerFontSize: clamp(1.7rem, 4vw, 2.8rem); 
 $bodyFontSize : clamp(.85rem, 1vw, 1rem);
 
 $mobileBodyFontSize: .95rem;

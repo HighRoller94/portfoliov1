@@ -1,0 +1,93 @@
+@import '../variables.module';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    font-family: $headerFont;
+    font-weight: 700;
+    color: currentColor;
+    height: fit-content;
+    position: relative;
+    width:fit-content;
+    margin: 0 auto;
+    max-width:325px;
+    @media screen and (min-width: 768px) {
+        height:fit-content;
+        max-width:fit-content;
+        padding: 0;
+        background: none;
+        line-height: 1.6;
+    }
+
+    @media screen and (min-width: 1312px) {
+        line-height: normal;
+        margin: 0;
+        justify-content:flex-start;
+        align-items:flex-start;
+    }
+    .pre {
+        font-weight: 700;
+        color: $offTeal;
+        text-align:center;
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+        @media screen and (min-width: 768px) {
+            
+        }
+    }
+    .title {
+        max-height: 40px;
+        font-size: $headerFontSize;
+        margin-top:-.5rem;
+        letter-spacing: 1px;
+        flex-wrap:nowrap;
+        font-weight: 700; 
+        overflow:hidden;
+        width: fit-content;
+        @media screen and (min-width: 768px) {
+            max-height: 70px;
+            text-align:center;
+        }
+        @media screen and (min-width: 1312px) {
+            max-height: 70px;
+            text-align:left;
+            justify-content:flex-start;
+            align-items:flex-start;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            height: .5rem;
+            width: 3rem;
+            border-radius: 2rem;
+            background-color: $offTeal;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            @media screen and (min-width: 768px) {
+                bottom: -1.2rem;
+                width: 3.5rem;
+                height: .7rem;
+            }
+
+            @media screen and (min-width: 1312px) {
+                margin:0;
+                bottom: -.7rem;
+                width: 4rem;
+                height: .7rem;
+            }
+        }
+    }
+    .sub {
+        width: 100%;
+        font-size: $mobileBodyFontSize;
+        font-weight: 400;
+        color: $darkModeGrey;
+        line-height:1.6;
+    }
+}

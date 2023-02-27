@@ -16,11 +16,12 @@
     @media screen and (min-width: 768px) { 
         margin-top: 2rem;
         padding: .5rem 0 3rem 0;
+        bottom: -180px;
     }
     @media screen and (min-width: 1312px) {
         margin-top: 0rem;
         padding: .5rem 0 5rem 0;
-        bottom: -250px;
+        bottom: -230px;
     }
     .socials {
         display: none;
@@ -33,6 +34,7 @@
         color: currentColor;
         @media screen and (min-width: 768px) {
             display: flex;
+            left: 7%;
         }
     
         @media screen and (min-width: 1312px) {
@@ -109,6 +111,7 @@
             height: 20px;
             font-size:3rem;
             bottom: 0rem;
+            right: 10%;
         }
     }
     .show {
@@ -116,7 +119,7 @@
             opacity: 1;
             visibility: visible;
             bottom: 100px;
-            right: 5.5%;
+            right: 6.5%;
         }
         @media screen and (min-width: 1312px) {
             bottom: 7rem;

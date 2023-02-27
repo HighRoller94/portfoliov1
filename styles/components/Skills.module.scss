@@ -12,7 +12,7 @@ $toolsHeaderFontSize: 1.2rem;
     height: 100%;
     padding-top: 3rem;
     position: relative;
-
+    
     @media screen and (min-width: 768px) {
         padding-bottom: 8rem;
         margin-top: 0;
@@ -21,7 +21,7 @@ $toolsHeaderFontSize: 1.2rem;
 
     @media screen and (min-width: 1312px) {
         padding-top: 4rem;
-        padding-bottom: 6rem;
+        padding-bottom:0;
         width: 100%;
     }
 
@@ -31,9 +31,10 @@ $toolsHeaderFontSize: 1.2rem;
         width: 100%;
         margin: 0 auto;
         margin-bottom: 1rem;
-
+        text-align:center;
         @media screen and (min-width: 768px) {
             width: 82%;
+
         }
 
         @media screen and (min-width: 1312px) {
@@ -44,43 +45,6 @@ $toolsHeaderFontSize: 1.2rem;
             font-size:1.2rem;
             font-weight:700;
         }
-        .skillsTitle {
-            display: flex;
-            flex-direction: column;
-            width:fit-content;
-            font-family: $headerFont;
-            font-weight: 700;
-            color: currentColor;
-            height: fit-content;
-            position: relative;
-            font-size: $headerFontSize;
-            letter-spacing: 1px;
-            span {
-                color: $offRed;
-                font-weight: 700;
-                font-size: $headerFontSize;
-                display: inline-flex;
-                flex-direction: row;
-                width: fit-content;
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -1rem;
-                left: 0;
-                height: .6rem;
-                width: 3rem;
-                border-radius: 2rem;
-                background-color: $offTeal;
-                @media screen and (min-width: 768px) {
-                    bottom: -1rem;
-                    width: 3.5rem;
-                    height: .7rem;
-                }
-            }
-
-        }
 
         p {
             width: 100%;
@@ -90,11 +54,14 @@ $toolsHeaderFontSize: 1.2rem;
             margin-top: $mobileHeaderMargin;
             margin-top: 2rem;
             line-height: 1.6;
-
+            @media screen and (min-width: 1312px) {
+                text-align:left;
+            }
             span {
                 color: $offTeal;
                 font-size: $bodyFontSize;
             }
+
         }
     }
 
@@ -106,23 +73,27 @@ $toolsHeaderFontSize: 1.2rem;
         justify-content: center;
         align-items: center;
         margin-left: 0;
-        margin-top: 2rem;
+        margin-top: 3rem;
 
         @media screen and (min-width: 768px) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: flex-start;
             justify-content: center;
-            width: 70%;
+            width:82%;
             margin: 3rem auto 0 auto;
-            gap: 1.5rem;
+            gap: 5%;
+            max-width: 700px;
         }
 
         @media screen and (min-width: 1312px) {
             grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
             grid-column-gap: 10%;
             margin: 4rem auto 0 auto;
             width: 65%;
+            
+            max-width:fit-content;
         }
     }
 }

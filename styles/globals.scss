@@ -31,7 +31,7 @@
   margin: 0;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  cursor:none;
+
 }
 
 html {
@@ -49,7 +49,7 @@ a {
 }
 
 body {
-  cursor:none;
+
   background-color: $offBlack;
   color: $offWhite;
   transition: 200ms ease-in-out;
