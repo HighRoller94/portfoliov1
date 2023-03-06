@@ -78,7 +78,7 @@ function Contact({ offsetY }) {
                         highlighted="projects I've worked on."
                     />
                     <div className="contact__text">
-                        <p>What's next? I'd love to hear from you, feel free to shoot me a message!</p>
+                        <p>Got a project in mind? I'd love to hear from you, feel free to shoot me a message!</p>
                         <div className="contact__mail focus">
                             <FiMail className="icon" />
                             <a href="mailto:ashbridgescodes@gmail.com">
