@@ -31,7 +31,7 @@
   margin: 0;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-
+  cursor: none;
 }
 
 html {
@@ -50,7 +50,7 @@ a {
 
 body {
   background-color: $offBlack;
-  // background: linear-gradient(109.6deg, rgb(8, 10, 12) 11.2%, rgb(7, 16, 26) 51.2%, rgb(0, 0, 0) 98.6%);
+  // background: linear-gradient(109.6deg, rgb(8, 10, 16) 11.2%, rgb(7, 16, 21) 51.2%, rgb(0, 0, 0) 98.6%);
   color: $offWhite;
   transition: 200ms ease-in-out;
   position:relative;
@@ -59,7 +59,9 @@ body {
   $accentColor: $offTeal;
   $textColor: $darkModeGrey;
   min-height: 75vh;
+  overflow-x:hidden;
 }
+
 
 // CURSOR 
 
@@ -79,6 +81,7 @@ body {
   animation: none;
   transition: background-color 200ms ease-in;
   background-color: $offTeal;
+  transition: 100ms;
 }
 
 .carouselFocus {
@@ -88,6 +91,7 @@ body {
   animation: none;
   transition: background-color 200ms ease-in;
   background-color: $offTeal;
+  transition: 100ms;
 }
 
 .link {

@@ -16,7 +16,7 @@
     }
 
     @media screen and (min-width: 1312px) {
-        margin-bottom: 0rem !important;
+        margin-bottom: 1rem !important;
         width: 77%;
         max-width: 100%;
     }
@@ -62,15 +62,106 @@
 
         img {
             position: static !important;
-            border-radius: .25rem !important;
+            border-radius: 10px !important;
             object-fit: cover;
-            filter: drop-shadow(0 0 0.2rem rgb(113, 219, 212)) grayscale(100) saturate(90%) brightness(50%);
+            filter: drop-shadow(0 0 0.2rem rgb(113, 219, 212)) grayscale(100) saturate(90%) brightness(25%);
             transition: 400ms ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.02);
             &:hover {
                 filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212)) grayscale(0) saturate(90%) brightness(80%);
                 transition: 400ms ease-in-out;
             }
         }
+        .projectImageText {
+            position:Absolute;
+            bottom:2rem;
+            left: 2.7rem;
+            opacity:0;
+            visibility:hidden;
+            transition: 200ms ease-in;
+            transform: translateY(10px);
+            h1 {
+                color: $offTeal;
+                font-size: 1.8rem;
+            }
+            .innerText {
+                display: flex;
+                align-items:center;
+                position:relative;
+                p {
+                    font-size: 0.85rem;
+                    color: $darkModeGrey;
+                }
+                .shaft {
+                    display:flex;
+                    justify-self:center;
+                    align-self: center;
+                    position: absolute;
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 100%;
+                    text-align: center;
+                    background-color:white;
+                    height: 2px;
+                    border-radius: 20px;
+                    z-index: 99999;
+                    width: 25px;
+                    margin-left: 15px;
+                    transition: 300ms ease-in;
+                    .head {
+                        position:relative;
+                        right: -95%;
+                        span {
+                            position: absolute;
+                            
+                            width: 2px;
+                            height: 8px;
+                            background-color: white;
+                            border-radius: 5px;
+                            transform: translateY(-4.5px) translateX(1px) rotate(120deg);
+                            @media screen and (min-width: 768px) {
+                                width: 2px;
+                                height: 8px;
+                            }
+                            &:nth-child(2) {
+                                transform: translateY(-1.5px) translateX(1px) rotate(60deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:hover {
+            .projectImageText {
+                opacity:1;
+                visibility:visible;
+                transform: translateY(0px);
+                .innerText {
+                    .shaft {
+                        width: 70px;
+                    }
+                }
+            }
+            img {
+                filter: drop-shadow(0 0 0.5rem rgb(113, 219, 212)) grayscale(0) saturate(90%) brightness(40%);
+            }
+            
+        }
+        // &::before {
+        //     background: radial-gradient(
+        //         800px circle at 100px 100px,
+        //         rgba(255, 255, 255, 0.06),
+        //         transparent 40%
+        //     );
+        //     border-radius:inherit;
+        //     content: "";
+        //     height: 100%;
+        //     left: 0px;
+        //     position: absolute;
+        //     top: 0px;
+        //     width: 100%;
+        //     z-index:2;
+        // }
     }
 
     .projectText {
@@ -256,11 +347,9 @@
             margin: 0;
             opacity: 1;
             transition: 0.5s ease-in-out;
-            filter: grayscale(50);
+
 
             &:hover {
-                filter: grayscale(0);
-                transform: translateY(-.5rem);
                 transition: 300ms ease-in-out;
             }
         }

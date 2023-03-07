@@ -1,13 +1,13 @@
 
 import Image from 'next/image';
 
-import ProjectStyles from '../../../styles/components/Project.module.scss';
+import ProjectNewStyles from '../../../styles/components/ProjectNew.module.scss';
 import { useInView } from 'react-intersection-observer';
-import { BsArrowRight } from 'react-icons/bs'
+
 import { ImGithub } from 'react-icons/im';
 import { BiWorld } from 'react-icons/bi';
 
-function Project({ data, setModalData, handleModal, title, type, desc, image, gitLink, siteLink, languages, offsetY }) {
+function ProjectNew({ data, setModalData, handleModal, title, type, desc, image, gitLink, siteLink, languages, offsetY }) {
 
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -16,8 +16,8 @@ function Project({ data, setModalData, handleModal, title, type, desc, image, gi
 
     return (
         <>
-            <div ref={ref} className={inView ? `${ProjectStyles.project} showProject` : `${ProjectStyles.project} hideProject`}>
-                <div className={`${ProjectStyles.projectImage} projectImage`} onClick={() => {
+            <div ref={ref} className={inView ? `${ProjectNewStyles.project} showProject` : `${ProjectNewStyles.project} hideProject`}>
+                <div className={`${ProjectNewStyles.projectImage} projectImage`} onClick={() => {
                     setModalData(data)
                     handleModal()
                 }}>
@@ -26,20 +26,8 @@ function Project({ data, setModalData, handleModal, title, type, desc, image, gi
                         alt="Project Image"
                         fill
                     />
-                    <div className={ProjectStyles.projectImageText}>
-                        <h1>Learn More</h1>
-                        <div className={ProjectStyles.innerText}>
-                            <p>Read more about this project</p>
-                            <span className={ProjectStyles.shaft}>
-                                <div className={ProjectStyles.head}>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
                 </div>
-                <div className={ProjectStyles.projectText}>
+                {/* <div className={ProjectStyles.projectText}>
                     <h4>{type}</h4>
                     <h1>{title}</h1>
                     <p>{desc}</p>
@@ -62,7 +50,7 @@ function Project({ data, setModalData, handleModal, title, type, desc, image, gi
                             </button>
                         </a>
                     </div>
-                </div>
+                </div> */}
             </div>
 
         </>
@@ -71,4 +59,4 @@ function Project({ data, setModalData, handleModal, title, type, desc, image, gi
     )
 }
 
-export default Project
+export default ProjectNew

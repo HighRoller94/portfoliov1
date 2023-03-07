@@ -63,7 +63,7 @@ export default function Home() {
           key="about"
           data-scroll-section
           />
-          <Projects 
+          <Projects
           offsetY={offsetY} 
           key="projects"
           />

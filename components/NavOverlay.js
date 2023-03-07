@@ -112,24 +112,24 @@ function NavOverlay() {
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2, duration: 1 }} 
                                     className="navbar__item focus">
-                                <Scroll to="about" offset={-70}><h1 className="navbar__links focus">About</h1></Scroll>
+                                <Scroll smooth spy activeClass="activeNavLink" to="about" offset={-70}><h1 className="navbar__links focus">About</h1></Scroll>
                             </motion.li>
                             <motion.li 
                                     initial={{ opacity: 0}}
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2.25, duration: 1 }} 
                                     className="navbar__item focus">
-                                <Scroll to="projects" offset={-30}><h1 className="navbar__links focus">Portfolio</h1></Scroll>
+                                <Scroll smooth spy activeClass="activeNavLink" to="projects" offset={-30}><h1 className="navbar__links focus">Portfolio</h1></Scroll>
                             </motion.li>
                             <motion.li 
                                     initial={{ opacity: 0}}
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2.5, duration: 1 }} 
                                     className="navbar__item focus">
-                                <Scroll to="skills" offset={-25}><h1 className="navbar__links focus">Skills</h1></Scroll>
+                                <Scroll smooth spy activeClass="activeNavLink" to="skills" offset={-25}><h1 className="navbar__links focus">Skills</h1></Scroll>
                             </motion.li>
                             <li className="mobile__contact focus">
-                                <Scroll to="contact"><button className="navbar__links">Contact</button></Scroll>
+                                <Scroll smooth spy activeClass="activeNavLink" to="contact"><button className="navbar__links">Contact</button></Scroll>
                             </li>
                             <div className="tab__toggle">
                             </div>

@@ -6,14 +6,17 @@
     margin: 0 auto;
     margin-top: 0rem;
     max-width: 400px;
+    margin-bottom: 5rem;
     @media screen and (min-width: 768px) {
         width: 99%;
         margin-top: 5rem;
         max-width: 100%;
+        
     }
 
     @media screen and (min-width: 1312px) {
         margin-top: 6rem;
+        margin-bottom: 9rem;
     }
 
     .contact__container {
@@ -92,9 +95,9 @@
                     @media screen and (min-width: 1312px) {
                         text-align: left;
 
-                        width: 80%;
+                        width: 70%;
                         margin: 0;
-                        font-size: 1.1rem;
+                        
                     }
 
                     span {
@@ -159,7 +162,8 @@
                             font-size: .9rem;
                             width: 100%;
                             font-weight: 700;
-
+                            position:relative;
+                            letter-spacing: 1px;
                             @media screen and (min-width: 768px) {
                                 font-size: 1.1rem;
                             }
@@ -168,48 +172,22 @@
                                 align-items: flex-start;
                                 font-size: 1.2rem;
                             }
-                        }
-                    }
-                }
-
-                .contact__phone {
-                    display: flex;
-                    margin: 1rem auto;
-                    align-items: center;
-
-                    @media screen and (min-width: 768px) {
-                        display: flex;
-                        margin: 1rem auto;
-                        width: 40%;
-                        justify-content: center;
-                    }
-
-                    @media screen and (min-width: 1312px) {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: flex-start;
-                        margin: 0;
-                        margin-top: 1rem;
-                        width: 100%;
-                    }
-
-                    .icon {
-                        margin-left: 0.2rem;
-                        width: 2.5rem;
-
-                        @media screen and (min-width: 1312px) {
-                            width: 3rem;
-                        }
-                    }
-
-                    h2 {
-                        font-weight: 400;
-                        font-size: 1.1rem;
-                        width: 100%;
-                        margin-left: 1.75rem;
-
-                        @media screen and (min-width: 1312px) {
-                            font-size: 1.3rem;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                transform: scaleX(0);
+                                height: 2px;
+                                bottom: -3px;
+                                left: 0;
+                                background-color: $offTeal;
+                                transform-origin: bottom right;
+                                transition: transform 0.4s ease-out;
+                            }
+                            &:hover::after {
+                                transform: scaleX(1);
+                                transform-origin: bottom left;
+                            }
                         }
                     }
                 }
@@ -260,12 +238,10 @@
             position: relative;
             flex-direction: column;
             margin-left: 0;
-            padding-bottom: 1rem;
             width:100%;
             margin-top:-1rem;
             @media screen and (min-width: 768px) {
                 margin-top: 2rem;
-                padding-bottom: 5rem;
                 width: 70%;
                 max-width: 450px;
             }
@@ -307,16 +283,27 @@
                     background: none;
                     margin-top: -12px;
                     margin-left: -1px;
-                    font-size: 1rem;
+                    font-size: $bodyFontSize;
                     outline: none;
 
                     &:focus+.label-name .content-name,
                     &:valid+.label-name .content-name {
-                        transform: translateY(-150%);
-                        font-size: .9rem;
+                        transform: translateY(-180%);
+                        font-size: .7rem;
+                        color: $offTeal;
+                        text-transform: uppercase;
+                        letter-spacing: .2rem;
+                        background: none;
+                        font-weight: 600;
+                    }
+                    &:hover+.label-name .content-name
+                    {
+                        color: $offTeal;
+                    }
+                    &:hover+.label-name::after {
+                        transform: translateX(0%);
                         background: none;
                     }
-
                     &:focus+.label-name::after,
                     &:valid+.label-name::after {
                         transform: translateX(0%);
@@ -346,9 +333,14 @@
                         height: 100%;
                         width: 100%;
                         background: none;
-                        border-bottom: 2px solid currentColor;
+                        border-bottom: 2px solid $offTeal;
                         transform: translateX(-100%);
                         transition: 0.5s;
+                        transform-origin: bottom right;
+                    }
+                    &::after:focus {
+                        transform-origin: bottom left;
+                        transform: translateX(-100%);
                     }
                 }
 
@@ -397,12 +389,25 @@
                     &:focus+.label-name .content-name,
                     &:valid+.label-name .content-name {
                         transform: translateY(-75%);
-                        font-size: .9rem;
+                        font-size: .7rem;
+                        color: $offTeal;
+                        text-transform: uppercase;
+                        letter-spacing: .2rem;
                         background: none;
+                        font-weight: 600;
                     }
 
                     &:focus+.label-name::after,
                     &:valid+.label-name::after {
+                        transform: translateX(0%);
+                        background: none;
+                    }
+
+                    &:hover+.label-name .content-name
+                    {
+                        color: $offTeal;
+                    }
+                    &:hover+.label-name::after {
                         transform: translateX(0%);
                         background: none;
                     }
@@ -429,7 +434,7 @@
                         bottom: -1px;
                         height: 100%;
                         width: 100%;
-                        border-bottom: 2px solid currentColor;
+                        border-bottom: 2px solid $offTeal;
                         transform: translateX(-150%);
                         transition: 0.5s;
                     }

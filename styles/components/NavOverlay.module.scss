@@ -104,7 +104,7 @@
 
                 @media screen and (min-width: 1312px) {
                     width: 3.5rem;
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                     margin-left: -.8rem;
                     margin-top: 1rem;
                 }
@@ -220,7 +220,7 @@
 
                     @media screen and (min-width: 1312px) {
                         background-color: transparent;
-                        margin-top: 2rem;
+                        margin-top: 3rem;
                     }
 
                     .sidebar__name {
@@ -286,15 +286,15 @@
                             }
 
                             @media screen and (min-width: 1312px) {
-                                font-size: .9rem;
+                                font-size: .8rem;
                             }
 
                             &:hover {
                                 color: $offTeal;
                             }
                         }
-
                     }
+
 
                     .tablet__toggle {
                         display: none;
@@ -590,10 +590,9 @@
 .navbar.active {
     height: 3.5rem;
     box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
-    background-color: $offWhite;
     // backdrop-filter: blur(1em) !important;
     z-index: 999;
-
+    background-color: $offWhite;
     @media screen and (min-width: 768px) {
         height: 4.8rem;
         padding-top: 1rem;
@@ -650,7 +649,23 @@
                             color: $offBlack;
                             font-size: .7rem;
                         }
-
+                        .activeNavLink {
+                            .navbar__links {
+                                color: $offTeal !important;
+                                position:relative;
+                                // &::after {
+                                //     content: "";
+                                //     position: absolute;
+                                //     left: 0;
+                                //     bottom: 10px;
+                                //     border-radius: 1rem;
+                                //     right:0;
+                                //     width: 90%;
+                                //     height: 6px;
+                                //     background-color: $offTeal;
+                                // }
+                            }
+                        }
                     }
                 }
             }
