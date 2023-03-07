@@ -30,6 +30,7 @@
         right: 0;
         top: 0;
         bottom: 0;
+        
         margin-left: auto;
         margin-right: auto;
         max-width:1200px;
@@ -45,6 +46,7 @@
         @media screen and (min-width: 1312px) {
             margin-top: 5rem;
             width: 70%;
+            max-height: 78%;
         }
         .modalClose {
             position: fixed;
@@ -57,6 +59,7 @@
             justify-content: center;
             z-index:99999;
             .modalCloseIcon {
+                position: fixed;
                 font-size: 1.3rem;
                 color: $offTeal;
             }
@@ -74,6 +77,7 @@
             @media screen and (min-width: 768px) {
                 text-align:center;
                 padding: 2rem 0;
+                
             }
             @media screen and (min-width: 768px) {
                 text-align:center;
