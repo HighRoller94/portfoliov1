@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
 import AltNavOverlay from '../components/AltNavOverlay'
 import Contact from '../components/Contact'
-import Footer from '../components/Footer';
+import AltFooter from '../components/AltFooter';
 
 const variants = {
     hidden: { opacity: 0 },
@@ -46,7 +46,7 @@ export default function ContactPage() {
                     transition={{ type: 'linear', duration: 1 }}
                 > 
                     <Contact offsetY={offsetY} />
-                    <Footer />
+                    <AltFooter />
                 </motion.div>
             </AnimatePresence>
         </>

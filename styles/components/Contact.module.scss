@@ -87,8 +87,7 @@
                         
                         margin-top: 1rem;
                         font-size: $mobileBodyFontSize;
-                        text-align: left;
-                        width: 100%;
+                        width: 80%;
                        
                     }
 
@@ -107,7 +106,7 @@
 
                 .contact__mail {
                     display: flex;
-                    margin-top: 1rem;
+                    margin-top: 1.5rem;
                     position: relative;
                     text-align:center;
                     justify-content:center;
@@ -213,7 +212,7 @@
                     h2 {
                         font-family: 'Helvetica Neue', sans-serif;
                         font-weight: 600;
-                        font-size: 1.1rem;
+                        font-size: $bodyFontSize;
                         color: $darkModeGrey;
                         width: 100%;
 
@@ -241,9 +240,9 @@
             width:100%;
             margin-top:-1rem;
             @media screen and (min-width: 768px) {
-                margin-top: 2rem;
+                margin-top: 1rem;
                 width: 70%;
-                max-width: 450px;
+                max-width: 400px;
             }
 
             @media screen and (min-width: 1312px) {
@@ -489,8 +488,40 @@
         }
 
     }
+    .statusSent {
+        display: flex;
+        padding: 1rem 30px 1.5rem 30px;
+        justify-content:space-between;
+        width: 90%;
+        @media screen and (min-width: 768px) {
+            width: 55%;
+        }
+        @media screen and (min-width: 1312px) {
+            width: 100%;
+            margin-top: 3rem;
+        }
+        .icon {
+            color: $offTeal;
+            font-size: 2rem;
+            @media screen and (min-width: 1312px) {
+                font-size: 2.5rem;
+            }
+        }
+        p {
+            margin-top: 2px;
+            font-size: .85rem;
+            width:100%;
+            @media screen and (min-width: 1312px) {
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+        }
+    }
 }
 
 .contactPage {
-    padding-top: 10vh;
+    padding-top: 11vh;
+    @media screen and (min-width: 768px) {
+        padding-top: 3rem;
+    }
 }
