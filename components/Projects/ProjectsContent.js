@@ -39,6 +39,27 @@ export const ProjectsContent  = [
         gitLink: 'https://github.com/HighRoller94/eatz-recipe-app'
     },
     {
+        image: '/shack1.svg',
+        gallery: [
+            '/shack2.svg',
+            '/shack3.svg',
+            '/shack5.svg',
+            '/shack4.svg',
+            '/shack1.svg',
+        ],
+        type: 'Featured Project',
+        title: 'The Shack',
+        desc: 'Built with Next.js, The Shack is a responsive, multipage website connected to a Sanity.io backend. It features everything one would need for an ecommerce business.',
+        longerDesc: 'Built with Next.js, The Shack is a responsive, multipage website connected to a Sanity.io backend. It features everything one would need for an ecommerce business.',
+        languages: [
+            'Next.js',
+            'Sanity.io',
+            'Ecommerce'
+        ],
+        siteLink: 'https://redux-pizza-app.vercel.app/',
+        gitLink: 'https://github.com/HighRoller94/redux-pizza-app'
+    },
+    {
         image: '/pyre1.svg',
         gallery: [
             '/pyre2.svg',
@@ -49,8 +70,8 @@ export const ProjectsContent  = [
         ],
         type: 'Featured Project',
         title: 'Pyre',
-        desc: 'Music player app with a simple dashboard layout. Built with React and SASS, Pyre uses the Spotify API to allows users to login, listen and manage their media.',
-        longerDesc: 'Music player app with a simple dashboard layout. Built with React and SASS, Pyre uses the Spotify API to allows users to login, listen and manage their media.',
+        desc: 'Built with React, Pyre uses the Spotify API to allows users to login, listen and manage their media. Users can add playlists and tracks to favourites, create new playlists entirely and follow artists/other Spotify users.',
+        longerDesc: 'Music player with a simple dashboard layout. Built with React, Pyre uses the Spotify API to allows users to login, listen and manage their media. Users can add playlists and tracks to favourites, create new playlists entirely as well as follow artists/other Spotify users. Pyre utilises React Context and an express server for authentication purposes on the backend. Due to the limitations of the Spotify API, only premium users can use Pyre to listen to their favourite media.',
         languages: [
             'React',
             'Express',
