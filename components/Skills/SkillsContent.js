@@ -12,7 +12,8 @@ export const SkillsContent  = [
             'CSS',
             'Javascript',
             'React',
-            'Next.js'
+            'Next.js',
+            'Node.js'
         ]
     },
     {
@@ -24,7 +25,7 @@ export const SkillsContent  = [
             'Adobe XD',
             'Figma',
             'Bootstrap Studio',
-            'Pen & Paper',
+            'Pen & Pape r',
             'Illustrator',
             'Photoshop',
         ]
@@ -32,15 +33,15 @@ export const SkillsContent  = [
     {
         icon: <AiOutlineCodepen className="skillsIcon"/>,
         title: 'Extra Skills',
-        body: "I've also eplored a number of different content systems and backends",
-        sub: "Apps I've used:",
+        body: "I've also eplored a number of different content systems and custom backends",
+        sub: "What I've used:",
         skills: [
-            'Node.js',
             'Express',
-            'Sanity',
+            'Sanity.io',
             'Firebase',
             'MongoDB',
             'SQL Databases',
+            'Restful APIS'
         ]
     },
 ]

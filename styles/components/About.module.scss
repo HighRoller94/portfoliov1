@@ -24,6 +24,7 @@
         justify-content: center;
         position: relative;
         padding-top: 13rem;
+        
     }
 
     .aboutContainer {
@@ -96,6 +97,7 @@
                 margin-top: 1.2rem;
                 width: 240px;
                 height: 240px;
+                
                 background-color: transparent;
                 border-radius: 50%;
                 overflow: hidden;
@@ -109,6 +111,7 @@
                     width: 325px;
                     height: 325px;
                     margin-left: auto;
+                    margin-left: 5rem;
                 }
                 &::before {
                     content: '';

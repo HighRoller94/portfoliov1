@@ -15,7 +15,8 @@
     }
 
     @media screen and (min-width: 1312px) {
-        margin-top: 6rem;
+        padding-top: 8rem;
+        margin-top: 0;
         margin-bottom: 9rem;
     }
 
@@ -499,6 +500,7 @@
         @media screen and (min-width: 1312px) {
             width: 100%;
             margin-top: 3rem;
+            
         }
         .icon {
             color: $offTeal;

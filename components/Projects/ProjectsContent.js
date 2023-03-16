@@ -41,11 +41,11 @@ export const ProjectsContent  = [
     {
         image: '/shack1.svg',
         gallery: [
-            '/shack2.svg',
+            '/shack1.svg',
             '/shack3.svg',
             '/shack5.svg',
             '/shack4.svg',
-            '/shack1.svg',
+            '/shack2.svg',
         ],
         type: 'Featured Project',
         title: 'The Shack',

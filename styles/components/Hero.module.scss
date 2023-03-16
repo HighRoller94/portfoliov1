@@ -144,9 +144,9 @@
             margin-top: 1.5rem;
         }
         @media screen and (min-width: 1312px) {
-            margin: 0;
+            margin:0;
             margin-top: 1.5rem;
-            margin-left: .3rem;
+
         }
         a {
             text-decoration: none;
@@ -266,74 +266,6 @@
         }
     }
 
-    .clicked {
-        
-        @media screen and (min-width: 768px) {
-            .download {
-                display: none;
-            }
-        }
-
-        @media screen and (min-width: 1312px) {
-            bottom:1.5rem;
-        }
-
-        h2 {
-            display: block;
-            margin-left: 1rem;
-            letter-spacing: 1px;
-            transition: 200ms ease-in-out;
-            color: $offTeal;
-            font-weight:700;
-            &:hover {
-                color: $lightTeal;
-            }
-        }
-
-        button {
-            height: 40px;
-            width: 40px;
-            padding: 0;
-            border-radius: 50%;
-
-            @media screen and (min-width: 1312px) {
-                height: 50px;
-                width: 50px;
-            }
-
-            &:hover,
-            &:focus {
-                transform: none;
-            } 
-
-            .icon {
-                color: $offBlack;
-                width:30px !important;
-                display:flex;
-            }
-
-            a {
-                display: none;
-            }
-
-            &::before {
-                display: none;
-            }
-
-            .download {
-                @media screen and (min-width: 736px) {
-                    display:none;
-                }
-                .icon {
-                    @media screen and (min-width: 1312px) {
-                        display:none;
-                    }
-                }
-            }
-            
-        }
-    }
-
     .arrow {
         display:flex;
         justify-content:center;
@@ -368,7 +300,7 @@
                 animation-delay: calc(var(--scroll) * -1s);
             }
             @media screen and (min-width: 1312px) {
-                margin:0;
+                margin: 0;
                 animation: extendBig 1s linear infinite;
                 animation-play-state: paused;
                 animation-delay: calc(var(--scroll) * -1s);
