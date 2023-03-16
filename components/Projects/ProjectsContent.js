@@ -49,8 +49,8 @@ export const ProjectsContent  = [
         ],
         type: 'Featured Project',
         title: 'The Shack',
-        desc: 'Built with Next.js, The Shack is a responsive, multipage website connected to a Sanity.io backend. It features everything one would need for an ecommerce business.',
-        longerDesc: 'Built with Next.js, The Shack is a responsive, multipage website connected to a Sanity.io backend. It features everything one would need for an ecommerce business.',
+        desc: 'Built with Next.js, The Shack is a responsive, multipage website connected to a Sanity.io backend. It features everything one would need for an ecommerce business!',
+        longerDesc: 'Built with Next.js, The Shack is a responsive, multipage website connected to a Sanity.io backend. It features everything one would need for an ecommerce business!',
         languages: [
             'Next.js',
             'Sanity.io',
