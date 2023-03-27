@@ -162,7 +162,9 @@
     display:none;
     transition: 200ms ease-in;
     @media screen and (min-width: 768px) {
-        display:block;
+        display:flex;
+        justify-content:center;
+        align-items:center;
         width: 30px;
         height: 30px;
         border: 1px solid currentColor;
@@ -173,16 +175,24 @@
         animation: cursorAnim 2s infinite alternate;
         pointer-events: none;
         transition: background-color 200ms ease-in;
-
-    span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        font-size: .55rem;
-        font-weight: 700;
-        color: $offWhite;
-    }
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: .55rem;
+            font-weight: 700;
+            color: $offWhite;
+        }
+        #arrowOpen {
+            display:none;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        #drag {
+            display:none;
+            font-size: 1.2rem;
+        }
     }
     
 }

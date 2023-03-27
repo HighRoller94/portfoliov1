@@ -92,14 +92,19 @@ function NavOverlay() {
                 </div>
                 <div className="navbar__container">
                     <Scroll to="home">
-                        <div className="nav__logo focus">
+                        <motion.div 
+                            className="nav__logo focus"
+                            initial={{ opacity: 0}}
+                            animate={{ opacity: 1}} 
+                            transition={{ delay: 1.5, duration: 1 }} 
+                        >
                             <Image
                                 className="focus"
                                 src={logoFill}
                                 fill
                                 alt="Logo"
                             />
-                        </div>
+                        </motion.div>
                     </Scroll>
                     <div className="sidebar">
                         <ul className="navbar__menu">
@@ -150,9 +155,14 @@ function NavOverlay() {
                             <span className="bar half end"></span>
                         </div>
                     </div>
-                    <div className="nav__button__div focus">
+                    <motion.div 
+                    className="nav__button__div focus"
+                    initial={{ opacity: 0}}
+                    animate={{ opacity: 1}} 
+                    transition={{ delay: 2.5, duration: 1 }} 
+                    >
                         <Scroll to="contact">Say Hello</Scroll>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <div className="download__cv">

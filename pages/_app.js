@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Background />
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </>
   )
 }

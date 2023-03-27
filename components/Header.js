@@ -41,9 +41,6 @@ const Header = ({ id, pre, heading, sub, highlighted}) => {
     }
 
     useEffect(() => {
-        document.querySelector(`#${id}`).onmouseover = e => {
-            animatedText(e.target);
-        }   
         if (inView) {
             console.log(inView)
             const e = document.getElementById(`${id}`)

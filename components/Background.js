@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 
 import BackgroundStyles from '../styles/components/Background.module.scss';
 
+import { FiArrowUpRight } from 'react-icons/fi'
+import { TfiHandDrag } from 'react-icons/tfi'
 
 function Background() {
 
@@ -13,6 +15,7 @@ function Background() {
         document.addEventListener('mousemove', e => {
             cursor.setAttribute("style", "top: " + (e.clientY - 15) + "px; left: " + (e.clientX - 15) + "px;")
         });
+
         focus.forEach(link => {
             link.addEventListener('mouseover', () => {
                 cursor.classList.add('link-focus')
@@ -23,22 +26,42 @@ function Background() {
         })
 
         const projectFocus = document.querySelectorAll(".projectImage")
+        const arrowOpen = document.getElementById("arrowOpen")
+
         projectFocus.forEach(project => {
             project.addEventListener('mouseover', () => {
                 cursor.classList.add('projectFocus')
-                cursor.innerHTML = '<span>CLICK</span>'
+                arrowOpen.style.display = "flex"
             })
             project.addEventListener('mouseleave', () => {
                 cursor.classList.remove('projectFocus')
-                cursor.innerHTML = ''
+                arrowOpen.style.display = "none"
             })
         })
+
+        const handleOnMouseMove = e => {
+            const { currentTarget: target} = e;
+
+            const rect = target.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+            target.style.setProperty("--mouse-x", `${x}px`);
+            target.style.setProperty("--mouse-y", `${y}px`);
+        }
+
+        for (const card of document.querySelectorAll(".projectImage")) {
+            card.onmousemove = e => handleOnMouseMove(e);
+        }
 
     }, []);
 
     return (
         <>
-            <div className="cursor"></div>
+            <div className="cursor">
+                <FiArrowUpRight id="arrowOpen"/>
+                <TfiHandDrag id="drag" />
+            </div>
             <div className={BackgroundStyles.border}></div>
             <div className={BackgroundStyles.mainArea} >
                 <div className={BackgroundStyles.circles}>

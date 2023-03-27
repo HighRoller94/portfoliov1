@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion'
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 
 import { Link } from 'react-scroll';
 

@@ -37,15 +37,16 @@ function Modal({ modalOpen, handleModal, languages, title, type, longerDesc, gal
         console.log(modalOpen)
         if (modalOpen === true) {
             const carouselFocus = document.querySelectorAll(".carouselImage")
+            const drag = document.getElementById("drag")
             carouselFocus.forEach(carousel => {
                 carousel.addEventListener('mouseover', () => {
                     cursor.classList.add('carouselFocus')
-                    cursor.innerHTML = '<span>DRAG</span>'
+                    drag.style.display = "flex"
 
                 })
                 carousel.addEventListener('mouseleave', () => {
                     cursor.classList.remove('carouselFocus')
-                    cursor.innerHTML = ''
+                    drag.style.display = "none"
                 })
                 
             })

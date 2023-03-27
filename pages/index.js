@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head'
 import NavOverlay from '../components/NavOverlay'
@@ -8,6 +8,7 @@ import Projects from '../components/Projects/Projects'
 import Skills from '../components/Skills/Skills'
 import Footer from '../components/Footer'
 import Contact from '../components/Contact'
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 
 const variants = {
   hidden: { opacity: 0 },
@@ -17,6 +18,7 @@ const variants = {
 
 export default function Home() {
   const [downloaded, setDownloaded] = useState(false);
+  const containerRef = useRef(null)
 
   const [offsetY, setOffSetY] = useState()
 
