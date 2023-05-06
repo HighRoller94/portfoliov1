@@ -25,7 +25,7 @@ export const SkillsContent  = [
             'Adobe XD',
             'Figma',
             'Bootstrap Studio',
-            'Pen & Pape r',
+            'Pen & Paper',
             'Illustrator',
             'Photoshop',
         ]

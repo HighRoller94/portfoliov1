@@ -9,7 +9,6 @@ $offRed: #f08080;
 $offTeal: #71DBD4;
 $lightTeal: #a7fff9;
 
-
 $possibleTeal: #91eeca;
 
 $headerMargin: 2rem;
@@ -19,8 +18,8 @@ $headerFont: 'Poppins', sans-serif;
 
 // MOBILE
 
-$heroTitleSize: clamp(4rem, 10vw, 8rem); 
-$headerFontSize: clamp(1.7rem, 4vw, 2.5rem); 
-$bodyFontSize : clamp(.85rem, 1vw, 1rem);
+$heroTitleSize: clamp(1.6rem, 4vw, 3.5rem); 
+$headerFontSize: clamp(1.5rem, 4vw, 2.5rem); 
+$bodyFontSize : clamp(.85rem, 1vw, 16px);
 
 $mobileBodyFontSize: .95rem;

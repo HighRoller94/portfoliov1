@@ -1,9 +1,8 @@
-
 import Image from 'next/image';
 
 import ProjectStyles from '../../../styles/components/Project.module.scss';
 import { useInView } from 'react-intersection-observer';
-import { BsArrowRight } from 'react-icons/bs'
+
 import { ImGithub } from 'react-icons/im';
 import { BiWorld } from 'react-icons/bi';
 

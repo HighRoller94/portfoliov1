@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head'
-import NavOverlay from '../components/NavOverlay'
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Projects from '../components/Projects/Projects'
-import Skills from '../components/Skills/Skills'
-import Footer from '../components/Footer'
-import Contact from '../components/Contact'
+import NavOverlay from '../components/NavOverlay.jsx'
+import Hero from '../components/Hero.jsx'
+import About from '../components/About.jsx'
+import Projects from '../components/Projects/Projects.jsx'
+import Skills from '../components/Skills/Skills.jsx'
+import Footer from '../components/Footer.jsx'
+import Contact from '../components/Contact.jsx'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 
 const variants = {

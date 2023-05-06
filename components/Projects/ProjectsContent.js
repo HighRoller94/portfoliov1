@@ -20,25 +20,6 @@ export const ProjectsContent  = [
         gitLink: 'https://github.com/HighRoller94/marquet-ecommerce'
     },
     {
-        image: '/eatz4.svg',
-        gallery: [
-            '/eatz4.svg',
-            '/eatz2.svg',
-            '/eatz3.svg',
-            '/eatz1.svg',
-        ],
-        type: 'Featured Project',
-        title: 'Eatz',
-        desc: 'Eatz is a recipe-lookup web application built with React and SASS, connected to an external API.',
-        longerDesc: 'Eatz is a recipe-lookup web application built with React and SASS, connected to an external API.',
-        languages: [
-            'React',
-            'Edamam API'
-        ],
-        siteLink: 'https://recipe-app-bd949.web.app/',
-        gitLink: 'https://github.com/HighRoller94/eatz-recipe-app'
-    },
-    {
         image: '/shack1.svg',
         gallery: [
             '/shack1.svg',

@@ -11,22 +11,17 @@ function Home({ offsetY, toggle, downloaded }) {
             document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
         }, false);
     })
+
     return (
         <div className="hero__section" data-scroll-section id="home">
-            <div className="hero__text">
+            <div className="hero__text" style={{ transform: `translateY(${offsetY * -0.1}px)`}}>
                 <motion.h2 initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0, duration: .5 }}>
-                    Hey,
+                    Hey there, I'm Ash.
                 </motion.h2>
                 <div className="swipe__text">
-                    <h1 data-value="I'm Ash." id="heroTitle">I'm Ash!</h1>
-                </div>
-                <div 
-                className="swipe__text secondary"
-
-                >
-                    <h3>A <span>web developer</span> based in Kent.</h3>
+                    <h1 data-value="I'm Ash." id="heroTitle">I'm a freelance <span>web developer</span> and <span>designer</span> based in Kent.</h1>
                 </div>
                 <motion.div
                     className="btn fade focus"
@@ -34,7 +29,7 @@ function Home({ offsetY, toggle, downloaded }) {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 2, duration: 1 }}>
                     <Link to="projects">
-                        View Projects
+                        View Works
                     </Link>
                 </motion.div>
                 <motion.div
@@ -53,8 +48,8 @@ function Home({ offsetY, toggle, downloaded }) {
                         <div className="scroller"></div>
                     </div> */}
                 </motion.div>
-
             </div>
+           
         </div>
     )
 }

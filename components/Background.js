@@ -60,7 +60,7 @@ function Background() {
         <>
             <div className="cursor">
                 <FiArrowUpRight id="arrowOpen"/>
-                <TfiHandDrag id="drag" />
+                <p id="drag">DRAG</p>
             </div>
             <div className={BackgroundStyles.border}></div>
             <div className={BackgroundStyles.mainArea} >

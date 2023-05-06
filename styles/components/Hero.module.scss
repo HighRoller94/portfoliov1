@@ -19,7 +19,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        padding-top: 27vh;
+        padding-top: 26.5vh;
         background: none;
         margin-left: 17.5%;
     }
@@ -44,19 +44,33 @@
         }
         h2 {
             font-weight: 700;
-            font-size: .9rem;
+            font-size: .8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
             margin-bottom: 0rem;
+            color: $darkModeGrey;
             @media screen and (min-width: 768px) {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                margin-left: -5px;
             }
         }
 
         .swipe__text {
             position: relative;
             width: 100%;
-
-
-            
+            margin: 0 auto;
+            margin-top: 1.3rem;
+            @media screen and (min-width: 768px) {
+                max-width: 700px;
+                margin-top: 1.7rem;
+            }
+            @media screen and (min-width: 1312px) {
+                min-width: 760px;
+                max-width: 760px;
+                width: 60%;
+                margin: 0;
+                margin-top: 1.7rem;
+            }
             h1 {
                 font-size: $heroTitleSize;
                 background: none;
@@ -65,41 +79,18 @@
                 opacity: 0;
                 animation: fade 0.01s linear 1.5s forwards;
                 animation-delay: 1s;
-                margin-left: -5px;
+                
                 @media screen and (min-width: 1312px) {
                     margin-top: -.5rem;
                     height: 12rem;
-                    margin-bottom: -1.5rem;
-                }
-            }
-
-            h3 {
-                margin: 0 auto;
-                margin-top: 0rem;
-                text-transform: uppercase;
-                letter-spacing: .3rem;
-                
-                width: 80%;
-                font-weight: 700;
-                font-size: clamp(.9rem, 3vw, 1.5rem);
-                background: none;
-                opacity: 0;
-                color: $darkModeGrey;
-                animation: fade 0.01s linear 1s forwards;
-                animation-delay: 1s;
-
-                @media screen and (min-width: 768px) {
-                    
-                    margin-top: -.5rem;
-                    width: 60%;
-                }
-                @media screen and (min-width: 1312px) {
-                    margin:0;
-                    margin-top: .5rem;
+                    line-height: 1.2;
                     width: 100%;
+                    margin-left: -5px;
+                }
+                span {
+                    color: $offTeal;
                 }
             }
-
             &::after {
                 content: '';
                 display: block;
@@ -113,19 +104,8 @@
                 background-color: $offTeal;
                 animation: swipe-text 1s ease-in-out .5s forwards;
             }
-
             span {
                 color: $offTeal;
-            }
-        }
-
-        .secondary {
-            width: 100%;
-            @media screen and (min-width: 1312px) {
-                width: 100%;
-            }
-            &::after {
-                background-color: $offTeal;
             }
         }
     }
@@ -139,13 +119,14 @@
         transition: 200ms ease-in;
         margin:0 auto;
         margin-top: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
         @media screen and (min-width: 768px) {
-           
             margin-top: 1.5rem;
         }
         @media screen and (min-width: 1312px) {
             margin:0;
-            margin-top: 1.5rem;
+            margin-top: 2.3rem;
 
         }
         a {
@@ -157,8 +138,8 @@
             color: $offWhite;
             outline: none;
             text-decoration: none;
-            font-size: .9rem;
-            font-weight: 600;
+            font-size: .8rem;
+            font-weight: 700;
             border-radius: 3px;
             transition: transform 300ms ease-in-out;
             
@@ -172,9 +153,9 @@
             }
 
             @media screen and (min-width: 1312px) {
-                    padding: .6rem 1.7rem;
+                    padding: .6rem 1.5rem;
                     margin-left: -.3rem;
-                    font-size: 1.1rem;
+                    font-size: 1rem;
             }
 
             .link {
@@ -373,6 +354,17 @@
     img {
         right:0 !important;
     }
+    .homeCircle {
+        width: 1000px;
+        height: 1000px;
+        background-color: $offTeal;
+        border-radius: 50%;
+        position:absolute;
+        right: 0;
+        bottom: -110%;
+        opacity: 0.1;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, $offTeal 100%);
+    }
 }
 
 @keyframes swipe-text {
@@ -418,15 +410,6 @@
         transform: translateY(15px);
         opacity: 0;
     }
-}
-
-.blobbieHolder {
-    position: absolute;
-    right:0;
-    bottom:0;
-    height:50%;
-    min-height:50%;
-    min-width:50%;
 }
 
 @keyframes extend {

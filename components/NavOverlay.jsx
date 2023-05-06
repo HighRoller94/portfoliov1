@@ -7,7 +7,7 @@ import { ImGithub } from 'react-icons/im';
 import { FaLinkedin } from 'react-icons/fa';
 
 import logoFill from '../images/logoFill.svg';
-import logo from '../images/logo.svg';
+import logo from '../images/logo2.svg';
 
 import Link from 'next/link'
 import { Link as Scroll } from 'react-scroll';
@@ -93,13 +93,12 @@ function NavOverlay() {
                 <div className="navbar__container">
                     <Scroll to="home">
                         <motion.div 
-                            className="nav__logo focus"
+                            className="nav__logo"
                             initial={{ opacity: 0}}
                             animate={{ opacity: 1}} 
                             transition={{ delay: 1.5, duration: 1 }} 
                         >
                             <Image
-                                className="focus"
                                 src={logoFill}
                                 fill
                                 alt="Logo"
@@ -116,24 +115,24 @@ function NavOverlay() {
                                     initial={{ opacity: 0}}
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2, duration: 1 }} 
-                                    className="navbar__item focus">
-                                <Scroll smooth spy activeClass="activeNavLink" to="about" offset={-70}><h1 className="navbar__links focus">About</h1></Scroll>
+                                    className="navbar__item">
+                                <Scroll smooth spy activeClass="activeNavLink" to="about" offset={-70}><h1 className="navbar__links">About</h1></Scroll>
                             </motion.li>
                             <motion.li 
                                     initial={{ opacity: 0}}
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2.25, duration: 1 }} 
-                                    className="navbar__item focus">
-                                <Scroll smooth spy activeClass="activeNavLink" to="projects" offset={-30}><h1 className="navbar__links focus">Portfolio</h1></Scroll>
+                                    className="navbar__item">
+                                <Scroll smooth spy activeClass="activeNavLink" to="projects" offset={-30}><h1 className="navbar__links">Portfolio</h1></Scroll>
                             </motion.li>
                             <motion.li 
                                     initial={{ opacity: 0}}
                                     animate={{ opacity: 1}} 
                                     transition={{ delay: 2.5, duration: 1 }} 
-                                    className="navbar__item focus">
-                                <Scroll smooth spy activeClass="activeNavLink" to="skills" offset={-25}><h1 className="navbar__links focus">Skills</h1></Scroll>
+                                    className="navbar__item">
+                                <Scroll smooth spy activeClass="activeNavLink" to="skills" offset={-25}><h1 className="navbar__links">Skills</h1></Scroll>
                             </motion.li>
-                            <li className="mobile__contact focus">
+                            <li className="mobile__contact">
                                 <Scroll smooth spy activeClass="activeNavLink" to="contact"><button className="navbar__links">Contact</button></Scroll>
                             </li>
                             <div className="tab__toggle">
@@ -156,7 +155,7 @@ function NavOverlay() {
                         </div>
                     </div>
                     <motion.div 
-                    className="nav__button__div focus"
+                    className="nav__button__div"
                     initial={{ opacity: 0}}
                     animate={{ opacity: 1}} 
                     transition={{ delay: 2.5, duration: 1 }} 

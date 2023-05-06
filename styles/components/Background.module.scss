@@ -2,8 +2,6 @@
 
 .mainArea {
     position: fixed;
-
-    
     width: 100%;
     height: 100vh;
     background: none;
@@ -161,6 +159,8 @@
 .cursor {
     display:none;
     transition: 200ms ease-in;
+    color: rgb(255, 255, 255, 1); 
+    mix-blend-mode: difference;
     @media screen and (min-width: 768px) {
         display:flex;
         justify-content:center;
@@ -191,7 +191,8 @@
         }
         #drag {
             display:none;
-            font-size: 1.2rem;
+            font-size: .5rem;
+            font-weight: 600;
         }
     }
     
