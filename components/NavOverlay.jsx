@@ -94,9 +94,9 @@ function NavOverlay() {
                     <Scroll to="home">
                         <motion.div 
                             className="nav__logo"
-                            initial={{ opacity: 0}}
-                            animate={{ opacity: 1}} 
-                            transition={{ delay: 1.5, duration: 1 }} 
+                            initial={{ opacity: 0  }}
+                            animate={{ opacity: 1 }} 
+                            transition={{ delay: 1.5, duration: .5 }} 
                         >
                             <Image
                                 src={logoFill}
@@ -156,9 +156,9 @@ function NavOverlay() {
                     </div>
                     <motion.div 
                     className="nav__button__div"
-                    initial={{ opacity: 0}}
-                    animate={{ opacity: 1}} 
-                    transition={{ delay: 2.5, duration: 1 }} 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }} 
+                    transition={{ delay: 1.5, duration: 1 }} 
                     >
                         <Scroll to="contact">Say Hello</Scroll>
                     </motion.div>

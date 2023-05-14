@@ -31,9 +31,9 @@
         justify-content: flex-start;
         background: none;
         text-align:center;
+        width: 100%;
         @media screen and (min-width: 768px) {
-            margin-left: 0;
-            
+            margin-left: 0; 
         }
 
         @media screen and (min-width: 1312px) {
@@ -44,7 +44,7 @@
         }
         h2 {
             font-weight: 700;
-            font-size: .8rem;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 0rem;
@@ -53,56 +53,24 @@
                 font-size: 1rem;
                 margin-left: -5px;
             }
+            
         }
-
-        .swipe__text {
-            position: relative;
-            width: 100%;
-            margin: 0 auto;
-            margin-top: .8rem;
-            @media screen and (min-width: 768px) {
-                max-width: 700px;
-                margin-top: 1.7rem;
+        h1 {
+            font-size: $heroTitleSize;
+            background: none;
+            font-family: $headerFont;
+            font-weight: 700;
+            animation:
+            text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+            animation-delay: 0.75s;
+            &:nth-child(2) {
+                margin-top: 1.2rem;
             }
             @media screen and (min-width: 1312px) {
-                min-width: 760px;
-                max-width: 760px;
-                width: 60%;
-                margin: 0;
-                margin-top: 1.7rem;
-            }
-            h1 {
-                font-size: $heroTitleSize;
-                background: none;
-                font-family: $headerFont;
-                font-weight: 700;
-                opacity: 0;
-                animation: fade 0.01s linear 1.5s forwards;
-                animation-delay: 1s;
-                
-                @media screen and (min-width: 1312px) {
-                    margin-top: -.5rem;
-                    height: 12rem;
-                    line-height: 1.2;
-                    width: 100%;
-                    margin-left: -5px;
-                }
-                span {
-                    color: $offTeal;
-                }
-            }
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 100%;
-                width: 0;
-                bottom: 0;
-                z-index: 1;
-                background-color: $offTeal;
-                animation: swipe-text 1s ease-in-out .5s forwards;
+                height: 69px;
+                line-height: 1.2;
+                width: 100%;
+                margin-left: -5px;
             }
             span {
                 color: $offTeal;
@@ -126,7 +94,7 @@
         }
         @media screen and (min-width: 1312px) {
             margin:0;
-            margin-top: 2.3rem;
+            margin-top: 1.8rem;
 
         }
         a {
@@ -138,7 +106,7 @@
             color: $offWhite;
             outline: none;
             text-decoration: none;
-            font-size: .8rem;
+            font-size: 14px;
             font-weight: 700;
             border-radius: 3px;
             transition: transform 300ms ease-in-out;
@@ -414,7 +382,7 @@
 
 @keyframes extend {
     0% {
-      height: 50px;
+      height: 80px;
     }
     10% {
       height: 150px;
@@ -438,3 +406,12 @@
         height: 250px;
     }
 }
+
+@keyframes text-clip {
+    from {
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }

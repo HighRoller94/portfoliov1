@@ -20,9 +20,9 @@ function Home({ offsetY, toggle, downloaded }) {
                     transition={{ delay: 0, duration: .5 }}>
                     Hey there, I'm Ash.
                 </motion.h2>
-                <div className="swipe__text">
-                    <h1 data-value="I'm Ash." id="heroTitle">I'm a freelance <span>web developer</span> and <span>designer</span> based in Kent.</h1>
-                </div>
+                    <h1 data-value="I'm Ash." id="heroTitle">I'm a freelance <span>web</span></h1>
+                    <h1><span>developer</span> and <span>designer</span></h1>
+                    <h1>based in Kent.</h1>
                 <motion.div
                     className="btn fade focus"
                     initial={{ opacity: 0 }}

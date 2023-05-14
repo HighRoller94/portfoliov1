@@ -41,30 +41,30 @@ const Header = ({ id, pre, heading, sub, highlighted}) => {
     }
 
     useEffect(() => {
-        if (inView) {
-            console.log(inView)
-            const e = document.getElementById(`${id}`)
-            animatedText(e)
-        }
+        // if (inView) {
+        //     console.log(inView)
+        //     const e = document.getElementById(`${id}`)
+        //     animatedText(e)
+        // }
     }, [inView])
 
     return (
         <div ref={ref} className={HeaderStyles.container}>
-            <motion.div 
+            <div 
                 className={HeaderStyles.header}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
+                // initial="hidden"
+                // animate={inView ? "visible" : "hidden"}
                 >
                 {pre && 
                     <span className={HeaderStyles.pre}>{pre}</span>
                 }
                 {heading && 
-                    <h2 className={HeaderStyles.title} data-value={heading} id={id}>{heading}</h2>
+                    <h2 ref={ref} className={`${HeaderStyles.title} ${inView ? `${HeaderStyles.titleActive}` : ''}`} data-value={heading} id={id}>{heading}</h2>
                 }
                 {sub && 
                     <p className={HeaderStyles.sub}>{sub}</p>
                 }
-            </motion.div>
+            </div>
         </div>
     )
 }

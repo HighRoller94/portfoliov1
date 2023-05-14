@@ -5,7 +5,7 @@ export const SkillsContent  = [
     {
         icon: <FaLaptopCode className="skillsIcon"/>,
         title: 'Web Development',
-        body: 'I really love coding from scratch and bringing new ideas to the web',
+        body: 'I love coding from scratch and bringing new ideas to the web',
         sub: 'Languages I speak:',
         skills: [
             'HTML',
