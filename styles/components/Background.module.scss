@@ -158,23 +158,23 @@
 
 .cursor {
     display:none;
-    transition: 200ms ease-in;
-    color: rgb(255, 255, 255, 1); 
+color: $offTeal;
     mix-blend-mode: difference;
+    background-color: $offTeal;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    width: 30px;
+    height: 30px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    animation: cursorAnim 2s infinite alternate;
+    pointer-events: none;
+    justify-content:center;
+    align-items:center;
     @media screen and (min-width: 768px) {
         display:flex;
-        justify-content:center;
-        align-items:center;
-        width: 30px;
-        height: 30px;
-        border: 1px solid currentColor;
-        opacity: 1;
-        border-radius: 50%;
-        position: fixed;
-        z-index: 9999999;
-        animation: cursorAnim 2s infinite alternate;
-        pointer-events: none;
-        transition: background-color 200ms ease-in;
         span {
             display: flex;
             justify-content: center;
