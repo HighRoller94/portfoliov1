@@ -31,7 +31,6 @@
   margin: 0;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 html {
@@ -70,7 +69,7 @@ body {
   opacity: .7;
   transform: scale(1.2);
   animation: none;
-  transition: background-color 200ms ease-in;
+  transition: 200ms ease-in;
   background-color: $offTeal;
 }
 
@@ -80,8 +79,8 @@ body {
   transform: scale(1.8);
   animation: none;
   transition: background-color 200ms ease-in;
-  background-color: $offTeal;
-
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
 }
 
 .carouselFocus {
