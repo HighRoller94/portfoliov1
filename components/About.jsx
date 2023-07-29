@@ -21,9 +21,9 @@ function About() {
     gsap.registerPlugin(ScrollTrigger);
     splitTypes.forEach((char, i) => {
       const text = new SplitType(char, {
-        types: "chars",
+        types: "words",
       });
-      gsap.from(text.chars, {
+      gsap.from(text.words, {
         scrollTrigger: {
           trigger: char,
           start: "top 80%",
