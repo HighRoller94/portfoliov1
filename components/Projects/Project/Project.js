@@ -35,14 +35,14 @@ function Project({
         }
       >
         <a className="imageLink" href={siteLink} target="_blank" rel="noreferrer">
-          <div className={`${ProjectStyles.projectImage} projectImage`}>
+          <div className={`${ProjectStyles.projectImage} interactive`} data-type="link">
             <Image src={`/images/${image}`} alt="Project Image" fill />
           </div>
         </a>
         <div className={ProjectStyles.projectText}>
           <h4>{type}</h4>
           <h1>{title}</h1>
-          <p>{desc}</p>
+          <p className="reveal-text">{desc}</p>
           <div className={ProjectStyles.projectLanguages}>
             {languages.map((language, index) => (
               <span key={index}>{language}</span>

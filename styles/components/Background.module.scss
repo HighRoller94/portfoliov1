@@ -1,223 +1,220 @@
-@import '../variables.module';
+@import "../variables.module";
 
 .mainArea {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: none;
+  top: 0;
+  z-index: -1;
+
+  .circles {
+    position: absolute;
     top: 0;
-    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
-    .circles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+    div {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: rgba(113, 219, 212, 0.2);
+      bottom: -150px;
+      animation: animate 20s linear infinite;
 
-        div {
-            position: absolute;
-            display: block;
-            width: 20px;
-            height: 20px;
-            background: rgba(113, 219, 212, 0.2);
-            bottom: -150px;
-            animation: animate 20s linear infinite;
+      @media screen and (min-width: 768px) {
+        bottom: -100px;
+      }
 
-            @media screen and (min-width: 768px) {
-                bottom: -100px;
-            }
+      &:nth-child(1) {
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+      }
 
-            &:nth-child(1) {
-                left: 25%;
-                width: 80px;
-                height: 80px;
-                animation-delay: 0s;
-            }
+      &:nth-child(2) {
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+      }
 
-            &:nth-child(2) {
-                left: 10%;
-                width: 20px;
-                height: 20px;
-                animation-delay: 2s;
-                animation-duration: 12s;
-            }
+      &:nth-child(3) {
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+      }
 
-            &:nth-child(3) {
-                left: 70%;
-                width: 20px;
-                height: 20px;
-                animation-delay: 4s;
-            }
+      &:nth-child(4) {
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+      }
 
-            &:nth-child(4) {
-                left: 40%;
-                width: 60px;
-                height: 60px;
-                animation-delay: 0s;
-                animation-duration: 18s;
-            }
+      &:nth-child(5) {
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+      }
 
-            &:nth-child(5) {
-                left: 65%;
-                width: 20px;
-                height: 20px;
-                animation-delay: 0s;
-            }
-
-            &:nth-child(6) {
-                left: 75%;
-                width: 35px;
-                height: 35px;
-                animation-delay: 4s;
-                @media screen and (min-width: 1312px) {
-                    display: block;
-                }
-            }
-
-            &:nth-child(7) {
-                left: 30%;
-                width:  70px;
-                height: 70px;
-                animation-delay: 12s;
-                display: none;
-                opacity: 0;
-                visibility: hidden;
-
-                @media screen and (min-width: 1312px) {
-                    display: block;
-                }
-            }
-
-            &:nth-child(8) {
-                left: 50%;
-                width: 25px;
-                height: 25px;
-                animation-delay: 15s;
-                animation-duration: 45s;
-                display: none;
-                opacity: 0;
-                visibility: hidden;
-
-                @media screen and (min-width: 1312px) {
-                    display: block;
-                }
-            }
-
-            &:nth-child(9) {
-                left: 20%;
-                width: 35px;
-                height: 35px;
-                animation-delay: 2s;
-                animation-duration: 35s;
-            }
-
-            &:nth-child(10) {
-                left: 85%;
-                width: 80px;
-                height: 80px;
-                animation-delay: 0s;
-                animation-duration: 20s;
-            }
+      &:nth-child(6) {
+        left: 75%;
+        width: 35px;
+        height: 35px;
+        animation-delay: 4s;
+        @media screen and (min-width: 1312px) {
+          display: block;
         }
+      }
+
+      &:nth-child(7) {
+        left: 30%;
+        width: 70px;
+        height: 70px;
+        animation-delay: 12s;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+
+        @media screen and (min-width: 1312px) {
+          display: block;
+        }
+      }
+
+      &:nth-child(8) {
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+
+        @media screen and (min-width: 1312px) {
+          display: block;
+        }
+      }
+
+      &:nth-child(9) {
+        left: 20%;
+        width: 35px;
+        height: 35px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+      }
+
+      &:nth-child(10) {
+        left: 85%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+        animation-duration: 20s;
+      }
     }
+  }
 }
 
 .socialsParent {
-    position: relative;
-
+  position: relative;
 }
 
-
 .border {
-    position: fixed;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    background: transparent;
-    pointer-events: none;
-    transition: 200ms ease-in-out;
+  position: fixed;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  background: transparent;
+  pointer-events: none;
+  transition: 200ms ease-in-out;
 
-    @media screen and (min-width: 768px) {
-        border: 25px solid black;
-    }
+  @media screen and (min-width: 768px) {
+    border: 25px solid black;
+  }
 
-    @media screen and (min-width: 1312px) {
-        border: 35px solid black;
-        border-width: 50px 70px 50px 70px;
-    }
+  @media screen and (min-width: 1312px) {
+    border: 35px solid black;
+    border-width: 50px 70px 50px 70px;
+  }
 }
 
 .cursor {
-    display:none;
-color: $offTeal;
-    mix-blend-mode: difference;
-    background-color: $offTeal;
-    transition-duration: 200ms;
-    transition-timing-function: ease-out;
-    width: 30px;
-    height: 30px;
-    border: 1px solid currentColor;
-    border-radius: 50%;
-    position: fixed;
-    z-index: 99;
-    animation: cursorAnim 2s infinite alternate;
-    pointer-events: none;
-    justify-content:center;
-    align-items:center;
-    @media screen and (min-width: 768px) {
-        display:flex;
-        span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            font-size: .55rem;
-            font-weight: 700;
-            color: $offWhite;
-        }
-        #arrowOpen {
-            display:none;
-            font-weight: 900;
-            font-size: 1.2rem;
-        }
-        #drag {
-            display:none;
-            font-size: .5rem;
-            font-weight: 600;
-        }
+  color: $offTeal;
+  background-color: $offTeal;
+  mix-blend-mode: difference;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+  animation: cursorAnim 2s infinite alternate;
+  pointer-events: none;
+  opacity: 0;
+  transition: 200ms ease-in;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+  &:not([data-type=""]) #cursor-icon {
+    opacity: 1;
+  }
+}
+
+#cursor-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 6px;
+  line-height: 4px;
+  fill: white !important;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+body {
+  &:hover {
+    .cursor {
+      opacity: 1;
     }
-    
+  }
 }
 
 @keyframes cursorAnim {
-    from {
-        transform: scale(1.2);
-    }
+  from {
+    transform: scale(1.2);
+  }
 
-    to {
-        transform: scale(.7);
-    }
+  to {
+    transform: scale(0.7);
+  }
 }
 
 @keyframes animate {
-    0% {
-        opacity: 1;
-        border-radius: 5%;
-        transform: translateY(0) rotate(0deg);
-    }
+  0% {
+    opacity: 1;
+    border-radius: 5%;
+    transform: translateY(0) rotate(0deg);
+  }
 
-    100% {
-        opacity: 0;
-        border-radius: 50%;
-        transform: translateY(-1000px) rotate(720deg);
-    }
+  100% {
+    opacity: 0;
+    border-radius: 50%;
+    transform: translateY(-1000px) rotate(720deg);
+  }
 }
