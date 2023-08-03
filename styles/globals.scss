@@ -6,7 +6,6 @@
 @import './components/GetInTouch.module.scss';
 @import './components/Background.module.scss';
 @import './components/Hero.module.scss';
-@import './components/About.module.scss';
 @import './components/Projects.module.scss';
 @import './components/Project.module.scss';
 @import './components/Carousel.module.scss';
@@ -34,7 +33,7 @@
 }
 
 html {
-  scrollbar-width: big;
+  scrollbar-width:calc(40px);
   scrollbar-color: $offTeal $offBlack;
 }
 

@@ -9,10 +9,10 @@ import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/dist/all"
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
-import AboutStyles from "../styles/components/About.module.scss";
+import AboutStyles from "./About.module.scss";
 
-import me from "../images/me.svg";
-import Header from "./Header";
+import me from "../../images/me.svg";
+import Header from "../Header";
 
 function About() {
 

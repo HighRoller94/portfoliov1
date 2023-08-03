@@ -150,16 +150,16 @@
 
   @media screen and (min-width: 1312px) {
     border: 35px solid black;
-    border-width: 50px 70px 50px 70px;
+    border-width: 50px 70px;
   }
 }
 
 .cursor {
   color: $offTeal;
   background-color: $offTeal;
-  mix-blend-mode: difference;
-  width: 25px;
-  height: 25px;
+  mix-blend-mode:difference;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   position: fixed;
   z-index: 99;

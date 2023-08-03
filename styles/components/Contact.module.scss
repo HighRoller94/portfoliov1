@@ -1,529 +1,520 @@
-@import '../variables.module';
+@import "../variables.module";
 
 .contact__section {
-    height: 100%;
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 0rem;
-    max-width: 400px;
-    margin-bottom: 5rem;
+  height: 100%;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 0rem;
+  max-width: 400px;
+  margin-bottom: 5rem;
+  @media screen and (min-width: 768px) {
+    width: 99%;
+    margin-top: 5rem;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 1312px) {
+    padding-top: 8rem;
+    margin-top: 0;
+    margin-bottom: 9rem;
+  }
+
+  .contact__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    position: relative;
+    width: 100%;
     @media screen and (min-width: 768px) {
-        width: 99%;
-        margin-top: 5rem;
-        max-width: 100%;
-        
+      width: 88%;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
     }
 
     @media screen and (min-width: 1312px) {
-        padding-top: 8rem;
-        margin-top: 0;
-        margin-bottom: 9rem;
+      width: 66%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
     }
 
-    .contact__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-left: 0;
-        position: relative;
-        width: 100%;
-        @media screen and (min-width: 768px) {
-            width: 88%;
-            justify-content:center;
-            align-items: center;
-            margin: 0 auto;
-        }
-
-        @media screen and (min-width: 1312px) {
-            width: 66%;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-start;
-            text-align: left;
-        }
-
-        .contact {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            @media screen and (min-width: 768px) {
-                width: 81%;
-                margin:0 auto;
-            }
-
-            @media screen and (min-width: 1312px) {
-                justify-content: flex-start;
-                align-items: flex-start;
-                margin-top: 2rem;
-            }
-
-            .contact__text {
-                margin-top:2rem;
-                text-align:center;
-                @media screen and (min-width: 768px) {
-                    display: flex;
-                    flex-direction: column;
-                    margin:0 auto;
-                    margin-top: 2rem;
-                }
-
-                @media screen and (min-width: 1312px) {
-                    align-items: flex-start;
-                    justify-content: flex-end;
-                    text-align:left;
-                    margin:0;
-                    margin-top: 2rem;
-                }
-
-                p {
-                    margin: 0 auto;
-                    font-size: $bodyFontSize;
-                    line-height: 1.6;
-                    color: $darkModeGrey;
-                    text-align:center;
-                    @media screen and (min-width: 768px) {
-                        
-                        margin-top: 1rem;
-                        font-size: $mobileBodyFontSize;
-                        width: 80%;
-                       
-                    }
-
-                    @media screen and (min-width: 1312px) {
-                        text-align: left;
-
-                        width: 70%;
-                        margin: 0;
-                        
-                    }
-
-                    span {
-                        color: $offTeal;
-                    }
-                }
-
-                .contact__mail {
-                    display: flex;
-                    margin-top: 1.5rem;
-                    position: relative;
-                    text-align:center;
-                    justify-content:center;
-                    @media screen and (min-width: 768px) {
-                        display: flex;
-                        justify-content: center;
-                        margin: 0 auto;
-                        width: 60%;
-                        margin-top: 2rem;
-                    }
-
-                    @media screen and (min-width: 1312px) {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        margin: 0;
-                        margin-top: 1.5rem;
-                    }
-
-                    .icon {
-
-                        font-size: 1.5rem;
-                        @media screen and (min-width: 768px) {
-                            position: absolute;
-                            left: 0;
-                            font-size: 1.7rem;
-                        }
-                        @media screen and (min-width: 1312px) {
-                            position: absolute;
-                            left: 0;
-                            top:0;
-                            font-size: 2rem;
-                        }
-                    }
-
-                    a {
-                        text-decoration: none;
-                        color: $darkModeGrey;
-                        display: flex;
-                        align-items: center;
-                        margin-left: 15px;
-                        @media screen and (min-width: 768px) {
-                            margin-left: 7rem;
-                        }
-
-                        @media screen and (min-width: 768px) {
-                            margin-left: 3.8rem;
-                        }
-
-                        h2 {
-                            font-weight: 400;
-                            font-size: .9rem;
-                            width: 100%;
-                            font-weight: 700;
-                            position:relative;
-                            letter-spacing: 1px;
-                            @media screen and (min-width: 768px) {
-                                font-size: 1.1rem;
-                            }
-
-                            @media screen and (min-width: 1312px) {
-                                align-items: flex-start;
-                                font-size: 1.2rem;
-                            }
-                            &::after {
-                                content: '';
-                                position: absolute;
-                                width: 100%;
-                                transform: scaleX(0);
-                                height: 2px;
-                                bottom: -3px;
-                                left: 0;
-                                background-color: $offTeal;
-                                transform-origin: bottom right;
-                                transition: transform 0.4s ease-out;
-                            }
-                            &:hover::after {
-                                transform: scaleX(1);
-                                transform-origin: bottom left;
-                            }
-                        }
-                    }
-                }
-
-                .contact__cta {
-                    display: flex;
-                    margin: 1.5rem auto;
-                    align-items: center;
-
-                    @media screen and (min-width: 768px) {
-                        text-align: center;
-                        margin-left: 2rem;
-                        margin: 1rem auto;
-                    }
-
-                    @media screen and (min-width: 1312px) {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        margin: 0;
-                    }
-
-                    h2 {
-                        font-family: 'Helvetica Neue', sans-serif;
-                        font-weight: 600;
-                        font-size: $bodyFontSize;
-                        color: $darkModeGrey;
-                        width: 100%;
-
-                        @media screen and (min-width: 1312px) {
-                            align-items: flex-start;
-                            text-align: left;
-                            margin-top: 3rem;
-                            margin-left: .2rem;
-                            font-size: 1.3rem;
-                        }
-
-                        span {
-                            color: $offTeal;
-                        }
-                    }
-                }
-            }
-        }
-
-        .contact__form {
-            display: flex;
-            position: relative;
-            flex-direction: column;
-            margin-left: 0;
-            width:100%;
-            margin-top:-1rem;
-            @media screen and (min-width: 768px) {
-                margin-top: 1rem;
-                width: 70%;
-                max-width: 400px;
-            }
-
-            @media screen and (min-width: 1312px) {
-                margin-top: 2rem;
-                width: 60%;
-                max-width: 100%;
-            }
-
-            .text__field {
-                margin-bottom: .5rem;
-                position: relative;
-                height: 60px;
-                overflow: hidden;
-                margin: auto;
-                margin-top: 1rem;
-                width: 90%;
-
-                @media screen and (min-width: 768px) {
-                    width: 100%;
-                }
-
-                @media screen and (min-width: 1312px) {
-                    height: 4rem;
-                    width: 100%;
-                }
-
-                &:nth-child(0) {
-                    margin-top: 0;
-                }
-
-                input {
-                    width: 100%;
-                    height: 100%;
-                    color: $offWhite;
-                    padding-top: 20px;
-                    border: none;
-                    background: none;
-                    margin-top: -12px;
-                    margin-left: -1px;
-                    font-size: $bodyFontSize;
-                    outline: none;
-
-                    &:focus+.label-name .content-name,
-                    &:valid+.label-name .content-name {
-                        transform: translateY(-180%);
-                        font-size: .7rem;
-                        color: $offTeal;
-                        text-transform: uppercase;
-                        letter-spacing: .2rem;
-                        background: none;
-                        font-weight: 600;
-                    }
-                    &:hover+.label-name .content-name
-                    {
-                        color: $offTeal;
-                    }
-                    &:hover+.label-name::after {
-                        transform: translateX(0%);
-                        background: none;
-                    }
-                    &:focus+.label-name::after,
-                    &:valid+.label-name::after {
-                        transform: translateX(0%);
-                        background: none;
-                    }
-                }
-
-                label {
-                    position: absolute;
-                    bottom: 0px;
-                    left: 0%;
-                    color: currentColor;
-                    margin-bottom: 1px;
-                    width: 100%;
-                    height: 100%;
-                    font-size: $bodyFontSize;
-                    pointer-events: none;
-                    opacity: 0.9;
-                    border-bottom: 1px solid currentColor;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        opacity: 1;
-                        left: 0px;
-                        bottom: -1px;
-                        height: 100%;
-                        width: 100%;
-                        background: none;
-                        border-bottom: 2px solid $offTeal;
-                        transform: translateX(-100%);
-                        transition: 0.5s;
-                        transform-origin: bottom right;
-                    }
-                    &::after:focus {
-                        transform-origin: bottom left;
-                        transform: translateX(-100%);
-                    }
-                }
-
-                .content-name {
-                    position: absolute;
-                    bottom: 5px;
-                    margin-top: -10px;
-                    color: $offWhite;
-                    left: 0px;
-                    transition: all 0.3s ease;
-                }
-            }
-
-            .text__area {
-                margin: 1rem auto 20px auto;
-                position: relative;
-                height: 9rem;
-                overflow: hidden;
-                width:90%;
-
-                @media screen and (min-width: 768px) {
-                    width: 100%;
-                    height: 11rem;
-                }
-
-                @media screen and (min-width: 1312px) {
-                    margin-top: 2rem;
-                    width: 100%;
-                    position: relative;
-                    height: 12rem;
-                    overflow: hidden;
-                }
-
-                textarea {
-                    width: 100%;
-                    height: 100%;
-                    color: $offWhite;
-                    padding-top: 35px;
-                    border: none;
-                    background: none;
-                    margin-top: -12px;
-                    margin-left: -1px;
-                    font-size: 1rem;
-                    outline: none;
-
-                    &:focus+.label-name .content-name,
-                    &:valid+.label-name .content-name {
-                        transform: translateY(-75%);
-                        font-size: .7rem;
-                        color: $offTeal;
-                        text-transform: uppercase;
-                        letter-spacing: .2rem;
-                        background: none;
-                        font-weight: 600;
-                    }
-
-                    &:focus+.label-name::after,
-                    &:valid+.label-name::after {
-                        transform: translateX(0%);
-                        background: none;
-                    }
-
-                    &:hover+.label-name .content-name
-                    {
-                        color: $offTeal;
-                    }
-                    &:hover+.label-name::after {
-                        transform: translateX(0%);
-                        background: none;
-                    }
-                }
-
-                label {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    margin-bottom: 1px;
-                    width: 100%;
-                    height: 100%;
-                    background: none;
-                    font-size: $bodyFontSize;
-                    pointer-events: none;
-                    opacity: 0.9;
-                    border-bottom: 1px solid currentColor;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        opacity: 1;
-                        left: 0px;
-                        bottom: -1px;
-                        height: 100%;
-                        width: 100%;
-                        border-bottom: 2px solid $offTeal;
-                        transform: translateX(-150%);
-                        transition: 0.5s;
-                    }
-                }
-
-                .content-name {
-                    position: absolute;
-                    top: 1rem;
-                    left: 0px;
-                    transition: all 0.3s ease;
-                }
-            }
-        }
-    }
-    
-    .send__btn {
+    .contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      @media screen and (min-width: 768px) {
+        width: 81%;
         margin: 0 auto;
+      }
+
+      @media screen and (min-width: 1312px) {
+        justify-content: flex-start;
+        align-items: flex-start;
         margin-top: 2rem;
-        padding: .5rem 1.8rem;
-        font-weight: 700;
-        display:flex;
-        justify-content:center;
-        align-self:right;
-        color: $offWhite;
-        background-color: $offTeal;
-        border-radius: 3px;
-        font-size: .9rem;
-        transition: 500ms ease;
-        border: 1px solid $offBlack;
-        text-transform:capitalize;
-        max-width: 12rem;
-        margin-left: auto;
+      }
+
+      .contact__text {
+        margin-top: 2rem;
+        text-align: center;
         @media screen and (min-width: 768px) {
-            margin-left: auto;
-            font-size: 1rem;
-            max-width: 12rem;
-            margin-top: 3rem;
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+          margin-top: 2rem;
         }
 
         @media screen and (min-width: 1312px) {
-            margin: 0;
-            max-width: 12rem;
-            font-size: 1rem;
-            padding: .6rem 1.5rem;
-            margin-top: 2.5rem;
+          align-items: flex-start;
+          justify-content: flex-end;
+          text-align: left;
+          margin: 0;
+          margin-top: 1rem;
         }
 
-        &:hover {
-            color: $offTeal;
-            background-color: $offBlack;
-            border: 1px solid $offTeal;
-        }
-
-    }
-    .statusSent {
-        display: flex;
-        padding: 1rem 30px 1.5rem 30px;
-        justify-content:space-between;
-        width: 90%;
-        @media screen and (min-width: 768px) {
-            width: 55%;
-        }
-        @media screen and (min-width: 1312px) {
-            width: 100%;
-            margin-top: 3rem;
-            
-        }
-        .icon {
-            color: $offTeal;
-            font-size: 2rem;
-            @media screen and (min-width: 1312px) {
-                font-size: 2.5rem;
-            }
-        }
         p {
-            margin-top: 2px;
-            font-size: .85rem;
-            width:100%;
-            @media screen and (min-width: 1312px) {
-                margin-top: 10px;
-                margin-left: 10px;
-            }
+          margin: 0 auto;
+          font-weight: 600;
+          font-size: $bodyFontSize;
+          line-height: 1.6;
+          color: $darkModeGrey;
+          text-align: center;
+          @media screen and (min-width: 768px) {
+            width: 80%;
+          }
+
+          @media screen and (min-width: 1312px) {
+            text-align: left;
+
+            width: 70%;
+            margin: 0;
+          }
+
+          span {
+            color: $offTeal;
+          }
         }
+
+        .contact__mail {
+          display: flex;
+          margin-top: 1.5rem;
+          position: relative;
+          text-align: center;
+          justify-content: center;
+          @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: 60%;
+            margin-top: 2rem;
+          }
+
+          @media screen and (min-width: 1312px) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0;
+            margin-top: 2.5rem;
+          }
+
+          .icon {
+            font-size: 1.5rem;
+            @media screen and (min-width: 768px) {
+              position: absolute;
+              left: 0;
+              font-size: 1.7rem;
+            }
+            @media screen and (min-width: 1312px) {
+              position: absolute;
+              left: 0;
+              top: 0;
+              font-size: 2.5rem;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            color: $offWhite;
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            @media screen and (min-width: 768px) {
+              margin-left: 7rem;
+            }
+
+            @media screen and (min-width: 768px) {
+              margin-left: 3.8rem;
+            }
+
+            h2 {
+              font-weight: 400;
+              font-size: 0.9rem;
+              width: 100%;
+              font-weight: 700;
+              position: relative;
+              letter-spacing: 1px;
+              @media screen and (min-width: 768px) {
+                font-size: 1.1rem;
+              }
+
+              @media screen and (min-width: 1312px) {
+                align-items: flex-start;
+                font-size: 1.5rem;
+                margin-left: 8px;
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: -3px;
+                left: 0;
+                background-color: $offTeal;
+                transform-origin: bottom right;
+                transition: transform 0.4s ease-out;
+              }
+              &:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+              }
+            }
+          }
+        }
+
+        .contact__cta {
+          display: flex;
+          margin: 1.5rem auto;
+          align-items: center;
+
+          @media screen and (min-width: 768px) {
+            text-align: center;
+            margin-left: 2rem;
+            margin: 1rem auto;
+          }
+
+          @media screen and (min-width: 1312px) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0;
+          }
+
+          h2 {
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 700;
+            font-size: $bodyFontSize;
+            color: $darkModeGrey;
+            width: 100%;
+
+            @media screen and (min-width: 1312px) {
+              align-items: flex-start;
+              text-align: left;
+              margin-top: 3rem;
+              margin-left: 0.2rem;
+              font-size: 1.3rem;
+            }
+
+            span {
+              color: $offTeal;
+            }
+          }
+        }
+      }
     }
+
+    .contact__form {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      margin-left: 0;
+      width: 100%;
+      margin-top: -1rem;
+      @media screen and (min-width: 768px) {
+        margin-top: 1rem;
+        width: 70%;
+        max-width: 400px;
+      }
+
+      @media screen and (min-width: 1312px) {
+        margin-top: 2rem;
+        width: 60%;
+        max-width: 100%;
+      }
+
+      .text__field {
+        margin-bottom: 0.5rem;
+        position: relative;
+        height: 60px;
+        overflow: hidden;
+        margin: auto;
+        margin-top: 1rem;
+        width: 90%;
+
+        @media screen and (min-width: 768px) {
+          width: 100%;
+        }
+
+        @media screen and (min-width: 1312px) {
+          height: 4rem;
+          width: 100%;
+        }
+
+        &:nth-child(0) {
+          margin-top: 0;
+        }
+
+        input {
+          width: 100%;
+          height: 100%;
+          color: $offWhite;
+          padding-top: 20px;
+          border: none;
+          background: none;
+          margin-top: -12px;
+          margin-left: -1px;
+          font-size: $bodyFontSize;
+          outline: none;
+
+          &:focus + .label-name .content-name,
+          &:valid + .label-name .content-name {
+            transform: translateY(-180%);
+            font-size: 0.7rem;
+            color: $offTeal;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            background: none;
+            font-weight: 600;
+          }
+          &:hover + .label-name .content-name {
+            color: $offTeal;
+          }
+          &:hover + .label-name::after {
+            transform: translateX(0%);
+            background: none;
+          }
+          &:focus + .label-name::after,
+          &:valid + .label-name::after {
+            transform: translateX(0%);
+            background: none;
+          }
+        }
+
+        label {
+          position: absolute;
+          bottom: 0px;
+          left: 0%;
+          color: currentColor;
+          margin-bottom: 1px;
+          width: 100%;
+          height: 100%;
+          font-size: $bodyFontSize;
+          pointer-events: none;
+          opacity: 0.9;
+          border-bottom: 1px solid currentColor;
+
+          &::after {
+            content: "";
+            position: absolute;
+            opacity: 1;
+            left: 0px;
+            bottom: -1px;
+            height: 100%;
+            width: 100%;
+            background: none;
+            border-bottom: 2px solid $offTeal;
+            transform: translateX(-100%);
+            transition: 0.5s;
+            transform-origin: bottom right;
+          }
+          &::after:focus {
+            transform-origin: bottom left;
+            transform: translateX(-100%);
+          }
+        }
+
+        .content-name {
+          position: absolute;
+          bottom: 5px;
+          margin-top: -10px;
+          color: $offWhite;
+          left: 0px;
+          transition: all 0.3s ease;
+        }
+      }
+
+      .text__area {
+        margin: 1rem auto 20px auto;
+        position: relative;
+        height: 9rem;
+        overflow: hidden;
+        width: 90%;
+
+        @media screen and (min-width: 768px) {
+          width: 100%;
+          height: 11rem;
+        }
+
+        @media screen and (min-width: 1312px) {
+          margin-top: 2rem;
+          width: 100%;
+          position: relative;
+          height: 12rem;
+          overflow: hidden;
+        }
+
+        textarea {
+          width: 100%;
+          height: 100%;
+          color: $offWhite;
+          padding-top: 35px;
+          border: none;
+          background: none;
+          margin-top: -12px;
+          margin-left: -1px;
+          font-size: 1rem;
+          outline: none;
+
+          &:focus + .label-name .content-name,
+          &:valid + .label-name .content-name {
+            transform: translateY(-75%);
+            font-size: 0.7rem;
+            color: $offTeal;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            background: none;
+            font-weight: 600;
+          }
+
+          &:focus + .label-name::after,
+          &:valid + .label-name::after {
+            transform: translateX(0%);
+            background: none;
+          }
+
+          &:hover + .label-name .content-name {
+            color: $offTeal;
+          }
+          &:hover + .label-name::after {
+            transform: translateX(0%);
+            background: none;
+          }
+        }
+
+        label {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          margin-bottom: 1px;
+          width: 100%;
+          height: 100%;
+          background: none;
+          font-size: $bodyFontSize;
+          pointer-events: none;
+          opacity: 0.9;
+          border-bottom: 1px solid currentColor;
+
+          &::after {
+            content: "";
+            position: absolute;
+            opacity: 1;
+            left: 0px;
+            bottom: -1px;
+            height: 100%;
+            width: 100%;
+            border-bottom: 2px solid $offTeal;
+            transform: translateX(-150%);
+            transition: 0.5s;
+          }
+        }
+
+        .content-name {
+          position: absolute;
+          top: 1rem;
+          left: 0px;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .send__btn {
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 0.5rem 1.8rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-self: right;
+    color: $offWhite;
+    background-color: $offTeal;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    transition: 500ms ease;
+    border: 1px solid $offBlack;
+    text-transform: capitalize;
+    max-width: 12rem;
+    margin-left: auto;
+    @media screen and (min-width: 768px) {
+      margin-left: auto;
+      font-size: 1rem;
+      max-width: 12rem;
+      margin-top: 3rem;
+    }
+
+    @media screen and (min-width: 1312px) {
+      margin: 0;
+      max-width: 12rem;
+      font-size: 1rem;
+      padding: 0.6rem 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    &:hover {
+      color: $offTeal;
+      background-color: $offBlack;
+      border: 1px solid $offTeal;
+    }
+  }
+  .statusSent {
+    display: flex;
+    padding: 1rem 30px 1.5rem 30px;
+    justify-content: space-between;
+    width: 90%;
+    @media screen and (min-width: 768px) {
+      width: 55%;
+    }
+    @media screen and (min-width: 1312px) {
+      width: 100%;
+      margin-top: 3rem;
+    }
+    .icon {
+      color: $offTeal;
+      font-size: 2rem;
+      @media screen and (min-width: 1312px) {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      margin-top: 2px;
+      font-size: 0.85rem;
+      width: 100%;
+      @media screen and (min-width: 1312px) {
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
 }
 
 .contactPage {
-    padding-top: 11vh;
-    @media screen and (min-width: 768px) {
-        padding-top: 3rem;
-    }
+  padding-top: 11vh;
+  @media screen and (min-width: 768px) {
+    padding-top: 3rem;
+  }
 }

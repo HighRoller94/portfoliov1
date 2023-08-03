@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import useRunOnce from "./useRunOnce.js";
+
 import Image from "next/image";
 import Magnetic from "./Magnetic/index.jsx";
 
 import { ImGithub } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
+import { FiMessageCircle } from "react-icons/fi";
 
-import logoFill from "../images/logoFill.svg";
-import logo from "../images/logo2.svg";
 
-import Link from "next/link";
 import { Link as Scroll } from "react-scroll";
 
 function NavOverlay() {
@@ -92,14 +90,14 @@ function NavOverlay() {
           <div id="progressBar"></div>
         </div>
         <div className="navbar__container">
-          <Scroll to="home">
+          <Scroll to="home" className="homeLink">
             <motion.div
               className="nav__logo"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.5 }}
             >
-              <Image src={logoFill} fill alt="Logo" />
+              <Image src='/logoFill.svg' fill alt="Logo" />
             </motion.div>
           </Scroll>
           <div className="sidebar">
@@ -162,15 +160,11 @@ function NavOverlay() {
                   </Scroll>
                 </motion.li>
               </Magnetic>
-              <Magnetic>
-                <li className="mobile__contact">
-                  <Scroll smooth spy activeClass="activeNavLink" to="contact">
-                    <button className="navbar__links interactive">
-                      Contact
-                    </button>
-                  </Scroll>
-                </li>
-              </Magnetic>
+              <li className="mobile__contact">
+                <Scroll smooth spy activeClass="activeNavLink" to="contact">
+                  <button className="navbar__links interactive">Contact</button>
+                </Scroll>
+              </li>
               <div className="tab__toggle"></div>
               <div className="menu__socials">
                 <a
@@ -205,25 +199,11 @@ function NavOverlay() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
           >
-            <Scroll to="contact">Say Hello</Scroll>
+            <Scroll to="contact">
+              <FiMessageCircle fill="white" className="contactIcon" size={24} />
+              <span>Say Hello</span>
+            </Scroll>
           </motion.div>
-        </div>
-      </div>
-      <div className="download__cv">
-        <p className="socials__header">Download my CV!</p>
-        <span className="bar"></span>
-        <div className="icon__container focus">
-          {/* {downloaded ? (
-                    <svg className="icon" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="currentColor" id="Icon_material-done"  data-name="Icon material-done" d="M13.5,24.3,7.2,18,6.075,19.125,5.1,20.1l8.4,8.4,18-18L29.4,8.4Z" transform="translate(-5.1 -8.4)"/>
-                    </svg> 
-                    ) :  (
-                        <a onClick={toggle} className="link" href="cv/Ash-Bridges-CV.pdf" download >
-                            <svg className="icon" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="currentColor" id="Icon_awesome-download" data-name="Icon awesome-download" d="M11.834,0h4.383a1.312,1.312,0,0,1,1.315,1.315v9.2h4.8a1.094,1.094,0,0,1,.772,1.868l-8.333,8.338a1.061,1.061,0,0,1-1.5,0L4.936,12.387a1.094,1.094,0,0,1,.772-1.868h4.81v-9.2A1.312,1.312,0,0,1,11.834,0ZM28.05,20.6v6.136a1.312,1.312,0,0,1-1.315,1.315H1.315A1.312,1.312,0,0,1,0,26.735V20.6a1.312,1.312,0,0,1,1.315-1.315H9.352l2.684,2.684a2.807,2.807,0,0,0,3.977,0L18.7,19.284h8.037A1.312,1.312,0,0,1,28.05,20.6ZM21.256,25.42a1.1,1.1,0,1,0-1.1,1.1A1.1,1.1,0,0,0,21.256,25.42Zm3.506,0a1.1,1.1,0,1,0-1.1,1.1A1.1,1.1,0,0,0,24.763,25.42Z"/>
-                            </svg>
-                        </a>
-                    )} */}
         </div>
       </div>
     </motion.div>

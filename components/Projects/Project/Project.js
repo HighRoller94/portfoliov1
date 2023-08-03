@@ -40,7 +40,7 @@ function Project({
           </div>
         </a>
         <div className={ProjectStyles.projectText}>
-          <h4>{type}</h4>
+          <h4>[{type}]</h4>
           <h1>{title}</h1>
           <p className="reveal-text">{desc}</p>
           <div className={ProjectStyles.projectLanguages}>

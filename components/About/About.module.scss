@@ -1,4 +1,4 @@
-@import '../variables.module';
+@import '../../styles/variables.module';
 
 .aboutSection {
     display: flex;
@@ -23,7 +23,7 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
-        padding-top: 13rem;
+        padding-top: 11rem;
         
     }
 
@@ -54,7 +54,7 @@
             flex-direction: column;
             justify-content: space-between;
             @media screen and (min-width: 768px) {
-                margin-top: 3rem;
+                margin-top: 1.5rem;
             }
 
             @media screen and (min-width: 1312px) {
@@ -67,8 +67,9 @@
             }
 
             p {
+                transform-style: preserve-3d;
                 font-size: $bodyFontSize;
-                font-weight: 400;
+
                 color: $darkModeGrey;
                 line-height: 1.6;
                 text-align:center;
@@ -90,7 +91,7 @@
                 span {
                     font-weight: 700;
                     color: $offTeal;
-                    font-size: 1rem;
+                    font-size: $bodyFontSize;
                 }
             }
 

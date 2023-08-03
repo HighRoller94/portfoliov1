@@ -1,0 +1,48 @@
+.introduction {
+  height: 100vh;
+  width: 100vw;
+  background-color: #141516;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin-top: -10vh;
+    z-index: 99;
+    font-size: 24px;
+    position: absolute;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+        font-size: 36px;
+    }
+    @media screen and (min-width: 1312px) {
+        font-size: 42px;  
+    }
+    span {
+      color: #71dbd4;
+    }
+  }
+  svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 300px);
+    path {
+      fill: #141516;
+    }
+  }
+}
+
+@keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

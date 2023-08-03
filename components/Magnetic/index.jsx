@@ -5,7 +5,7 @@ export default function Magnetic({children}) {
     const magnetic = useRef(null);
 
     useEffect( () => {
-        console.log(children)
+
         const xTo = gsap.quickTo(magnetic.current, "x", {duration: 1, ease: "elastic.out(1, 0.3)"})
         const yTo = gsap.quickTo(magnetic.current, "y", {duration: 1, ease: "elastic.out(1, 0.3)"})
 
@@ -14,8 +14,9 @@ export default function Magnetic({children}) {
             const {height, width, left, top} = magnetic.current.getBoundingClientRect();
             const x = clientX - (left + width/2)
             const y = clientY - (top + height/2)
-            xTo(x * 0.8);
-            yTo(y * 0.8);
+            e.target.style.zIndex = '999';
+            xTo(x * 0.5);
+            yTo(y * 0.5);
         })
         magnetic.current.addEventListener("mouseleave", (e) => {
             xTo(0);

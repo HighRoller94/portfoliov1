@@ -16,7 +16,7 @@
   }
 
   @media screen and (min-width: 1312px) {
-    margin-bottom: 1rem !important;
+    margin-bottom: 2rem !important;
 
     width: 77%;
     max-width: 100%;
@@ -155,15 +155,16 @@
     }
 
     p {
-      margin: 0.5rem 0;
+      margin: 1rem 0;
       color: $darkModeGrey;
       line-height: 1.6;
       width: 100%;
-      font-size: $bodyFontSize;
-      font-weight: 400;
+      font-size: 16px;
+
       transition: all 0.3s ease-in-out;
       @media screen and (min-width: 768px) {
         margin: 0.5rem 0;
+        font-size: 18px;
       }
       span {
         color: $offTeal;

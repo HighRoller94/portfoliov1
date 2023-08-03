@@ -24,29 +24,29 @@ function Contact({ offsetY }) {
     let interval = null;
 
     useEffect(() => {
-        document.querySelector('#contactTitle').onmouseover = e => {
-            let iteration = 0;
-            clearInterval(interval);
+        // document.querySelector('#contactTitle').onmouseover = e => {
+        //     let iteration = 0;
+        //     clearInterval(interval);
 
-            interval = setInterval(() => {
-                e.target.innerText = e.target.innerText
-                .split("")
-                .map((letter, index) => {
-                    if(index < iteration) {
-                    return e.target.dataset.value[index];
-                    }
+        //     interval = setInterval(() => {
+        //         e.target.innerText = e.target.innerText
+        //         .split("")
+        //         .map((letter, index) => {
+        //             if(index < iteration) {
+        //             return e.target.dataset.value[index];
+        //             }
                 
-                    return letters[Math.floor(Math.random() * 26)]
-                })
-                .join("");
+        //             return letters[Math.floor(Math.random() * 26)]
+        //         })
+        //         .join("");
                 
-                if(iteration >= e.target.dataset.value.length){ 
-                clearInterval(interval);
-                }
+        //         if(iteration >= e.target.dataset.value.length){ 
+        //         clearInterval(interval);
+        //         }
                 
-                iteration += 1 / 3;
-            }, 10);
-        }   
+        //         iteration += 1 / 3;
+        //     }, 10);
+        // }   
     })
 
     const { ref, inView } = useInView({

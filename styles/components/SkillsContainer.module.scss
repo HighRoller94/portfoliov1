@@ -112,16 +112,17 @@
         }
 
         p {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             font-size: $bodyFontSize;
             color: $darkModeGrey;
             width: 75%;
+            opacity: .7;
             line-height: 1.6;
-            font-weight: 400;
+            font-weight: 600;
 
             @media screen and (min-width: 1312px) {
-                font-size: .9rem;
-                width: 65%;
+                font-size: 16px;
+                width: 73%;
             }
         }
     }
@@ -130,7 +131,7 @@
         color: lightgrey;
 
         h3 {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             font-weight: 600;
             position: relative;
             @media screen and (min-width: 768px) {
@@ -150,7 +151,7 @@
             }
 
             h2 {
-                font-size: $bodyFontSize;
+                font-size: 16px;
                 opacity: 0.8;
                 font-weight: 500;
                 margin: .3rem auto;

@@ -58,9 +58,6 @@ function Background() {
 
       if (interacting) {
         let iconData = getCursorContent(interactiveContent.dataset.type)
-
-        console.log(icon)
-        console.log(iconData.props.children)
       }
     };
 
@@ -83,7 +80,7 @@ function Background() {
   return (
     <>
       <div className="cursor">
-        <div id="cursor-icon"><getCursorContent /></div>
+        <div id="cursor-icon"></div>
       </div>
       <div className={BackgroundStyles.border}></div>
       <div className={BackgroundStyles.mainArea}>

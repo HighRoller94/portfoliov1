@@ -51,10 +51,10 @@ $toolsHeaderFontSize: 1.2rem;
             margin: 0 auto;
             width: 90%;
             font-size: $bodyFontSize;
-            font-weight: 400;
+            font-weight: 600;
             color: $darkModeGrey;
             margin-top: $mobileHeaderMargin;
-            margin-top: 2rem;
+            margin-top: 1rem;
             line-height: 1.6;
             
             @media screen and (min-width: 1312px) {
@@ -95,7 +95,7 @@ $toolsHeaderFontSize: 1.2rem;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1.5rem;
             grid-column-gap: 10%;
-            margin: 4rem auto 0 auto;
+            margin: 6rem auto 0 auto;
             width: 65%;
             
             max-width:fit-content;

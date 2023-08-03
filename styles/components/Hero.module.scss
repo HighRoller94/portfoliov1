@@ -8,6 +8,7 @@
     width: 85%;
     margin: 0 auto;
     position: relative;
+    max-width: 1400px;
     @media screen and (min-width: 768px) {
         padding-top: 25vh;
 
@@ -19,9 +20,10 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        padding-top: 26.5vh;
+        padding-top: 26.3vh;
         background: none;
-        margin-left: 17.5%;
+
+width:65%;
     }
     .hero__text {
         display: flex;
@@ -94,7 +96,7 @@
         }
         @media screen and (min-width: 1312px) {
             margin:0;
-            margin-top: 1.8rem;
+            margin-top: 2.4rem;
 
         }
         a {

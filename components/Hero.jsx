@@ -20,7 +20,7 @@ function Home({ offsetY, toggle, downloaded }) {
                     transition={{ delay: 0, duration: .5 }}>
                     Hey there, I'm Ash.
                 </motion.h2>
-                    <h1 data-value="I'm Ash." id="heroTitle">I'm a freelance <span>web</span></h1>
+                    <h1 data-value="I'm Ash." id="heroTitle">I'm a Freelance <span>web</span></h1>
                     <h1><span>developer</span> and <span>creative</span></h1>
                     <h1>based in Kent.</h1>
                 <motion.div
