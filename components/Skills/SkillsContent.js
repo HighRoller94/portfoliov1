@@ -5,7 +5,7 @@ export const SkillsContent  = [
     {
         icon: <FaLaptopCode className="skillsIcon"/>,
         title: 'Web Development',
-        body: 'I love coding from scratch and bringing new ideas to the web',
+        body: 'I love coding from scratch and bringing new ideas to the web.',
         sub: 'Languages I speak:',
         skills: [
             'HTML',
@@ -19,7 +19,7 @@ export const SkillsContent  = [
     {
         icon: <FaPencilRuler className="skillsIcon"/>,
         title: 'UI/UX Design',
-        body: 'Clean and simple design, with thoughtful interactions and animations',
+        body: 'Clean and simple design, with thoughtful interactions and animations.',
         sub: 'Design tools:',
         skills: [
             'Adobe XD',
@@ -33,7 +33,7 @@ export const SkillsContent  = [
     {
         icon: <AiOutlineCodepen className="skillsIcon"/>,
         title: 'Extra Skills',
-        body: "I've also eplored a number of different content systems and custom backends",
+        body: "I've also explored a number of different content systems and custom backends.",
         sub: "What I've used:",
         skills: [
             'Express',
