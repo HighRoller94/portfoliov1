@@ -59,8 +59,8 @@ export const ProjectsContent  = [
             'Zustand',
             'Tailwind'
         ],
-        siteLink: 'https://pyre-2e47e.web.app/',
-        gitLink: 'https://github.com/HighRoller94/pyre'
+        siteLink: 'https://pyre-nextjs.vercel.app/login',
+        gitLink: 'https://github.com/HighRoller94/pyre-nextjs'
     },
     // {
     //     image: '/illume.svg',
