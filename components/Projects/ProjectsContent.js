@@ -30,11 +30,11 @@ export const ProjectsContent  = [
         ],
         type: 'Featured Project',
         title: 'Marquet',
-        desc: 'Marquet is a scalable ecommerce site that features full cart functionality and third party user authentication. Built with Next.js and Mongodb.',
+        desc: 'Marquet is a scalable ecommerce site that features full cart functionality and third party user authentication. Built with Next.js, MongoDb and Tailwind.',
         longerDesc: 'Built with HTML, and utilising SASS and pure JS, Marquet is an ecommerce site that features full cart functionality, and uses session and local storage to simulate a backend. ',
         languages: [
             'Next.js',
-            'Mongodb',
+            'MongoDb',
             'Redux'
         ],
         siteLink: 'https://marquet-nextjs.vercel.app/',
@@ -52,8 +52,8 @@ export const ProjectsContent  = [
         ],
         type: 'Featured Project',
         title: 'Pyre',
-        desc: 'Pyre uses the Spotify API to allows users to login, listen and manage their media. Users can add playlists and tracks to favourites, create new playlists and follow artists/other Spotify users.',
-        longerDesc: 'Music player with a simple dashboard layout. Built with React, Pyre uses the Spotify API to allows users to login, listen and manage their media. Users can add playlists and tracks to favourites, create new playlists entirely as well as follow artists/other Spotify users. Pyre utilises React Context and an express server for authentication purposes on the backend. Due to the limitations of the Spotify API, only premium users can use Pyre to listen to their favourite media.',
+        desc: 'Pyre allows users to login, listen and manage their Spotify media. Users can add new tracks, create new playlists and follow artists/other Spotify users.',
+        longerDesc: 'Music player with a dashboard layout. Built with React, Pyre uses the Spotify API to allows users to login, listen and manage their media. Users can add playlists and tracks to favourites, create new playlists entirely as well as follow artists/other Spotify users. Pyre utilises React Context and an express server for authentication purposes on the backend. Due to the limitations of the Spotify API, only premium users can use Pyre to listen to their favourite media.',
         languages: [
             'Next.js',
             'Zustand',

@@ -1,11 +1,11 @@
 .introduction {
   height: 100vh;
   width: 100vw;
-  background-color: #141516;
+  background-color: #101013;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99;
   color: white;
   display: flex;
   justify-content: center;
@@ -17,10 +17,10 @@
     position: absolute;
     align-items: center;
     @media screen and (min-width: 768px) {
-        font-size: 36px;
+        font-size: 30px;
     }
     @media screen and (min-width: 1312px) {
-        font-size: 42px;  
+        font-size: 36px;  
     }
     span {
       color: #71dbd4;
@@ -32,7 +32,7 @@
     width: 100%;
     height: calc(100% + 300px);
     path {
-      fill: #141516;
+      fill: #101013;
     }
   }
 }
